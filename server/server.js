@@ -2,12 +2,14 @@
 // configure server
 var express = require('express');
 var bodyParser = require('body-parser');
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 3000;
 var app = express();
+var path = require('path');
+
+
 
 // configure database
 var morgan = require('morgan');
-var mongoose = require('mongoose');
 
 // log every request to the console
 app.use(morgan('dev'));
@@ -15,7 +17,8 @@ app.use(morgan('dev'));
 // configure authentication
 
 // serve static files
-app.use('/', express.static(); //to configure
+
+app.use('/', express.static(path.join(__dirname, '../public')))
 
 // parse requests
 app.use(bodyParser.json());

@@ -28,10 +28,21 @@ var storage = {iceCream:0,
 
 var rankedArray = function(objectWithValues){
 
+    var sortable = [];
+    for (var object in storage)
+        sortable.push([object, storage[object]])
+
+    sortable.sort(function(a, b) {
+        return a[1] - b[1]
+})
+
+
+return sortable;
+
+
+
 
 }
-
-
 
 for (var i =0; i < battlePairs.length; i++){
     var answer = prompt(
@@ -49,6 +60,8 @@ for (var i =0; i < battlePairs.length; i++){
      storage[ battlePairs[i][0] ]--;
      storage[ battlePairs[i][1] ]++;
     }
+
+    console.log(rankedArray(storage));
    }
 
 

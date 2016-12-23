@@ -72,6 +72,7 @@ var i = 0;
     //change values in storage array
     storage[ battlePairs[i][0] ]--;
     storage[ battlePairs[i][1] ]++;
+
     if (i<battlePairs.length-1){
       i++;
     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UserStats from './User_Stats.js';
+import UserStats from './user_stats.js';
 
 export default class App extends Component {
   render() {

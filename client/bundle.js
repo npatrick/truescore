@@ -21524,12 +21524,12 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
+	      // Render test for UserStats; it must be visited from a nav link later
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        'React simple started hey!',
-	        _react2.default.createElement(_User_Stats2.default, null),
-	        ' // Render test; need to be visited from a nav link later'
+	        _react2.default.createElement(_User_Stats2.default, null)
 	      );
 	    }
 	  }]);

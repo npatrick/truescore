@@ -21500,6 +21500,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _User_Stats = __webpack_require__(180);
+
+	var _User_Stats2 = _interopRequireDefault(_User_Stats);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21520,10 +21524,12 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
+	      // Render test for UserStats; it must be visited from a nav link later
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        'React simple started bruh!'
+	        'React simple started hey!',
+	        _react2.default.createElement(_User_Stats2.default, null)
 	      );
 	    }
 	  }]);
@@ -21532,6 +21538,88 @@
 	}(_react.Component);
 
 	exports.default = App;
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var UserStats = function (_Component) {
+	  _inherits(UserStats, _Component);
+
+	  function UserStats() {
+	    _classCallCheck(this, UserStats);
+
+	    return _possibleConstructorReturn(this, (UserStats.__proto__ || Object.getPrototypeOf(UserStats)).apply(this, arguments));
+	  }
+
+	  _createClass(UserStats, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "dl",
+	        null,
+	        _react2.default.createElement(
+	          "dt",
+	          null,
+	          "User's Stats"
+	        ),
+	        _react2.default.createElement(
+	          "dd",
+	          { className: "percentage percentage-75" },
+	          _react2.default.createElement(
+	            "span",
+	            { className: "text" },
+	            "Cheese Steak: 75%"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "dd",
+	          { className: "percentage percentage-25" },
+	          _react2.default.createElement(
+	            "span",
+	            { className: "text" },
+	            "Ice Cream: 25%"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "dd",
+	          { className: "percentage percentage-1" },
+	          _react2.default.createElement(
+	            "span",
+	            { className: "text" },
+	            "Fries: 1%"
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return UserStats;
+	}(_react.Component);
+
+	;
+
+	exports.default = UserStats;
 
 /***/ }
 /******/ ]);

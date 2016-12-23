@@ -7,7 +7,6 @@ var app = express();
 var path = require('path');
 var handlers = require('./handlers.js');
 
-
 // configure database
 var morgan = require('morgan');
 

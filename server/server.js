@@ -5,6 +5,11 @@ var bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
 var app = express();
 var path = require('path');
+var mongoose = require('mongoose');
+
+
+
+// local folder imports
 var handlers = require('./handlers.js');
 
 // configure database
@@ -25,6 +30,32 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+// ============TEMPORARY MONGOOSE DB TO REPLACE WITH SQL ====================//
+
+mongoose.connect('mongodb://localhost/test');
+
+var trueScoreSchema = mongoose.Schema({
+    name: String,
+    wins: Number,
+    losses: Number,
+    rankPosition: Number
+});
+
+
+var ItemOfJudgement = mongoose.model('ItemOfJudgement', trueScoreSchema);
+
+var friesObject = new ItemOfJudgement({
+  name: 'fries',
+  wins: 0,
+  losses: 0,
+  rankPosition: 0
+});
+
+console.log(friesObject.name, friesObject.wins); // 'Silence'
+
+
+
+
 
 // ============TEMPORARY TO MOVE TO HANDLERS OR DB ====================//
   var arrayOfObjects = ["iceCream", "cheeseSteak", "fries", "Doner Kebab"];
@@ -38,11 +69,52 @@ app.use(bodyParser.urlencoded({
 
   // ============ END TEMPORARY TO MOVE TO HANDLERS OR DB ====================//
 
+  // ============ DB STUFF ====================//
+
+
+    app.post('/drop', function(req, res){
+      ItemOfJudgement.remove({}, function(err) {
+        console.log('killed all records in db');
+        res.send('killed all records in db');
+      });
+    });
+
+
+    app.post('/addObjectOfJudgement', (req, res) => {
+      console.log("someone's trying to add some stuff to the db");
+
+         //add to model
+         ItemOfJudgement.create({
+             name: req.body.name,
+             wins: req.body.wins,
+             losses: req.body.losses,
+             rankPosition: req.body.rankPosition
+         }, function(err, data) {
+             if (err) {
+                 console.log(err);
+             }
+             res.send(data);
+         });
+
+         // show all db records
+         ItemOfJudgement.find(function(err, itemsOfJudgement) {
+           if (err) return console.error(err);
+           console.log(itemsOfJudgement);
+         });
+
+
+    });
+
+
+
+
+    // ============ END DB STUFF ====================//
+
+
 
   app.get('/nextBattlePairs', (req, res) => {
     res.send(battlePairs[i]);
     i++;
-
   });
 
 // receive results of most recent battle
@@ -61,7 +133,7 @@ app.post('/resultOfBattle', (req, res) => {
 });
 
 app.get('/getRankList', (req, res) => {
-  //get storage from 
+  //get storage from
 
   res.send(handlers.rankedArray(storage));
 });

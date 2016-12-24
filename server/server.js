@@ -121,9 +121,10 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
   app.get('/getRankList', (req, res) => {
     ItemOfJudgement.find(function(err, itemsOfJudgement) {
       if (err) return console.error(err);
-      res.send(itemsOfJudgement);
-    });
 
+      var results = handlers.rankArray(itemsOfJudgement);
+      res.send(results);
+    });
 
 });
 

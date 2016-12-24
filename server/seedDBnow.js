@@ -1,5 +1,7 @@
 var fs = require('fs');
 var request = require('request');
+var path = require('path');
+
 
 function populateDB(){
 
@@ -12,8 +14,7 @@ function populateDB(){
              }
            );
 
-//TODO: change this to be relative and change name to final stub file
-var results = fs.readFile('/Users/bartekringwelski/Desktop/MKS/truescore/stubs_food.json', function(err, results){
+var results = fs.readFile(path.join(__dirname, '../stubs.json'), function(err, results){
   if(err) {
     console.log(err);
   }else {
@@ -30,7 +31,8 @@ var results = fs.readFile('/Users/bartekringwelski/Desktop/MKS/truescore/stubs_f
                });
              }
 
-    }); // added ok.
-} // closes entrire thing
+    });
+}
 
+//execute file
 populateDB();

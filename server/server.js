@@ -1,110 +1,44 @@
 
-// configure server
+// ============ setup ==============//
 var express = require('express');
 var bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
 var app = express();
 var path = require('path');
+var morgan = require('morgan');
 var mongoose = require('mongoose');
 
-
-
-// local folder imports
+// ============ local folders ==============//
 var handlers = require('./handlers.js');
-
-// configure database
-var morgan = require('morgan');
 
 // log every request to the console
 app.use(morgan('dev'));
 
-// configure authentication
-
 // serve static files
-
 app.use('/', express.static(path.join(__dirname, '../public')));
 
 // parse requests
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-
-// ============TEMPORARY MONGOOSE DB TO REPLACE WITH SQL ====================//
+app.use(bodyParser.urlencoded({extended: true}));
 
 mongoose.connect('mongodb://localhost/test');
 
+
+// ============ db setup ==============//
+
 var trueScoreSchema = mongoose.Schema({
     name: String,
+    imageUrl: String,
     wins: Number,
     losses: Number,
     rankPosition: Number
 });
 
-
 var ItemOfJudgement = mongoose.model('ItemOfJudgement', trueScoreSchema);
 
 
-// ============TEMPORARY TO MOVE TO HANDLERS OR DB ====================//
-  var arrayOfObjects = ["iceCream", "cheeseSteak", "fries", "Doner Kebab"];
 
-// hardcoded storage items for now
-  var storage = {iceCream:0, cheeseSteak:0, fries:0, "Doner Kebab":0 };
-
-  var i = 0;
-
-  // ============ END TEMPORARY TO MOVE TO HANDLERS OR DB ====================//
-
-  var battleCount = 0
-  var battlePairs;
-  app.get('/nextBattlePairs', (req, res) => {
-    if (battleCount === 0){
-      //get stuff from db
-
-      ItemOfJudgement.find(function(err, arrayOfObjects) {
-        if (err) return console.error(err);
-        battlePairs = handlers.battlePairMaker(arrayOfObjects); // [{a:1},{b:2}]
-        res.send(battlePairs[battleCount]);
-        battleCount++;
-
-      });
-
-
-    } else {
-      console.log("next battle", battlePairs[battleCount]);
-      res.send(battlePairs[battleCount]);
-      battleCount++;
-    }
-
-  });
-
-// receive results of most recent battle
-app.post('/resultOfBattle', (req, res) => {
-
-  // if(req.body.results[0].left == 1 && req.body.results[1].right == -1){
-  //   // console.log("left wonnnnn!");
-  //   storage[ battlePairs[i-1][0] ]++
-  //   storage[ battlePairs[i-1][1] ]--
-  // } else {
-  //   // console.log("right wonnnn!");
-  //   storage[ battlePairs[i-1][0] ]--
-  //   storage[ battlePairs[i-1][1] ]++
-  // }
-  // console.log(storage);
-});
-
-app.get('/getRankList', (req, res) => {
-  //get storage from
-
-  res.send(handlers.rankedArray(storage));
-});
-
-app.get('/showUserStats', (req, res) => {
-  //tbd
-});
-
-
-// ============ DB STUFF ====================//
+// ============ DB routes ====================//
 
 
   app.post('/drop', function(req, res){
@@ -116,14 +50,14 @@ app.get('/showUserStats', (req, res) => {
 
 
   app.post('/addObjectOfJudgement', (req, res) => {
-    console.log("someone's trying to add some stuff to the db");
 
        //add to model
        ItemOfJudgement.create({
            name: req.body.name,
-           wins: req.body.wins,
-           losses: req.body.losses,
-           rankPosition: req.body.rankPosition
+           imageUrl: req.body.imageUrl,
+           wins: 0,
+           losses: 0,
+           rankPosition:0
        }, function(err, data) {
            if (err) {
                console.log(err);
@@ -136,14 +70,71 @@ app.get('/showUserStats', (req, res) => {
          if (err) return console.error(err);
          console.log(itemsOfJudgement);
        });
-
-
   });
 
 
-// ============ END DB STUFF ====================//
+// ============ API Routes  ==============//
+
+// moved these later
+  var battleCount = 0
+  var battlePairs;
+
+  //serve up next battle
+  app.get('/nextBattlePairs', (req, res) => {
+
+    if (battleCount === 0){
+
+      ItemOfJudgement.find(function(err, arrayOfObjects) {
+        if (err) return console.error(err);
+        battlePairs = handlers.battlePairMaker(arrayOfObjects); // [{a:1},{b:2}]
+        res.send(battlePairs[battleCount]);
+        battleCount++;
+      });
+
+    } else {
+      res.send(battlePairs[battleCount]);
+      battleCount++;
+    }
+  });
+
+// receive results of most recent battle
+app.post('/updateDBwithResultOfBattle', (req, res) => {
+  var winner;
+  var loser;
 
 
+  if(req.body.winner === "left"){
+    winner = battlePairs[battleCount-1][0]
+    loser = battlePairs[battleCount-1][1]
+
+  } else {
+    console.log("right won");
+    winner = battlePairs[battleCount-1][1]
+    loser = battlePairs[battleCount-1][0]
+  }
+
+  ItemOfJudgement.update({name: winner.name}, {wins: winner.wins++ }, err => err ? console.error(err) : null);
+  ItemOfJudgement.update({name: loser.name}, {losses:loser.losses-- }, err => err ? console.error(err) : null);
+
+  });
+
+  app.get('/getRankList', (req, res) => {
+    ItemOfJudgement.find(function(err, itemsOfJudgement) {
+      if (err) return console.error(err);
+      res.send(itemsOfJudgement);
+    });
+
+
+});
+
+
+ // serve up stats
+app.get('/showUserStats', (req, res) => {
+  //tbd
+});
+
+
+// ============ PORT LISTENING  ==============//
 
 // start server
 app.listen(port);

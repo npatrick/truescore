@@ -1,97 +1,141 @@
 
-// configure server
+// ============ setup ==============//
 var express = require('express');
 var bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
 var app = express();
 var path = require('path');
-var handlers = require('./handlers.js');
-
-// configure database
 var morgan = require('morgan');
+var mongoose = require('mongoose');
+
+// ============ local folders ==============//
+var handlers = require('./handlers.js');
 
 // log every request to the console
 app.use(morgan('dev'));
 
-// configure authentication
-
 // serve static files
-
-app.use('/', express.static(path.join(__dirname, '../client')));
+app.use('/', express.static(path.join(__dirname, '../public')));
 
 // parse requests
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(bodyParser.urlencoded({extended: true}));
+
+mongoose.connect('mongodb://localhost/test');
 
 
-// ============TEMPORARY TO MOVE TO HANDLERS OR DB ====================//
-  var arrayOfObjects = ["iceCream", "cheeseSteak", "fries", "Doner Kebab"];
+// ============ db setup ==============//
 
-  var battlePairs = [];
-  var battlePairMaker = function() {
-    for (var i = 0; i<arrayOfObjects.length; i++){
-      for (var j = i+1; j<arrayOfObjects.length; j++){
-        battlePairs.push([arrayOfObjects[i], arrayOfObjects[j]]);
-      }
-    }
-    return battlePairs;
-  };
-  battlePairMaker(arrayOfObjects);
-  console.log(battlePairs);
+var trueScoreSchema = mongoose.Schema({
+    name: String,
+    imageUrl: String,
+    wins: Number,
+    losses: Number,
+    rankPosition: Number
+});
 
-  var i = 0;
+var ItemOfJudgement = mongoose.model('ItemOfJudgement', trueScoreSchema);
 
 
 
-// hardcoded storage items for now
-  var storage = {iceCream:0, cheeseSteak:0, fries:0, "Doner Kebab":0 };
+// ============ DB routes ====================//
 
-// read storage object and return ranked list
-  var rankedArray = function(objectWithValues) {
-    var sortable = [];
-      for (var object in storage) {
-        sortable.push([object, storage[object]])
-        sortable.sort(function(a, b) {
-          return a[1] - b[1]
-        })
-      }
-  return sortable;
 
-  }
+  app.post('/drop', function(req, res){
+    ItemOfJudgement.remove({}, function(err) {
+      console.log('killed all records in db');
+      res.send('killed all records in db');
+    });
+  });
 
-  // ============ END TEMPORARY TO MOVE TO HANDLERS OR DB ====================//
 
+  app.post('/addObjectOfJudgement', (req, res) => {
+
+       //add to model
+       ItemOfJudgement.create({
+           name: req.body.name,
+           imageUrl: req.body.imageUrl,
+           wins: 0,
+           losses: 0,
+           rankPosition:0
+       }, function(err, data) {
+           if (err) {
+               console.log(err);
+           }
+           res.send(data);
+       });
+
+       // show all db records
+       ItemOfJudgement.find(function(err, itemsOfJudgement) {
+         if (err) return console.error(err);
+         console.log(itemsOfJudgement);
+       });
+  });
+
+
+// ============ API Routes  ==============//
+
+// moved these later
+  var battleCount = 0
+  var battlePairs;
+
+  //serve up next battle
   app.get('/nextBattlePairs', (req, res) => {
 
-    res.send(battlePairs[i]);
-    i++;
+    if (battleCount === 0){
 
+      ItemOfJudgement.find(function(err, arrayOfObjects) {
+        if (err) return console.error(err);
+        battlePairs = handlers.battlePairMaker(arrayOfObjects); // [{a:1},{b:2}]
+        res.send(battlePairs[battleCount]);
+        battleCount++;
+      });
+
+    } else {
+      res.send(battlePairs[battleCount]);
+      battleCount++;
+    }
   });
 
 // receive results of most recent battle
-app.post('/resultOfBattle', (req, res) => {
+app.post('/updateDBwithResultOfBattle', (req, res) => {
+  var winner;
+  var loser;
 
-  if(req.body.results[0].left == 1 && req.body.results[1].right == -1){
-    console.log("left wonnnnn!");
-    storage[ battlePairs[i-1][0] ]++
-    storage[ battlePairs[i-1][1] ]--
+
+  if(req.body.winner === "left"){
+    winner = battlePairs[battleCount-1][0]
+    loser = battlePairs[battleCount-1][1]
+
   } else {
-    console.log("right wonnnn!");
-    storage[ battlePairs[i-1][0] ]--
-    storage[ battlePairs[i-1][1] ]++
+    console.log("right won");
+    winner = battlePairs[battleCount-1][1]
+    loser = battlePairs[battleCount-1][0]
   }
-  console.log(storage);
+
+  ItemOfJudgement.update({name: winner.name}, {wins: winner.wins++ }, err => err ? console.error(err) : null);
+  ItemOfJudgement.update({name: loser.name}, {losses:loser.losses-- }, err => err ? console.error(err) : null);
+
+  });
+
+  app.get('/getRankList', (req, res) => {
+    ItemOfJudgement.find(function(err, itemsOfJudgement) {
+      if (err) return console.error(err);
+
+      var results = handlers.rankArray(itemsOfJudgement);
+      res.send(results);
+    });
+
 });
 
-app.get('/getRankList', (req, res) => {
-  res.send(rankedArray(storage));
-});
 
+ // serve up stats
 app.get('/showUserStats', (req, res) => {
   //tbd
 });
+
+
+// ============ PORT LISTENING  ==============//
 
 // start server
 app.listen(port);

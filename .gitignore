@@ -1,3 +1,7 @@
 /node_modules
 
+<<<<<<< 694a983e59acb09f6b30331240c5a4f250f28547
 /client/bundle.js
+=======
+/client/bundle.js
+>>>>>>> add Game & Choice components

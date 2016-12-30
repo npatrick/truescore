@@ -1,33 +1,12 @@
 import React, { Component } from 'react';
 
-
-
-
-
-class Choice extends Component {
-  constructor (props) {
-    super(props);
-
-    this.state = {dummy: "save data?"};
-
-  }
-
-
-  render() {
-    return (
-      <div className="choice-container">
-        <h3>Person's Name</h3>
-        <img src={this.props.catPhoto}/>
-      </div>
-
-
-
-    );
-  }
-}
-
-
-
-
+const Choice = props => {
+  return (
+    <div className="choice-container">
+      <h3>Mr. Meow</h3>
+      <img src={props.catPhoto}/>
+    </div>
+  )
+};
 
 export default Choice;

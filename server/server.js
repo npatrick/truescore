@@ -15,6 +15,7 @@ var handlers = require('./handlers.js');
 app.use(morgan('dev'));
 
 // serve static files
+
 app.use(express.static(path.join(__dirname, '../client')));
 
 // parse requests

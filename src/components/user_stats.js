@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 class UserStats extends Component {
   render() {
-    return ( 
+    return (
       <dl>
-        <dt>User's Stats</dt>
+        <dt>Users Stats</dt>
         <dd className="percentage percentage-75">
           <span className="text">
             Cheese Steak: 75%

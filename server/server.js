@@ -151,13 +151,9 @@ app.get('/getAllObjectsOfComparison', (req, res) => {
 
   ItemOfJudgement.find(function(err, arrayOfObjects) {
     if (err) return console.error(err);
-    console.log(arrayOfObjects);
 
-    for (var i = 0; i < arrayOfObjects.length; i++){
-      arrayOfObjectNames.push(arrayOfObjects[i].name)
-    }
-    res.send(arrayOfObjectNames);
-    arrayOfObjectNames= [];
+    var arrayOfNames = handlers.getNames(arrayOfObjects)
+    res.send(arrayOfNames);
   });
 
 });

@@ -1,4 +1,4 @@
-
+var _ = require('underscore');
 
 module.exports = {
 
@@ -9,7 +9,9 @@ module.exports = {
         battlePairs.push([arrayOfObjects[i], arrayOfObjects[j]]);
       }
     }
-    return battlePairs;
+    //shuffle order
+
+    return _.shuffle(battlePairs);
   },
 
 

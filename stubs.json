@@ -1,26 +1,74 @@
 [
   {
-   "name": "Mittu",
-   "imageUrl": "https://pbs.twimg.com/profile_images/602729491916435458/hSu0UjMC.jpg"
+   "name": "Mittu the mouse",
+   "imageUrl": "http://ecowallpapers.net/wp-content/uploads/1474_mouse.jpg",
+   "promptHistory" : [
+                      {
+                        "prompt": "Who has shorter hair?"
+                      },
+                      {
+                        "prompt": "Who is taller?"
+                      }
+                    ]
   },
   {
-   "name": "Timpu",
-   "imageUrl": "https://s14.favim.com/mini/160611/cat-cats-cute-cute-cats-Favim.com-4399459.jpeg"
+   "name": "Timpu the cat",
+   "imageUrl": "https://s-media-cache-ak0.pinimg.com/originals/bc/d8/84/bcd8841f69279f74248515919c8c1814.jpg",
+   "promptHistory" : [
+                      {
+                        "prompt": "Who has shorter hair?"
+                      },
+                      {
+                        "prompt": "Who is taller?"
+                      }
+                    ]
   },
   {
-   "name": "Dolly",
-   "imageUrl": "http://zoonarea.com/wp-content/uploads/parser/british-shorthair-kittens-white-1.jpg"
+   "name": "Dolly the cat",
+   "imageUrl": "http://zoonarea.com/wp-content/uploads/parser/british-shorthair-kittens-white-1.jpg",
+   "promptHistory" : [
+                      {
+                        "prompt": "Who has shorter hair?"
+                      },
+                      {
+                        "prompt": "Who is taller?"
+                      }
+                    ]
   },
   {
-   "name": "Abee",
-   "imageUrl": "http://www.thelabradorsite.com/wp-content/uploads/2015/07/4.jpg"
+   "name": "Abee the dog of Zucekrberg",
+   "imageUrl": "http://tailandfur.com/wp-content/uploads/2014/11/long-haired-dog-breeds3.jpg",
+   "promptHistory" : [
+                      {
+                        "prompt": "Who has shorter hair?"
+                      },
+                      {
+                        "prompt": "Who is taller?"
+                      }
+                    ]
   },
   {
-   "name": "Jack",
-   "imageUrl": "http://4.bp.blogspot.com/-cHnQWH0U4qk/URkcPzMbg9I/AAAAAAAAFD8/oCj160AJ4Yw/s1600/golden.jpg"
+   "name": "Jack the dog",
+   "imageUrl": "http://4.bp.blogspot.com/-cHnQWH0U4qk/URkcPzMbg9I/AAAAAAAAFD8/oCj160AJ4Yw/s1600/golden.jpg",
+   "promptHistory" : [
+                      {
+                        "prompt": "Who has shorter hair?"
+                      },
+                      {
+                        "prompt": "Who is taller?"
+                      }
+                    ]
   },
   {
-   "name": "Jimmy",
-   "imageUrl": "https://lh3.googleusercontent.com/EQyL3U7T8fks2I1qGlevGSX6HGGiCLGhL2vWATDBFA5vPPj60Cin3WG36X2gfUn2q3A=h900"
+   "name": "Jimmy the Giraffe",
+   "imageUrl": "https://www.sciencenews.org/sites/default/files/main/blogposts/wt_giraffeneck_free.jpg",
+   "promptHistory" : [
+                      {
+                        "prompt": "Who has shorter hair?"
+                      },
+                      {
+                        "prompt": "Who is taller?"
+                      }
+                    ]
   }
 ]

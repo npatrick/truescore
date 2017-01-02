@@ -30,13 +30,16 @@ mongoose.connect('mongodb://localhost/test');
 var trueScoreSchema = mongoose.Schema({
     name: String,
     imageUrl: String,
-    wins: Number,
-    losses: Number,
-    rankPosition: Number
+    promptHistory: [
+                    {
+                      prompt: String,
+                      wins: Number,
+                      losses: Number
+                    }
+                  ]
 });
 
 var ItemOfJudgement = mongoose.model('ItemOfJudgement', trueScoreSchema);
-
 
 
 // ============ DB routes ====================//
@@ -56,9 +59,19 @@ var ItemOfJudgement = mongoose.model('ItemOfJudgement', trueScoreSchema);
        ItemOfJudgement.create({
            name: req.body.name,
            imageUrl: req.body.imageUrl,
-           wins: 0,
-           losses: 0,
-           rankPosition:0
+           promptHistory: [
+                            {
+                              prompt: req.body.promptHistory[0].prompt,
+                              wins: 0,
+                              losses: 0
+                            },
+                            {
+                              prompt: req.body.promptHistory[1].prompt,
+                              wins: 0,
+                              losses: 0
+                            }
+                          ]
+
        }, function(err, data) {
            if (err) {
                console.log(err);
@@ -119,20 +132,49 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
 
   });
 
-  app.get('/getRankList', (req, res) => {
-    ItemOfJudgement.find(function(err, itemsOfJudgement) {
-      if (err) return console.error(err);
+app.get('/getRankList', (req, res) => {
+  ItemOfJudgement.find(function(err, itemsOfJudgement) {
+    if (err) return console.error(err);
 
-      var results = handlers.rankArray(itemsOfJudgement);
-      res.send(results);
-    });
+    var results = handlers.rankArray(itemsOfJudgement);
+    res.send(results);
+  });
 
 });
 
 
- // serve up stats
-app.get('/showUserStats', (req, res) => {
+
+
+//sends back an array of all names
+app.get('/getAllObjectsOfComparison', (req, res) => {
+  var arrayOfObjectNames =[];
+
+  ItemOfJudgement.find(function(err, arrayOfObjects) {
+    if (err) return console.error(err);
+    console.log(arrayOfObjects);
+
+    for (var i = 0; i < arrayOfObjects.length; i++){
+      arrayOfObjectNames.push(arrayOfObjects[i].name)
+    }
+    res.send(arrayOfObjectNames);
+    arrayOfObjectNames= [];
+  });
+
+});
+
+// serve up stats
+app.post('/getStatsForObject', (req, res) => {
+
+  //figure out phone number of request
+  ItemOfJudgement.findOne({
+    name: req.body.name // finds the user in the db
+  }, function(err, object) {
+    if (err) {
+      console.log(err);
+    }
+    res.send(object.promptHistory);
   //tbd
+});
 });
 
 

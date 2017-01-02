@@ -26,8 +26,7 @@ class CompareChoices extends Component {
 
     return (
       <div className="game-container">
-      <h2>Compare Component!</h2>
-      <h4 className="game-info">Sincerity</h4>
+      <h4 className="game-info">Who's hair is longer?</h4>
       <button
         onClick={() => this.props.fetchChoices()}
         className="btn btn-secondary">

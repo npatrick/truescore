@@ -28,6 +28,11 @@ class CompareChoices extends Component {
       <div className="game-container">
       <h2>Compare Component!</h2>
       <h4 className="game-info">Sincerity</h4>
+      <button
+        onClick={() => this.props.fetchChoices()}
+        className="btn btn-secondary">
+        Refresh
+      </button>
       <div className="game-comparison">
         {this.renderChoices.bind(this)()}
       </div>

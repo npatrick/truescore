@@ -1,3 +1,12 @@
+
+////////////////////////
+//
+// DO NOT USE
+//
+// DO NOT USE
+//
+////////////////////////
+
 import React, { Component } from 'react';
 import Choice from './choice.js'
 
@@ -18,3 +27,12 @@ const Game = props => {
 
 
 export default Game
+
+
+////////////////////////
+//
+// DO NOT USE
+//
+// DO NOT USE
+//
+////////////////////////

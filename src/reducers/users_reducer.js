@@ -1,8 +1,8 @@
-import { FETCH_USERS } from './actions/actionCreators';
+import { FETCH_USERS } from '../actions/actions';
 
 const INITIAL_STATE = [];
 
-export default funtion(state = INITIAL_STATE, action) {
+export default function(state = INITIAL_STATE, action) {
   switch( action.type ) {
 
     case FETCH_USERS:

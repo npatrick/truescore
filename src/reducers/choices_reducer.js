@@ -1,4 +1,4 @@
-import { FETCH_CHOICES } from '../actions/actionCreators';
+import { FETCH_CHOICES } from '../actions/actions';
 
 const INITIAL_STATE = [];
 

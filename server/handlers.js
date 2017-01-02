@@ -1,4 +1,4 @@
-
+var _ = require('underscore');
 
 module.exports = {
 
@@ -9,9 +9,8 @@ module.exports = {
         battlePairs.push([arrayOfObjects[i], arrayOfObjects[j]]);
       }
     }
-    return battlePairs;
+    return _.shuffle(battlePairs);
   },
-
 
   rankArray: function(arrayOfObjects) {
     var rankList = [];
@@ -19,8 +18,14 @@ module.exports = {
       rankList.push([ arrayOfObjects[i].name, arrayOfObjects[i].wins + arrayOfObjects[i].losses ] );
     }
     return rankList;
+  },
 
-
+  getNames: function(arrayOfObjects) {
+    var names = [];
+    for (var i = 0; i<arrayOfObjects.length; i++){
+      names.push(arrayOfObjects[i].name);
+    }
+    return names;
   }
 
 };

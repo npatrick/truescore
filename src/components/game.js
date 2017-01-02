@@ -15,7 +15,7 @@ const Game = props => {
   return (
 
     <div className="game-container">
-      <h2 className="game-info">Sincerity</h2>
+      <h2 className="game-info">This should be replaced by dynamic prompt</h2>
       <div className="game-comparison">
         {choices}
       </div>

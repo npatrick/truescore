@@ -14,9 +14,10 @@ class CompareChoices extends Component {
     return this.props.choices.map(choice => {
       console.log("current choice is ", choice);
       return (
-        <Choice 
+        <Choice
           name={choice.name}
           imageUrl={choice.imageUrl}
+          promptHistory={choice.promptHistory[0].prompt}
           key={choice.name} />
       );
     });
@@ -26,7 +27,8 @@ class CompareChoices extends Component {
 
     return (
       <div className="game-container">
-      <h4 className="game-info">Who's hair is longer?</h4>
+      <h2>Compare Component!</h2>
+      <h4 className="game-info">This should be replaced by a dynamic route</h4>
       <button
         onClick={() => this.props.fetchChoices()}
         className="btn btn-secondary">

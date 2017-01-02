@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { fetchChoices } from '../actions/actionCreators';
+import { fetchChoices } from '../actions/actions';
 import Choice from '../components/choice.js'
 
 class CompareChoices extends Component {
@@ -26,8 +26,7 @@ class CompareChoices extends Component {
 
     return (
       <div className="game-container">
-      <h2>Compare Component!</h2>
-      <h4 className="game-info">Sincerity</h4>
+      <h4 className="game-info">Who's hair is longer?</h4>
       <button
         onClick={() => this.props.fetchChoices()}
         className="btn btn-secondary">

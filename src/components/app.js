@@ -16,8 +16,7 @@ export default class App extends Component {
     // Render test for UserStats; it must be visited from a nav link later
     return (
       <div>
-        <CompareChoices />
-        <UserStats />
+        {this.props.children}
       </div>
     );
   }

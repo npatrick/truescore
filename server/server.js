@@ -121,10 +121,50 @@ res.send('killed all records in db');
 app.post('/updateDBwithResultOfBattle', (req, res) => {
 
   //update winner
-  //ItemOfJudgement.update({name: req.body.winner, 'promptHistory.prompt': req.body.prompt}, {promptHistory.prompt.wins: wins++ }, err => err ? console.error(err) : null);
+
+  ItemOfJudgement.findOne({
+    name: req.body.winner // finds the winner in the db
+  }, function(err, object) {
+    if (err) {console.log(err);}
+
+    //find matching prompt
+    for (var i = 0; i <object.promptHistory.length; i++){
+      if(object.promptHistory[i].prompt === req.body.prompt){
+        var index = i;
+      }
+    }
+
+    // overwrite response at last entry in response array
+    object.promptHistory[index].wins++;
+
+    // update user in database and invoke grading function on user
+    ItemOfJudgement.update({name: req.body.winner}, {promptHistory: object.promptHistory}, err => err ? console.error(err) : null);
+
+  });
+
 
   //update loser
-  // ItemOfJudgement.update({name: req.body.loser, 'promptHistory.prompt': req.body.prompt}, {promptHistory.prompt.losses: losses++ },err => err ? console.error(err) : null);
+
+  ItemOfJudgement.findOne({
+    name: req.body.loser // finds the winner in the db
+  }, function(err, object) {
+    if (err) {console.log(err);}
+
+    //find matching prompt
+    for (var i = 0; i <object.promptHistory.length; i++){
+      if(object.promptHistory[i].prompt === req.body.prompt){
+        var index = i;
+      }
+    }
+
+    // overwrite response at last entry in response array
+    object.promptHistory[index].loser++;
+
+    // update user in database and invoke grading function on user
+    ItemOfJudgement.update({name: req.body.loser}, {promptHistory: object.promptHistory}, err => err ? console.error(err) : null);
+
+  });
+
 });
 
 

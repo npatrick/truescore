@@ -11,9 +11,8 @@ class CompareChoices extends Component {
 
   renderChoices(){
 
-    console.log("my comparison: ", this.props.comparison);
     return this.props.comparison.choices.map(choice => {
-      console.log("current choice is ", choice);
+    
       return (
         <Choice 
           name={choice.name}

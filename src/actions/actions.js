@@ -33,12 +33,12 @@ export function fetchUsers () {
 export function submitDecision(winner) {
 
   const currentComparison = store.getState().comparison;
+ 
   const [left, right] = currentComparison.choices;
   const loser = left.name === winner ? right.name  : left.name;
   const prompt = currentComparison.prompt;
 
   const result = {winner, loser, prompt};
-  console.log("result is: ", result);
 
   const request = axios.post(`${ROOT_URL}updateDBwithResultOfBattle`, result);
 

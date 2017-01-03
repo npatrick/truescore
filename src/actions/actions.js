@@ -26,7 +26,7 @@ export function fetchUsers () {
     payload: request
   }
 }
-<<<<<<< HEAD
+
 
 
 
@@ -57,5 +57,4 @@ export function submitDecision(winner) {
 
 
 
-=======
->>>>>>> Save changes
+

@@ -4,7 +4,7 @@ import UsersReducer from './users_reducer';
 
 
 const rootReducer = combineReducers({
-  choices: ComparisonReducer,
+  comparison: ComparisonReducer,
   users: UsersReducer
 });
 

@@ -11,7 +11,7 @@ class CompareChoices extends Component {
 
   renderChoices(){
 
-    console.log("my choices: ", this.props.choices);
+    console.log("my comparison: ", this.props.comparison);
     return this.props.comparison.choices.map(choice => {
       console.log("current choice is ", choice);
       return (
@@ -27,8 +27,7 @@ class CompareChoices extends Component {
 
     return (
       <div className="game-container">
-      <h2>Compare Component!</h2>
-      <h4 className="game-info">{this.props.comparison.prompt}</h4>
+      <h4 className="game-info">{this.props.comparison ? this.props.comparison.prompt : 'Loading...'}</h4>
       <button
         onClick={() => this.props.fetchComparison()}
         className="btn btn-secondary">

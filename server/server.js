@@ -120,6 +120,7 @@ res.send('killed all records in db');
 // receive results of most recent battle //not working
 app.post('/updateDBwithResultOfBattle', (req, res) => {
 
+  console.log(req.body);
   //update winner
 
   ItemOfJudgement.findOne({

@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { submitDecision } from '../actions/actions';
+import { submitDecision, fetchComparison } from '../actions/actions';
   
 class Choice extends Component {
+
+  submit(winner){
+    this.props.submitDecision(winner);
+    this.props.fetchComparison();
+  }
 
   render() {
 
@@ -10,7 +15,7 @@ class Choice extends Component {
       <div className="choice-container">
         <h3>{this.props.name}</h3>
         <img
-        onClick={() => this.props.submitDecision(this.props.name)}
+        onClick={() => this.submit.bind(this)(this.props.name)}
         src={this.props.imageUrl} />
       </div>
     );
@@ -19,5 +24,5 @@ class Choice extends Component {
 };
 
 
-export default connect(null, { submitDecision })(Choice);
+export default connect(null, { submitDecision, fetchComparison })(Choice);
 

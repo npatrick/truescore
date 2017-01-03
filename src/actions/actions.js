@@ -31,16 +31,23 @@ export function fetchUsers () {
 
 
 
-export function submitDecision(winnerName) {
+export function submitDecision(winner) {
 
-  const [left, right] = store.getState().choices;
-  const loserName = left.name === winnerName ? right.name  : left.name;
+  const currentComparison = store.getState().comparison;
+  const [left, right] = currentComparison.choices;
+  const loser = left.name === winner ? right.name  : left.name;
+  const prompt = currentComparison.prompt;
 
-  console.log("winner is: ", winnerName, "      loser is: ", loserName);
+  const result = {winner, loser, prompt};
+  console.log("result is: ", result);
+
+  //const request = axios.post(`${ROOT_URL}updateDBwithResultOfBattle`, result);
+  let request = "bah";
 
 
   return {
-    type: SUBMIT_DECISION
+    type: SUBMIT_DECISION,
+    payload: request
   }
 
 }

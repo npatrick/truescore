@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { submitDecision } from '../actions/actions';
+  
+class Choice extends Component {
 
-const Choice = props => {
-  console.log("choice props: ", props);
-  return (
-    <div className="choice-container">
-      <h3>{props.name}</h3>
-      <img src={props.imageUrl} />
-    </div>
-  )
+  render() {
+
+    return (
+      <div className="choice-container">
+        <h3>{this.props.name}</h3>
+        <img 
+        src={this.props.imageUrl} />
+      </div>
+    );
+  }
+
 };
 
-export default Choice;
+
+export default connect(null, { submitDecision })(Choice);
+

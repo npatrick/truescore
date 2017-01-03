@@ -46,7 +46,7 @@ var ItemOfJudgement = mongoose.model('ItemOfJudgement', trueScoreSchema);
 
 
   app.post('/drop', function(req, res){
-    ItemOfJudgement.remove({}, function(err) {
+    ItemOfJudgement.remove(function(err) {
       console.log('killed all records in db');
       res.send('killed all records in db');
     });

@@ -10,6 +10,7 @@ class CompareChoices extends Component {
   }
 
   renderChoices(){
+
     console.log("my choices: ", this.props.choices);
     return this.props.choices.map(choice => {
       console.log("current choice is ", choice);
@@ -17,7 +18,6 @@ class CompareChoices extends Component {
         <Choice
           name={choice.name}
           imageUrl={choice.imageUrl}
-          promptHistory={choice.promptHistory[0].prompt}
           key={choice.name} />
       );
     });

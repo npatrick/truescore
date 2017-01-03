@@ -88,7 +88,6 @@ res.send('killed all records in db');
        // show all db records
        ItemOfJudgement.find(function(err, itemsOfJudgement) {
          if (err) return console.error(err);
-         console.log(itemsOfJudgement);
        });
   });
 
@@ -113,6 +112,8 @@ res.send('killed all records in db');
 
     } else {
       res.send(battlePairs[battleCount]);
+      console.log("items in battle", battlePairs.length)
+      console.log("BATTLE COUNT", battleCount)
       battleCount++;
     }
   });
@@ -148,8 +149,6 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
   }, function(err, object) {
     if (err) {console.log(err);}
 
-    console.log("loser is", object)
-
     //find matching prompt
     for (var i = 0; i <object.promptHistory.length; i++){
       if(object.promptHistory[i].prompt === req.body.prompt){
@@ -159,7 +158,6 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
 
     // overwrite response at last entry in response array
     object.promptHistory[index].losses++;
-    console.log(object);
 
     // update user in database and invoke grading function on user
     ItemOfJudgement.update({name: req.body.loser}, {promptHistory: object.promptHistory}, err => err ? console.error(err) : null);

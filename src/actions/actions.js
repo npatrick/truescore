@@ -17,7 +17,7 @@ export function fetchChoices () {
 export function fetchUsers () {
 
   /// WARNING CHECK ROUTE WITH BARTEK!!
-  const request = axios.get(`${ROOT_URL}users`);
+  const request = axios.get(`${ROOT_URL}users`); // === localhos3000/users. returns promise with .then property. returns object and must have a type
 
   return {
     type: FETCH_USERS,

@@ -30,4 +30,4 @@ function mapStateToProps (state ) {
 }
 
 
-export default connect(mapStateToProps, { fetchUsers })(UsersList);
+export default connect(mapStateToProps, { fetchUsers })(UsersList); //currying {stateData, action ==> component}

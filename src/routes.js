@@ -8,9 +8,9 @@ import CompareChoices from './containers/compare_choices';
 
 export default (
   <Route path="/" component={App} >
-    <IndexRoute component={CompareChoices} />
-    <Route path="stats" component={UserStats} />
-    <Route path="game" component={CompareChoices} />
+    <IndexRoute component={CompareChoices} /> //hmmm...main page
+    <Route path="stats" component={UserStats} /> //stats page
+    <Route path="game" component={CompareChoices} /> // other page we may delete
 
   </Route>
 );

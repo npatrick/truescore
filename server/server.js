@@ -193,7 +193,7 @@ app.get('/getAllObjectsOfComparison', (req, res) => {
 });
 
 // serve up stats
-app.post('/getStatsForObject', (req, res) => {
+app.get('/getStatsForObject', (req, res) => {
 
   //figure out phone number of request
   ItemOfJudgement.findOne({
@@ -206,7 +206,6 @@ app.post('/getStatsForObject', (req, res) => {
   //tbd
 });
 });
-
 
 // ============ PORT LISTENING  ==============//
 

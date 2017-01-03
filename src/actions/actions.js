@@ -41,9 +41,7 @@ export function submitDecision(winner) {
   const result = {winner, loser, prompt};
   console.log("result is: ", result);
 
-  //const request = axios.post(`${ROOT_URL}updateDBwithResultOfBattle`, result);
-  let request = "bah";
-
+  const request = axios.post(`${ROOT_URL}updateDBwithResultOfBattle`, result);
 
   return {
     type: SUBMIT_DECISION,

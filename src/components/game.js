@@ -7,7 +7,7 @@
 ////////////////////////
 
 import React, { Component } from 'react';
-import Choice from './choice.js'
+import Choice from '../containers/choice.js'
 
 const Game = props => {
   let choices = [props.catPhoto, props.catPhoto].map((url, index) => <Choice catPhoto={url} />)

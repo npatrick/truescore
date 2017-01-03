@@ -134,7 +134,6 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
         var index = i;
       }
     }
-
     // overwrite response at last entry in response array
     object.promptHistory[index].wins++;
 

@@ -45,12 +45,18 @@ var ItemOfJudgement = mongoose.model('ItemOfJudgement', trueScoreSchema);
 // ============ DB routes ====================//
 
 
-  app.post('/drop', function(req, res){
-    ItemOfJudgement.remove(function(err) {
-      console.log('killed all records in db');
-      res.send('killed all records in db');
-    });
+
+app.post('/drop', function(req, res){
+  ItemOfJudgement.remove(function(err, p){
+      if(err){
+          throw err;
+      } else{
+          console.log('No Of Documents deleted:' + p);
+      }
   });
+
+res.send('killed all records in db');
+});
 
 
   app.post('/addObjectOfJudgement', (req, res) => {
@@ -93,7 +99,7 @@ var ItemOfJudgement = mongoose.model('ItemOfJudgement', trueScoreSchema);
   var battleCount = 0
   var battlePairs;
 
-  //serve up next battle
+  //serve up next battle  // prompst + tuple array of two objects
   app.get('/nextBattlePairs', (req, res) => {
 
     if (battleCount === 0){
@@ -111,26 +117,16 @@ var ItemOfJudgement = mongoose.model('ItemOfJudgement', trueScoreSchema);
     }
   });
 
-// receive results of most recent battle
+// receive results of most recent battle //not working
 app.post('/updateDBwithResultOfBattle', (req, res) => {
-  var winner;
-  var loser;
 
+  //update winner
+  //ItemOfJudgement.update({name: req.body.winner, 'promptHistory.prompt': req.body.prompt}, {promptHistory.prompt.wins: wins++ }, err => err ? console.error(err) : null);
 
-  if(req.body.winner === "left"){
-    winner = battlePairs[battleCount-1][0]
-    loser = battlePairs[battleCount-1][1]
+  //update loser
+  // ItemOfJudgement.update({name: req.body.loser, 'promptHistory.prompt': req.body.prompt}, {promptHistory.prompt.losses: losses++ },err => err ? console.error(err) : null);
+});
 
-  } else {
-    console.log("right won");
-    winner = battlePairs[battleCount-1][1]
-    loser = battlePairs[battleCount-1][0]
-  }
-
-  ItemOfJudgement.update({name: winner.name}, {wins: winner.wins++ }, err => err ? console.error(err) : null);
-  ItemOfJudgement.update({name: loser.name}, {losses:loser.losses-- }, err => err ? console.error(err) : null);
-
-  });
 
 app.get('/getRankList', (req, res) => {
   ItemOfJudgement.find(function(err, itemsOfJudgement) {

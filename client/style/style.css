@@ -9,7 +9,7 @@ dl {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
+  width: 80%;
   max-width: 700px;
   position: relative;
   padding: 20px;
@@ -49,6 +49,7 @@ dt {
 
 .choice-container{
   display: inline-block;
+  border: 1px solid lightgrey;
   padding: 20px;
   margin: 20px;
 }
@@ -508,9 +509,28 @@ dt {
   width: 100%;
 }
 
-div {
-  border: 1px solid lightgrey;
+#choices{
+  border:1px solid lightgrey;
+  margin:40px;
 }
-
-
+ 
+#prompt{
+  margin:20px;
+}
+#App{
+  margin:20px;
+}
+#nav{
+  border: 1px solid lightgrey;
+  color: blue;
+}
+#gamecontainer{
+  border: 1px solid lightgrey;
+  text-align: center;
+  font-style: italic;
+  margin:20px;
+}
+body{
+  background-color: turquoise;
+}
 /*//////////////////////////////////////////////////////////////////////

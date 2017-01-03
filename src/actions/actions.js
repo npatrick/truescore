@@ -30,7 +30,6 @@ export function fetchUsers () {
 
 
 
-
 export function submitDecision(winner) {
 
   const currentComparison = store.getState().comparison;
@@ -52,6 +51,7 @@ export function submitDecision(winner) {
 
 export function fetchPrompt () {
   const request = axios.get(`${ROOT_URL}getRankList`);
+
 
   return {
     type: FETCH_PROMPT,

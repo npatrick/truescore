@@ -26,14 +26,9 @@ class CompareChoices extends Component {
   render () {
 
     return (
-      <div className="game-container">
-      <h4 className="game-info">{this.props.comparison ? this.props.comparison.prompt : 'Loading...'}</h4>
-      <button
-        onClick={() => this.props.fetchComparison()}
-        className="btn btn-secondary">
-        Refresh
-      </button>
-      <div className="game-comparison">
+      <div id="gamecontainer"className="game-container">
+      <h3 id= "prompt"className="game-info">{this.props.comparison ? this.props.comparison.prompt : 'Loading...'}</h3>
+      <div id="choices"className="game-comparison">
         {this.renderChoices.bind(this)()}
       </div>
     </div>

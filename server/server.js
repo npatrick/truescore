@@ -119,8 +119,6 @@ res.send('killed all records in db');
 
 // receive results of most recent battle //not working
 app.post('/updateDBwithResultOfBattle', (req, res) => {
-
-  console.log(req.body);
   //update winner
 
   ItemOfJudgement.findOne({
@@ -146,9 +144,11 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
   //update loser
 
   ItemOfJudgement.findOne({
-    name: req.body.loser // finds the winner in the db
+    name: req.body.loser // finds the loser in the db
   }, function(err, object) {
     if (err) {console.log(err);}
+
+    console.log("loser is", object)
 
     //find matching prompt
     for (var i = 0; i <object.promptHistory.length; i++){
@@ -158,7 +158,8 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
     }
 
     // overwrite response at last entry in response array
-    object.promptHistory[index].loser++;
+    object.promptHistory[index].losses++;
+    console.log(object);
 
     // update user in database and invoke grading function on user
     ItemOfJudgement.update({name: req.body.loser}, {promptHistory: object.promptHistory}, err => err ? console.error(err) : null);

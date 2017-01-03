@@ -7,7 +7,7 @@ module.exports = {
     for (var i = 0; i<arrayOfObjects.length; i++){
       for (var j = i+1; j<arrayOfObjects.length; j++){
         battlePairs.push({
-                          prompt: "Who is cooler?",
+                          prompt: "Who has shorter hair?",
                           battlePairs: [ arrayOfObjects[i], arrayOfObjects[j] ]
                         });
       }

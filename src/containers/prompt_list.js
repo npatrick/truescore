@@ -16,7 +16,7 @@ class PromptList extends Component {
         <StatsListItem
           prompt="Shortest Hair"
           name={data[0]}
-          average={(data[1]*100)}
+          average={Math.floor(data[1]*100)}
           key={data[0]} />
       );
     });

@@ -8,8 +8,7 @@ module.exports = {
       for (var j = i+1; j<arrayOfObjects.length; j++){
         battlePairs.push({
                           prompt: "Who is cooler?",
-                          objectA: arrayOfObjects[i],
-                          objectB: arrayOfObjects[j]
+                          battlePairs: [ arrayOfObjects[i], arrayOfObjects[j] ]
                         });
       }
     };

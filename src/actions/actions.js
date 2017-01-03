@@ -3,15 +3,15 @@ import { store } from '../index';
 
 const ROOT_URL = 'http://localhost:3000/';
 
-export const FETCH_CHOICES = 'FETCH_CHOICES';
+export const FETCH_COMPARISON = 'FETCH_COMPARISON';
 export const FETCH_USERS = 'FETCH_USERS';
 export const SUBMIT_DECISION = 'SUBMIT_DECISION';
 
-export function fetchChoices () {
+export function fetchComparison () {
   const request = axios.get(`${ROOT_URL}nextBattlePairs`);
 
   return {
-    type: FETCH_CHOICES,
+    type: FETCH_COMPARISON,
     payload: request
   }
 }

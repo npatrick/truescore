@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { fetchChoices } from '../actions/actions';
+import { fetchComparison } from '../actions/actions';
 import Choice from '../components/choice.js'
 
 class CompareChoices extends Component {
 
   componentWillMount() {
-    this.props.fetchChoices();
+    this.props.fetchComparison();
   }
 
   renderChoices(){
 
     console.log("my choices: ", this.props.choices);
-    return this.props.choices.map(choice => {
+    return this.props.comparison.choices.map(choice => {
       console.log("current choice is ", choice);
       return (
         <Choice
@@ -28,9 +28,9 @@ class CompareChoices extends Component {
     return (
       <div className="game-container">
       <h2>Compare Component!</h2>
-      <h4 className="game-info">This should be replaced by a dynamic route</h4>
+      <h4 className="game-info">{this.props.comparison.prompt}</h4>
       <button
-        onClick={() => this.props.fetchChoices()}
+        onClick={() => this.props.fetchComparison()}
         className="btn btn-secondary">
         Refresh
       </button>
@@ -44,7 +44,7 @@ class CompareChoices extends Component {
 }
 
 function mapStateToProps (state) {
-  return {choices: state.choices};
+  return {comparison: state.comparison};
 }
 
-export default connect(mapStateToProps, { fetchChoices })(CompareChoices);
+export default connect(mapStateToProps, { fetchComparison })(CompareChoices);

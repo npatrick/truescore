@@ -1,6 +1,6 @@
-import { FETCH_CHOICES } from '../actions/actions';
+import { FETCH_COMPARISON } from '../actions/actions';
 
-const INITIAL_STATE = [];
+const INITIAL_STATE = {};
 
 export default function (state = INITIAL_STATE, action){
   switch(action.type){

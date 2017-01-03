@@ -11,7 +11,9 @@ import reducers from './reducers/root_reducer';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
+export const store = createStoreWithMiddleware(reducers);
+
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
     <Router history={hashHistory} routes={routes}/>
   </Provider>, document.querySelector('.container'));

@@ -7,7 +7,7 @@ export default function (state = INITIAL_STATE, action){
     
     case FETCH_CHOICES:
       console.log("choices response", action.payload.data);
-     return action.payload.data;
+      return action.payload.data;
 
     default:
       return state;

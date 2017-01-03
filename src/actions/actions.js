@@ -1,9 +1,11 @@
 import axios from 'axios';
+import { store } from '../index';
 
 const ROOT_URL = 'http://localhost:3000/';
 
 export const FETCH_CHOICES = 'FETCH_CHOICES';
 export const FETCH_USERS = 'FETCH_USERS';
+export const SUBMIT_DECISION = 'SUBMIT_DECISION';
 
 export function fetchChoices () {
   const request = axios.get(`${ROOT_URL}nextBattlePairs`);
@@ -24,3 +26,28 @@ export function fetchUsers () {
     payload: request
   }
 }
+
+
+
+
+
+export function submitDecision(winnerName) {
+
+  const [left, right] = store.getState().choices;
+  const loserName = left.name === winnerName ? right.name  : left.name;
+
+  console.log("winner is: ", winnerName, "      loser is: ", loserName);
+
+
+  return {
+    type: SUBMIT_DECISION
+  }
+
+}
+
+
+
+
+
+
+

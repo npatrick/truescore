@@ -8,7 +8,7 @@ class Choice extends Component {
 
     return (
       <div className="choice-container">
-        <h3>{this.props.name}</h3>
+        <h6>{this.props.name}</h6>
         <img 
         onClick={() => this.props.submitDecision(this.props.name)}
         src={this.props.imageUrl}  />

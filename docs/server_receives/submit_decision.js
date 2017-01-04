@@ -1,6 +1,6 @@
 var submitDecision = {
-  user_id: "FredTalks",
-  prompt_id:  "Who is taller?",
-  choice_id_winner: 5,
-  choice_id_loser: 3
+  userid: "52",
+  promptid:  "Who is taller?",
+  choiceid_winner: 5,
+  choiceid_loser: 3
 };

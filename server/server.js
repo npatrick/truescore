@@ -101,6 +101,8 @@ res.send('killed all records in db');
   //serve up next battle  // prompst + tuple array of two objects
   app.get('/nextBattlePairs', (req, res) => {
 
+    console.log("__Getting pair");
+
     if (battleCount === 0){
 
       ItemOfJudgement.find(function(err, arrayOfObjects) {
@@ -121,6 +123,7 @@ res.send('killed all records in db');
 // receive results of most recent battle //not working
 app.post('/updateDBwithResultOfBattle', (req, res) => {
   //update winner
+  console.log("___UPDATING db");
 
   ItemOfJudgement.findOne({
     name: req.body.winner // finds the winner in the db
@@ -163,6 +166,8 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
     ItemOfJudgement.update({name: req.body.loser}, {promptHistory: object.promptHistory}, err => err ? console.error(err) : null);
 
   });
+
+  res.send("congrats!");
 
 });
 

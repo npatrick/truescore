@@ -2,3 +2,4 @@
 /client/bundle.js
 /todo.todo
 .DS_Store
+/server/auth/keys.js

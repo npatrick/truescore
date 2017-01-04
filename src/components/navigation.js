@@ -11,7 +11,10 @@ export default class Navigation extends React.Component {
           <Nav className="float-right">
             <NavbarBrand href="/">Truescore</NavbarBrand>
             <NavItem>
-              <NavLink href="#/">Play</NavLink>
+              <NavLink href="#/">Login</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#/game">Play</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="#/stats">Stats</NavLink>

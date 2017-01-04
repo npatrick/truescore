@@ -4,20 +4,19 @@ class LoginView extends Component {
 
   render() {
     return (
-      <div className="login">
+      <div id="loginform" className="login">
         <div className="panel panel-info">
-          <div className="col-md-8">
-            <h3>Login</h3>
+          <div id="lform" className="col-md-8">
+            <h4>Login</h4>
             <form className="" method="post"  id="contact_form">
-              username<input className="form-control" type="text" />
+              Username<input id="username" className="form-control" type="text" />
               <br />
-              password<input className="form-control" type="password" />
+              Password<input id="password"className="form-control" type="password" />
               <br />
               <button className="btn btn-info" type="submit">Login</button>
-              <br />
-              <span>Don't have an account?</span>
-              <br />
-              <button className="btn btn-info" type="submit">Signup</button>
+              <br /><br/>
+              Don't have an account? -->
+              <a href="#/signup">Signup</a><br/><br/>
               
             </form>
           </div>

@@ -12,11 +12,11 @@ import LoginView from './components/login.js';
 
 export default (
   <Route path="/" component={App} >
-    <IndexRoute component={CompareChoices} />
+    <IndexRoute component={LoginView} />
     <Route path="stats" component={PromptList} />
     <Route path="game" component={CompareChoices} />
     <Route path="signup" component={SignupView} />
-    <Route path="login" component={LoginView} />
+    <Route path= "login"component={LoginView} />
 
   </Route>
 );

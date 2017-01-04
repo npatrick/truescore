@@ -1,5 +1,8 @@
 var nextComparison = {
-  prompt: "Get arrested for Hacking by the NSA",
+  prompt: {
+    id: 3,
+    text: "Get arrested for Hacking by the NSA"
+  },
   choices: [
     {
       id: 7,

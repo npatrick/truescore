@@ -1,4 +1,4 @@
- This block is used on the User_Stats component
+ /*This block is used on the User_Stats component
     which styles a graph based on percentage*/
 dl {
   display: -webkit-box;
@@ -513,7 +513,7 @@ dt {
   border:1px solid lightgrey;
   margin:40px;
 }
- 
+
 #prompt{
   margin:20px;
 }
@@ -533,4 +533,3 @@ dt {
 body{
   background-color: turquoise;
 }
-/*//////////////////////////////////////////////////////////////////////

@@ -25,6 +25,13 @@ module.exports = {
     }
   },
 
+  allChoices: {
+    get: function(req, res){
+      db.Choice.findAll()
+      .then(choices => res.send(choices));
+    }
+  },
+
 
    /////////////
   //DON'T USE//

@@ -1,7 +1,32 @@
 var db = require('../db/db_index');
 
 module.exports = {
-  /////////////
+
+  ////////////////////////
+  //     Work Here     //
+  ////////////////////////
+
+
+  prompts: {
+    get: function (req, res) {
+      let derp = "";
+      db.Prompt.findAll()
+      .then(function(prompts) {
+        res.send(prompts);
+      });
+    },
+    post: function (req, res) {
+      const {text, sensitive } = req.body;
+      db.Prompt.findOrCreate({where: {text: text}})
+      .then(function(prompt) {
+        res.status(201).send(prompt);
+      });
+
+    }
+  },
+
+
+   /////////////
   //DON'T USE//
   /////////////
   users: {
@@ -21,33 +46,11 @@ module.exports = {
     }
   },
 
-  ////////////////////////
-  //     Work Here     //
-  ////////////////////////
-
-
-  prompts: {
-    get: function (req, res) {
-      db.Prompt.findAll({include: [db.Prompt]})
-        .then(function(prompts) {
-          res.json(prompts);
-        });
-    },
-    post: function (req, res) {
-      const {text, sensitive } = req.body;
-      db.Prompt.findOrCreate({where: {text: text}})
-      .then(function(prompt) {
-        res.status(201).send(prompt);
-      });
-
-    }
-  },
-
   messages: {
     get: function (req, res) {
       db.Message.findAll({include: [db.User]})
         .then(function(messages) {
-          res.json(messages);
+          res.send(messages);
         });
     },
     post: function (req, res) {

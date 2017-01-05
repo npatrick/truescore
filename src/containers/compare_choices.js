@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { fetchComparison } from '../actions/actions';
+
 import Choice from './choice.js'
 
 class CompareChoices extends Component {

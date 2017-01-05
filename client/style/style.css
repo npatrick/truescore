@@ -522,7 +522,8 @@ dt {
 }
 #nav{
   border: 1px solid lightgrey;
-  color: blue;
+  background-color: inherit;
+  color: Yellow;
 }
 #gamecontainer{
   border: 1px solid lightgrey;
@@ -531,5 +532,31 @@ dt {
   margin:20px;
 }
 body{
-  background-color: turquoise;
+  background-image: url(http://www.walldevil.com/wallpapers/w01/528642-bokeh-colors-dawn-gradient-instagram-out-of-focus-photo-filters-photographers-soft-light.jpg);
 }
+#loginform {
+  border: 1px solid lightgrey;
+  align-self:center;
+  margin:45px
+}
+#lform{
+  margin: 20px;
+}
+#username{
+  width:200px;
+}
+#password{
+  width:200px;
+}
+#confirmpassword{
+  width:200px;
+}
+#signupform{
+   border: 1px solid lightgrey;
+  margin: 15px;
+}
+#sform{
+  margin: 20px;
+}
+
+/*////////////////////////////////////////////////////////////////////

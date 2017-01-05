@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
    "name": "Bartek",
    "imageUrl": "/assets/classPhotos/Bartek.jpg",
@@ -38,4 +38,4 @@
    "name": "Elliot",
    "imageUrl": "/assets/classPhotos/Elliot.jpg",
   }
-]
+];

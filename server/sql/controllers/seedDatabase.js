@@ -1,6 +1,7 @@
 const db = require('../db/db_index');
 const animals = require('../../../docs/db_stubs/animals');
 const prompts = require('../../../docs/db_stubs/prompts');
+
 const people = require('../../../docs/db_stubs/people');
 
 //One function to call them all
@@ -15,6 +16,7 @@ const seedDB = function(){
 //////////////////////////
 //   Individual seeds   //
 //////////////////////////
+
 const seedAnimals = function(){
   animals.forEach( ({name, imageUrl}) =>
     db.Choice.create({name, imageUrl})
@@ -26,6 +28,7 @@ const seedPrompts = function(){
     db.Prompt.create({text, sensitive})
   );
 };
+
 
 const seedPeople = function(){
   people.forEach( ({name, imageUrl}) =>

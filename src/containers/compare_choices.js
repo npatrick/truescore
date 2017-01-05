@@ -13,11 +13,12 @@ class CompareChoices extends Component {
   renderChoices(){
 
     return this.props.comparison.choices.map(choice => {
-    
+      let userWL = choice.promptHistory[0].wins/(choice.promptHistory[0].wins + choice.promptHistory[0].losses);
       return (
         <Choice 
           name={choice.name}
           imageUrl={choice.imageUrl}
+          average={userWL}
           key={choice.name} />
       );
     });
@@ -27,11 +28,11 @@ class CompareChoices extends Component {
 
     return (
       <div id="gamecontainer"className="game-container">
-      <h3 id= "prompt"className="game-info">{this.props.comparison ? this.props.comparison.prompt : 'Loading...'}</h3>
-      <div id="choices"className="game-comparison">
-        {this.renderChoices.bind(this)()}
+        <h3 id= "prompt"className="game-info">{this.props.comparison ? this.props.comparison.prompt : 'Loading...'}</h3>
+        <div id="choices"className="game-comparison">
+          {this.renderChoices.bind(this)()}
+        </div>
       </div>
-    </div>
 
     );
   }

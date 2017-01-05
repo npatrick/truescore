@@ -42,7 +42,7 @@ const Prompt = db.define('prompt', {
   text: Sequelize.STRING,
   sensitive: {
     type: Sequelize.BOOLEAN,
-    defaultValue: true
+    defaultValue: false
   }
 });
 
@@ -89,6 +89,7 @@ Comparison.sync();
 /////////////////////
 //  Export Models  //
 /////////////////////
+exports.database = db;
 exports.User = User;
 exports.Choice = Choice;
 exports.Prompt = Prompt;

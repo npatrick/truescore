@@ -34,7 +34,7 @@ const User = db.define('user', {
 });
 
 const Choice = db.define('choice', {
-  fullName: Sequelize.STRING,
+  name: Sequelize.STRING,
   imageUrl: Sequelize.STRING
 });
 

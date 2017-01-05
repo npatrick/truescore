@@ -2,7 +2,7 @@ import React from 'react';
 
 const StatsListItem = (props) => {
   console.log("HERE'S STATSLIST props: ", props);
-  let actualPercentage = "percentage percentage-" + (props.average-12).toString();
+  let actualPercentage = "percentage percentage-" + (props.average).toString();
   return (
     <dl>
       <dt>{props.name}</dt>

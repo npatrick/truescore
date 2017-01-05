@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { fetchPrompt } from '../actions/actions';
 import StatsListItem from '../components/stats_list_item';
+import UserList from '../components/user_list';
 
 class PromptList extends Component {
 
@@ -10,14 +11,18 @@ class PromptList extends Component {
   }
 
   renderStatsListItem () {
-    console.log('WHAT I DONT KNOW: ', this.props);
+    console.log('WHAT I DONT KNOW on PromptList: ', this.props);
     return this.props.prompt.map(data => {
       return (
-        <StatsListItem
-          prompt="Shortest Hair"
-          name={data[0]}
-          average={Math.floor(data[1]*100)}
-          key={data[0]} />
+        <div>
+          <div>
+            <StatsListItem
+              prompt="Shortest Hair"
+              name={data[0]}
+              average={Math.floor(data[1]*100)}
+              key={data[0]} />
+          </div>
+        </div> 
       );
     });
   }

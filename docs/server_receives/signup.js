@@ -1,4 +1,4 @@
 var signup = {
   username: "Bob",
-  password: "password"
+  password: "secretpassword"
 }

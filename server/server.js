@@ -27,6 +27,21 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+// configure authentication
+var session = require('express-session');
+var passport = require('passport');
+require('./auth.js')(passport);
+app.use(session({
+  secret: 'squirrel',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+
 
 app.post('/drop', function(req, res){
   Model.remove(function(err, p){
@@ -37,7 +52,7 @@ app.post('/drop', function(req, res){
       }
   });
 
-res.send('killed all records in db');
+  res.send('killed all records in db');
 });
 
 

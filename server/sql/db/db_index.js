@@ -1,6 +1,19 @@
 const Sequelize = require('sequelize');
 
-const db = new Sequelize('truescore', 'root', 'test') // DB, user, password
+const db = new Sequelize('truescore', 'root', 'test', {
+  dialect: 'mysql',
+  port: 3306,
+  host: 'localhost'
+}) // DB, user, password
+
+
+// db
+//   .authenticate()
+//   .then(function(err) {
+//     console.log('Connection has been established successfully.');
+//   }, function (err) { 
+//     console.log('Unable to connect to the database:', err);
+//   });
 
 
 /////////////////
@@ -62,6 +75,8 @@ Choice.hasMany(Comparison, {as: 'Loser'});
 /////////////////////
 //  Create Tables  //
 /////////////////////
+
+// add {force: true} to have syncs drop tables
 User.sync();
 Choice.sync();
 Prompt.sync();

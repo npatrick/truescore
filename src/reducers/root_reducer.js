@@ -8,8 +8,7 @@ import ChoiceReducer from './choices_reducer.js';
 const rootReducer = combineReducers({
   comparison: ComparisonReducer,
   users: UsersReducer,
-  prompt: PromptReducer,
-  choice: ChoiceReducer
+  prompt: PromptReducer
 });
 
 export default rootReducer;

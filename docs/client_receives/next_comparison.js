@@ -1,8 +1,7 @@
+// could return just the ARRAY instead of object with array in it,
+// but this is more flexible in case we need to add other properties later.
+
 var nextComparison = {
-  prompt: {
-    id: 3,
-    text: "Get arrested for Hacking by the NSA"
-  },
   choices: [
     {
       id: 7,

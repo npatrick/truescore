@@ -9,8 +9,34 @@ var morgan = require('morgan');
 var mongoose = require('mongoose');
 var prompts = require('../docs/db_stubs/prompts.js');
 
+
+// ============ stuff for authentication ==============//
+var passport = require ('passport');
+var cookieParser = require('cookie-parser'); //reads cookies
+var session = require('express-session');
+
+
+app.use(cookieParser());
+app.use(cookieParser());
+app.use(bodyParser());
+
+
+// required for passport
+app.use(session( {secret: 'heyyyy'})); // session secret?
+app.use(passport.initialize()); // ??
+app.use(passport.session()); // persistent session login
+
+require('./routes.js')(app, passport); // what does this do?
+require('./config/passport')(passport); // what does this do?
+require('./config/passport')(passport);
+
+
+mongoose.connect('mongodb://localhost/test');
+
 // ============ local folders ==============//
 var handlers = require('./handlers.js');
+var Model = require('./model.js');
+
 
 // log every request to the console
 app.use(morgan('dev'));
@@ -23,32 +49,11 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect('mongodb://localhost/test');
 
-
-// ============ db setup ==============//
-
-var trueScoreSchema = mongoose.Schema({
-    name: String,
-    imageUrl: String,
-    promptHistory: [
-                    {
-                      prompt: String,
-                      wins: Number,
-                      losses: Number
-                    }
-                  ]
-});
-
-var ItemOfJudgement = mongoose.model('ItemOfJudgement', trueScoreSchema);
-
-
-// ============ DB routes ====================//
-
-
+////
 
 app.post('/drop', function(req, res){
-  ItemOfJudgement.remove(function(err, p){
+  Model.remove(function(err, p){
       if(err){
           throw err;
       } else{
@@ -56,14 +61,14 @@ app.post('/drop', function(req, res){
       }
   });
 
-res.send('killed all records in db');
+  res.send('killed all records in db');
 });
 
 
   app.post('/addObjectOfJudgement', (req, res) => {
 
        //add to model
-       ItemOfJudgement.create({
+       Model.create({
            name: req.body.name,
            imageUrl: req.body.imageUrl,
            promptHistory: [
@@ -87,7 +92,7 @@ res.send('killed all records in db');
        });
 
        // show all db records
-       ItemOfJudgement.find(function(err, itemsOfJudgement) {
+       Model.find(function(err, itemsOfJudgement) {
          if (err) return console.error(err);
        });
   });
@@ -105,8 +110,10 @@ res.send('killed all records in db');
     console.log("__Getting pair");
 
     if (battleCount === 0){
+      console.log("getting first battle pair");
 
-      ItemOfJudgement.find(function(err, arrayOfObjects) {
+
+      Model.find(function(err, arrayOfObjects) {
         if (err) return console.error(err);
         battlePairs = handlers.battlePairMaker(arrayOfObjects); // [{a:1},{b:2}]
         res.send(battlePairs[battleCount]);
@@ -115,8 +122,6 @@ res.send('killed all records in db');
 
     } else {
       res.send(battlePairs[battleCount]);
-      console.log("items in battle", battlePairs.length)
-      console.log("BATTLE COUNT", battleCount)
       battleCount++;
     }
   });
@@ -126,7 +131,7 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
   //update winner
   console.log("___UPDATING db");
 
-  ItemOfJudgement.findOne({
+  Model.findOne({
     name: req.body.winner // finds the winner in the db
   }, function(err, object) {
     if (err) {console.log(err);}
@@ -141,14 +146,14 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
     object.promptHistory[index].wins++;
 
     // update user in database and invoke grading function on user
-    ItemOfJudgement.update({name: req.body.winner}, {promptHistory: object.promptHistory}, err => err ? console.error(err) : null);
+    Model.update({name: req.body.winner}, {promptHistory: object.promptHistory}, err => err ? console.error(err) : null);
 
   });
 
 
   //update loser
 
-  ItemOfJudgement.findOne({
+  Model.findOne({
     name: req.body.loser // finds the loser in the db
   }, function(err, object) {
     if (err) {console.log(err);}
@@ -164,7 +169,7 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
     object.promptHistory[index].losses++;
 
     // update user in database and invoke grading function on user
-    ItemOfJudgement.update({name: req.body.loser}, {promptHistory: object.promptHistory}, err => err ? console.error(err) : null);
+    Model.update({name: req.body.loser}, {promptHistory: object.promptHistory}, err => err ? console.error(err) : null);
 
   });
 
@@ -174,7 +179,7 @@ app.post('/updateDBwithResultOfBattle', (req, res) => {
 
 
 app.get('/getRankList', (req, res) => {
-  ItemOfJudgement.find(function(err, itemsOfJudgement) {
+  Model.find(function(err, itemsOfJudgement) {
     if (err) return console.error(err);
 
     var results = handlers.rankArray(itemsOfJudgement);
@@ -189,7 +194,7 @@ app.get('/getRankList', (req, res) => {
 app.get('/getAllObjectsOfComparison', (req, res) => {
   var arrayOfObjectNames =[];
 
-  ItemOfJudgement.find(function(err, arrayOfObjects) {
+  Model.find(function(err, arrayOfObjects) {
     if (err) return console.error(err);
 
     var arrayOfNames = handlers.getNames(arrayOfObjects)
@@ -202,7 +207,7 @@ app.get('/getAllObjectsOfComparison', (req, res) => {
 app.get('/getStatsForObject', (req, res) => {
 
   //figure out phone number of request
-  ItemOfJudgement.findOne({
+  Model.findOne({
     name: req.body.name // finds the user in the db
   }, function(err, object) {
     if (err) {

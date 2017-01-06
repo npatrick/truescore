@@ -3,7 +3,6 @@ import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 export default class Navigation extends React.Component {
 
-
   render() {
     return (
       <div>
@@ -21,6 +20,9 @@ export default class Navigation extends React.Component {
             </NavItem>
             <NavItem>
               <NavLink href="#/stats">Stats</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/logout">Logout</NavLink>
             </NavItem>
           </Nav>
         </Navbar>

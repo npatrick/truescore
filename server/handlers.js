@@ -12,7 +12,6 @@ module.exports = {
                         });
       }
     };
-
     return _.shuffle(battlePairs);
   },
 

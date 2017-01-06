@@ -11,7 +11,7 @@ const db = new Sequelize('truescore', 'root', 'test', {
 //   .authenticate()
 //   .then(function(err) {
 //     console.log('Connection has been established successfully.');
-//   }, function (err) { 
+//   }, function (err) {
 //     console.log('Unable to connect to the database:', err);
 //   });
 
@@ -21,16 +21,35 @@ const db = new Sequelize('truescore', 'root', 'test', {
 /////////////////
 
 const User = db.define('user', {
-  // id: {
-  //   type: Sequelize.INTEGER,
-  //   primaryKey: true,
-  //   autoIncrement: true
-  // },
-  username: {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  fbId: {
     type: Sequelize.STRING,
     unique: true
   },
-  password: Sequelize.STRING
+  token: {
+    type: Sequelize.STRING,
+    unique: true
+  },
+  name: {
+    type: Sequelize.STRING,
+    unique: true
+  },
+  minifbPhoto: {
+    type: Sequelize.STRING,
+    unique: true
+  },
+  bigfbPhoto: {
+    type: Sequelize.STRING,
+    unique: true
+  },
+  email: {
+    type: Sequelize.STRING,
+    unique: true
+  }
 });
 
 const Choice = db.define('choice', {
@@ -94,7 +113,3 @@ exports.User = User;
 exports.Choice = Choice;
 exports.Prompt = Prompt;
 exports.Comparison = Comparison;
-
-
-
-

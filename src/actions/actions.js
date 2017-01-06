@@ -41,7 +41,6 @@ export function submitDecision(winner) {
   const result = {winner, loser, prompt};
 
   const request = axios.post(`${ROOT_URL}updateDBwithResultOfBattle`, result);
-
   return {
     type: SUBMIT_DECISION,
     payload: request
@@ -51,7 +50,6 @@ export function submitDecision(winner) {
 
 export function fetchPrompt () {
   const request = axios.get(`${ROOT_URL}getRankList`);
-
 
   return {
     type: FETCH_PROMPT,

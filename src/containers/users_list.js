@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchUsers } from '../actions/actionCreators';
+import { fetchUsers } from '../actions/actions';
 
 class UsersList extends Component {
 
@@ -10,7 +10,13 @@ class UsersList extends Component {
 
   renderUsers () {
     return this.props.users.map(user => {
-      return <div>{user.name}</div>
+      const picSize = {
+        height: '60px',
+        width: '60px'
+      };
+      return (
+          <img style={picSize} src={user.imageUrl} />
+        )
     });
   }
 

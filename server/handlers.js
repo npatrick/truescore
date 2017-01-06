@@ -25,9 +25,14 @@ module.exports = {
   },
 
   getNames: function(arrayOfObjects) {
+    console.log('I AM HANDLER: ', arrayOfObjects);
     var names = [];
     for (var i = 0; i<arrayOfObjects.length; i++){
-      names.push(arrayOfObjects[i].name);
+      names.push(
+        {
+          name: arrayOfObjects[i].name, 
+          imageUrl: arrayOfObjects[i].imageUrl
+        });
     }
     return names;
   }

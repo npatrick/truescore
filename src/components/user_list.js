@@ -3,9 +3,9 @@ import React from 'react';
 const UserList = (props) => {
   console.log("HERE'S userList props: ", props);
   return (
-    <div>
+    <div className="container">
       <ul>
-        <li>{props.name}</li>
+        <li>{props.imageUrl}</li>
       </ul>
     </div>
   );

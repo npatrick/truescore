@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { fetchPrompt } from '../actions/actions';
 import StatsListItem from '../components/stats_list_item';
+import UsersList from './users_list';
 
 class PromptList extends Component {
 
@@ -10,22 +11,40 @@ class PromptList extends Component {
   }
 
   renderStatsListItem () {
-    console.log('WHAT I DONT KNOW: ', this.props);
+    console.log('WHAT I DONT KNOW on PromptList: ', this.props);
     return this.props.prompt.map(data => {
       return (
-        <StatsListItem
-          prompt="Shortest Hair"
-          name={data[0]}
-          average={Math.floor(data[1]*100)}
-          key={data[0]} />
+        <div>
+          <div>
+            <StatsListItem
+              prompt="Shortest Hair"
+              name={data[0]}
+              average={Math.floor(data[1]*100)}
+              key={data[0]} />
+          </div>
+        </div> 
       );
     });
   }
 
   render () {
+    const textPos = {
+      'color': 'white'
+    };
     return (
-      <div className="statList-container">
-        {this.renderStatsListItem.bind(this)()}
+      <div>
+        <br />
+        <h2>Cohort Stats</h2>
+        <br />
+        <h4 style={textPos}>Who has a shorter hair?</h4>
+        <br />
+        <div className="network-list">
+          <h5>Your Network (players)</h5>
+          <UsersList />
+        </div>
+        <div className="statList-container">
+          {this.renderStatsListItem.bind(this)()}
+        </div>
       </div>
     );
   }

@@ -9,10 +9,11 @@ dl {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 80%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 1000px;
   position: relative;
   padding: 20px;
+  padding-right: 250px;
 }
 
 dt {
@@ -56,6 +57,17 @@ dt {
 
 .choice-container img {
   width: 200px;
+}
+
+.statList-container {
+  width: 70%
+}
+
+.network-list {
+  position: relative;
+  float: right;
+  width: 300px;
+  height: 500px;
 }
 
 

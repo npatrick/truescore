@@ -14,9 +14,7 @@ var prompts = require('../docs/db_stubs/prompts.js');
 var passport = require ('passport');
 var cookieParser = require('cookie-parser'); //reads cookies
 var session = require('express-session');
-var flash = require ('connect-flash');
 
-// require('./config/passport')(passport);
 
 app.use(cookieParser());
 app.use(cookieParser());
@@ -27,14 +25,10 @@ app.use(bodyParser());
 app.use(session( {secret: 'heyyyy'})); // session secret?
 app.use(passport.initialize()); // ??
 app.use(passport.session()); // persistent session login
-app.use(flash()); // flash messages or something
 
-// routes
-require('./routes.js')(app, passport);
+require('./routes.js')(app, passport); // what does this do?
+require('./config/passport')(passport); // what does this do?
 require('./config/passport')(passport);
-
-
-
 
 
 mongoose.connect('mongodb://localhost/test');
@@ -56,7 +50,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-
+////
 
 app.post('/drop', function(req, res){
   Model.remove(function(err, p){

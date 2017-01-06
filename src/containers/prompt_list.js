@@ -43,7 +43,9 @@ class PromptList extends Component {
           <UsersList />
         </div>
         <div className="statList-container">
-          {this.renderStatsListItem.bind(this)()}
+          <dl>
+            {this.renderStatsListItem.bind(this)()}
+          </dl>
         </div>
       </div>
     );

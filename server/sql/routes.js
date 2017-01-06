@@ -2,6 +2,7 @@ const router = require('express').Router();
 const controller = require('./controllers/controllers');
 const setup = require('./controllers/setup');
 const comparison = require('./controllers/comparison');
+const stats = require('./controllers/stats');
 
 /////////////////////
 //     Prompts     //
@@ -24,6 +25,14 @@ router.post('/prompts', controller.prompts.post);
 
 // return all choices in DB
 router.get('/allChoices', controller.allChoices.get);
+
+
+
+/////////////////////////
+//        Stats        //
+/////////////////////////
+
+router.get('/stats/:promptId', stats.statsByPrompt);
 
 
 

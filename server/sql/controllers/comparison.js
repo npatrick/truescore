@@ -4,7 +4,7 @@ module.exports = {
   get: function(req, res){
     const promptId = req.params.id || 1;
     //how many choices in db?
-    db.Comparison.count().
+    db.Choice.count().
     then(count => {
     
     //get 2 random, but different ids
@@ -19,14 +19,14 @@ module.exports = {
     db.Choice.findAll( {where: {id: [choice1Id, choice2Id] } } )
     .then(([choiceA, choiceB]) => {
     
-      console.log("ChoiceA is ", choiceA.dataValues);
+      console.log("ChoiceA is ", choiceA);
 
       db.Comparison.count({where: {
         winnerId: choiceA.id,
         promptId
       }})
       .then((wins)=> {
-        choiceA.dataValues.wins = wins;
+        choiceA.dataValues.wins = wins; //set Choice A wins
       });
 
       db.Comparison.count({where: {
@@ -34,7 +34,7 @@ module.exports = {
         promptId
       }})
       .then((losses)=> {
-        choiceA.dataValues.losses = losses;
+        choiceA.dataValues.losses = losses; //set Choice A losses
       });
 
       db.Comparison.count({where: {
@@ -42,7 +42,7 @@ module.exports = {
         promptId
       }})
       .then((wins)=> {
-        choiceB.dataValues.wins = wins;
+        choiceB.dataValues.wins = wins; //set Choice B wins
       });
 
       db.Comparison.count({where: {
@@ -50,19 +50,9 @@ module.exports = {
         promptId
       }})
       .then((losses)=> {
-        choiceB.dataValues.losses = losses;
+        choiceB.dataValues.losses = losses; //set Choice B losses
         res.send([choiceA, choiceB]);
       });
-
-
-
-      // choices[0].wins = cat1winner;
-      // choices[0].losser = cat1loses;
-      // choices[1].wins = cat2winner;
-      // choices[1].losses = cat
-      //res.send([choiceA, choiceB]);
-
-    
     });
 
 

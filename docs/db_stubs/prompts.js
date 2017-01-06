@@ -1,7 +1,8 @@
 module.exports = [
   {
     "text": "Invent the next snapchat",
-    "sensitive": false
+    "sensitive": false,
+
   },
   {
     "text": "Get arrested by the NSA",

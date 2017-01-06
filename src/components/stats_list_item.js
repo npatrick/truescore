@@ -4,14 +4,14 @@ const StatsListItem = (props) => {
   console.log("HERE'S STATSLIST props: ", props);
   let actualPercentage = "percentage percentage-" + (props.average).toString();
   return (
-    <dl>
-      <dd>{props.name}</dd>
+    <div>
+      {props.name}
       <dd className={actualPercentage}>
         <span className="text">
           {(props.average + "%")}
         </span>
       </dd>
-    </dl>
+    </div>
   );
 };
 

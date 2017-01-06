@@ -29,9 +29,10 @@ app.use(passport.initialize()); // ??
 app.use(passport.session()); // persistent session login
 app.use(flash()); // flash messages or something
 
-
 // routes
-// require('./app/routes.js')(app, passport);
+require('./routes.js')(app, passport);
+require('./config/passport')(passport);
+
 
 
 
@@ -115,6 +116,8 @@ app.post('/drop', function(req, res){
     console.log("__Getting pair");
 
     if (battleCount === 0){
+      console.log("getting first battle pair");
+
 
       Model.find(function(err, arrayOfObjects) {
         if (err) return console.error(err);
@@ -125,8 +128,6 @@ app.post('/drop', function(req, res){
 
     } else {
       res.send(battlePairs[battleCount]);
-      console.log("items in battle", battlePairs.length)
-      console.log("BATTLE COUNT", battleCount)
       battleCount++;
     }
   });

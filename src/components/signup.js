@@ -4,11 +4,13 @@ class SignupView extends Component {
 
   render() {
     return (
-      <div id="signupform"className="register">
+      <div id="signupform" className="register">
+
+
         <div className="panel panel-info">
           <div id="sform" className="col-md-8">
             <h3>Create Account</h3>
-            <form className="" method="post"  id="contact_form">
+            <form className="" method="post"  id="contact_form" action = "/signup">
               username<input id="username" className="form-control" type="text" />
               <br />
               password<input id="password"className="form-control" type="password" />

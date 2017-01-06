@@ -27,7 +27,7 @@ class LoginView extends Component {
 
           <div id="lform" className="col-md-8">
             <p>-or-</p>
-            <form className="" method="post"  id="contact_form">
+            <form className="" method="post"  action="/login" id="contact_form">
               Username<input id="username" className="form-control" type="text" />
               <br />
               Password<input id="password" className="form-control" type="password" />
@@ -36,7 +36,7 @@ class LoginView extends Component {
               <br />
               <br />
               Don't have an account? -->
-              <a href="/signup">Signup</a><br/><br/>
+              <a href="/#signup">Signup</a><br/><br/>
             </form>
           </div>
         </div>

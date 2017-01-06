@@ -28,9 +28,20 @@ class PromptList extends Component {
   }
 
   render () {
+    const textPos = {
+      'text-align': 'center',
+      'color': 'white'
+    };
     return (
-      <div className="statList-container">
-        {this.renderStatsListItem.bind(this)()}
+      <div>
+        <br />
+        <h2>Cohort Stats</h2>
+        <br />
+        <h4 style={textPos}>Who has a shorter hair?</h4>
+        <br />
+        <div className="statList-container">
+          {this.renderStatsListItem.bind(this)()}
+        </div>
       </div>
     );
   }

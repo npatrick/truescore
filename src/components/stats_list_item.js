@@ -5,7 +5,7 @@ const StatsListItem = (props) => {
   let actualPercentage = "percentage percentage-" + (props.average).toString();
   return (
     <dl>
-      <dt>{props.name}</dt>
+      <dd>{props.name}</dd>
       <dd className={actualPercentage}>
         <span className="text">
           {(props.average + "%")}

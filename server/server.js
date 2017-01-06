@@ -7,6 +7,7 @@ var app = express();
 var path = require('path');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
+var prompts = require('../docs/db_stubs/prompts.js');
 
 // ============ local folders ==============//
 var handlers = require('./handlers.js');
@@ -210,6 +211,10 @@ app.get('/getStatsForObject', (req, res) => {
     res.send(object.promptHistory);
   //tbd
 });
+});
+
+app.get('/getAllPrompts', (req, res) => {
+  res.send(prompts);
 });
 
 // ============ PORT LISTENING  ==============//

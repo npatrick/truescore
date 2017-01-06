@@ -8,12 +8,10 @@ class PromptTile extends Component {
   render() {
 
     return (
-      <div className="prompts-container">
         <div className ="prompt-tile">
         	<img src={this.props.imageUrl}/>
-        	<div>this.props.query</div>
+          <div>{this.props.query}</div>
         </div>
-      </div>
     );
   }
 }

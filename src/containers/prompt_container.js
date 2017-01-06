@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {fetchPrompts} from '../actions/actions';
+import { fetchPrompts } from '../actions/actions';
 
 import PromptTile from './prompt_tile'
 
 class PromptContainer extends  Component {
 
+  componentWillMount() {
+    this.props.fetchPrompts();
+  }
+
 	renderPrompts () {
-		return this.props.prompts.map((prompt) => {
+    console.log('PROMPT CONTAINER OUTSIDE: ', this.props);
+		return this.props.prompt.map((prompt) => {
+      console.log('MAPPING PROMPT: ', prompt);
 			return(
 				<PromptTile
-				imageUrl={prompt.image}
-				query={prompt.query}
+				imageUrl={prompt.tileimage}
+				query={prompt.text}
 				backgroundimg = {prompt.backgroundImg}/>
 			)
 		});
@@ -28,5 +34,9 @@ class PromptContainer extends  Component {
   }
 }
 
+function mapStateToProps (state) {
+  return {prompt: state.prompt};
+}
 
-export default connect(null, { fetchPrompts })(PromptContainer);
+
+export default connect(mapStateToProps, { fetchPrompts })(PromptContainer);

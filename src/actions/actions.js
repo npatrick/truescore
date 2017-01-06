@@ -7,7 +7,7 @@ export const FETCH_COMPARISON = 'FETCH_COMPARISON';
 export const FETCH_USERS = 'FETCH_USERS';
 export const SUBMIT_DECISION = 'SUBMIT_DECISION';
 export const FETCH_PROMPT = 'FETCH_PROMPT';
-export const FECTH_PROMPTS = 'FECTH_PROMPTS';
+export const FETCH_PROMPTS = 'FETCH_PROMPTS';
 export function fetchComparison () {
   const request = axios.get(`${ROOT_URL}nextBattlePairs`);
 
@@ -59,5 +59,10 @@ export function fetchPrompt () {
 
 export function fetchPrompts() {
   const request = axios.get(`${ROOT_URL}getAllPrompts`);
+
+  return{
+    type:FETCH_PROMPTS,
+    payload: request
+  }
 }
 

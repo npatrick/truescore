@@ -543,9 +543,7 @@ dt {
   font-style: italic;
   margin:20px;
 }
-body{
-  background-image: url(http://www.walldevil.com/wallpapers/w01/528642-bokeh-colors-dawn-gradient-instagram-out-of-focus-photo-filters-photographers-soft-light.jpg);
-}
+
 #loginform {
   border: 1px solid lightgrey;
   align-self:center;
@@ -570,5 +568,31 @@ body{
 #sform{
   margin: 20px;
 }
+img {
+  width:220px;
+  border: 1px solid lightgrey;
+}
 
-/*////////////////////////////////////////////////////////////////////
+
+/*.first div {
+  display: inline-block;
+  float: left;
+  margin:25px;
+  border: 1px solid lightgrey;
+}
+.second div {
+  display: inline-block;
+  float: left;
+  margin:25px;
+  border: 1px solid lightgrey;
+}*/
+.prompt-tile:hover img {
+  display:none;
+}
+.prompt-tile div{
+  display:none;
+}
+.prompt-tile:hover div{
+  display:block;
+}
+

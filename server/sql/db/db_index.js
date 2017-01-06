@@ -11,7 +11,7 @@ const db = new Sequelize('truescore', 'root', 'test', {
 //   .authenticate()
 //   .then(function(err) {
 //     console.log('Connection has been established successfully.');
-//   }, function (err) { 
+//   }, function (err) {
 //     console.log('Unable to connect to the database:', err);
 //   });
 
@@ -94,7 +94,3 @@ exports.User = User;
 exports.Choice = Choice;
 exports.Prompt = Prompt;
 exports.Comparison = Comparison;
-
-
-
-

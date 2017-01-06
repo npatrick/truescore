@@ -9,6 +9,33 @@ var morgan = require('morgan');
 var mongoose = require('mongoose');
 var prompts = require('../docs/db_stubs/prompts.js');
 
+
+// ============ stuff for authentication ==============//
+var passport = require ('passport');
+var cookieParser = require('cookie-parser'); //reads cookies
+var session = require('express-session');
+var flash = require ('connect-flash');
+
+// require('./config/passport')(passport);
+
+app.use(cookieParser());
+app.use(cookieParser());
+app.use(bodyParser());
+
+
+// required for passport
+app.use(session( {secret: 'heyyyy'})); // session secret?
+app.use(passport.initialize()); // ??
+app.use(passport.session()); // persistent session login
+app.use(flash()); // flash messages or something
+
+
+// routes
+// require('./app/routes.js')(app, passport);
+
+
+
+
 mongoose.connect('mongodb://localhost/test');
 
 // ============ local folders ==============//
@@ -26,19 +53,6 @@ app.use(express.static(path.join(__dirname, '../client')));
 // parse requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
-// configure authentication
-var session = require('express-session');
-var passport = require('passport');
-require('./auth.js')(passport);
-app.use(session({
-  secret: 'squirrel',
-  resave: false,
-  saveUninitialized: true
-}));
-app.use(passport.initialize());
-app.use(passport.session());
-
 
 
 

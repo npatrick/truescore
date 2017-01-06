@@ -548,10 +548,19 @@ dt {
   border: 1px solid lightgrey;
   align-self:center;
   margin:45px
+
 }
 #lform{
   margin: 20px;
+  align: center;
+  align-self:center;
+
 }
+
+h2 {
+  margin-left:10px;
+}
+
 #username{
   width:200px;
 }
@@ -562,7 +571,7 @@ dt {
   width:200px;
 }
 #signupform{
-   border: 1px solid lightgrey;
+  border: 1px solid lightgrey;
   margin: 15px;
 }
 #sform{
@@ -606,3 +615,8 @@ img {
   height:inherit;
 }
 
+.btn-fb {
+  border-radius: 5px;
+  width: 200px;
+  margin-left: 20px;
+}

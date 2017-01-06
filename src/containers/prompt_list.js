@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { fetchPrompt } from '../actions/actions';
 import StatsListItem from '../components/stats_list_item';
-import UserList from '../components/user_list';
+import UsersList from './users_list';
 
 class PromptList extends Component {
 
@@ -29,7 +29,6 @@ class PromptList extends Component {
 
   render () {
     const textPos = {
-      'text-align': 'center',
       'color': 'white'
     };
     return (
@@ -39,6 +38,10 @@ class PromptList extends Component {
         <br />
         <h4 style={textPos}>Who has a shorter hair?</h4>
         <br />
+        <div className="network-list">
+          <h5>Your Network (players)</h5>
+          <UsersList />
+        </div>
         <div className="statList-container">
           {this.renderStatsListItem.bind(this)()}
         </div>

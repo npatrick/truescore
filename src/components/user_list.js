@@ -5,7 +5,7 @@ const UserList = (props) => {
   return (
     <div className="container">
       <ul>
-        <li>{props.name}</li>
+        <li>{props.imageUrl}</li>
       </ul>
     </div>
   );

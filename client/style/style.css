@@ -59,6 +59,17 @@ dt {
   width: 200px;
 }
 
+.statList-container {
+  width: 70%
+}
+
+.network-list {
+  position: relative;
+  float: right;
+  width: 300px;
+  height: 500px;
+}
+
 
 
 

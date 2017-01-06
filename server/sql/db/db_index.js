@@ -63,11 +63,11 @@ Prompt.hasMany(Comparison);
 
 //puts choiceId on Comparison aliased as Winner
 //then enables Choice.getWinner so collect all the comparisons it won
-Comparison.belongsTo(Choice, {as: 'Winner'});
-Choice.hasMany(Comparison, {as: 'Winner'});
+Comparison.belongsTo(Choice, {as: 'winner'});
+//Choice.hasMany(Comparison, {as: 'winner'});
 
-Comparison.belongsTo(Choice, {as: 'Loser'});
-Choice.hasMany(Comparison, {as: 'Loser'});
+Comparison.belongsTo(Choice, {as: 'loser'});
+//Choice.hasMany(Comparison, {as: 'loser'});
 
 
 

@@ -1,6 +1,7 @@
 const db = require('../db/db_index');
 const animals = require('../../../docs/db_stubs/animals');
 const seedDatabase = require('./seedDatabase');
+const stats = require('./stats');
 
 
 module.exports = {
@@ -20,18 +21,20 @@ module.exports = {
   },
 
   testroute: {
-    get: function(req, res) {
-      let names = [];
-      animals.forEach(animal => {
-        names.push(animal.name);
-        db.Choice.create({
-          fullName: animal.name,
-          imageUrl: animal.imageUrl
-        });
-      });
+    get: function(req, res){
 
-      res.send(names);
+
+      // db.Comparison.count({where:{ winnerId: 1}})
+      // .then(wins => {
+      //   db.Comparison.count({where:{ loserId: 1}})
+      //   .then(losses => res.send({wins, losses}));
+      // });
+      res.send(stats.winsAndLosses());
+
+
+
     }
+  
   }
 
 };

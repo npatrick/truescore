@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { store } from '../index';
 
-const ROOT_URL = 'http://localhost:3000/';
+export const ROOT_URL = 'http://localhost:3000/';
 
 export const FETCH_COMPARISON = 'FETCH_COMPARISON';
 export const FETCH_USERS = 'FETCH_USERS';

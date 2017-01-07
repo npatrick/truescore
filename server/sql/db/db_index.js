@@ -1,17 +1,5 @@
 const Sequelize = require('sequelize');
 
-// mysql://b06fed5159e473:287381f7@us-cdbr-iron-east-04.cleardb.net/heroku_c10fc179039d016?reconnect=true
-
-
-// const db = process.env.CLEARDB_DATABASE_URL ? 
-//   new Sequelize(process.env.CLEARDB_DATABASE_URL) : 
-//   new Sequelize('truescore', 'root', 'test', {
-//     dialect: 'mysql',
-//     port: 3306,
-//     host: 'localhost'
-//   }) // DB, user, password
-
-
 
 if(process.env.CLEARDB_DATABASE_URL){
 
@@ -21,7 +9,7 @@ if(process.env.CLEARDB_DATABASE_URL){
 
 } else {
 
-   var db = new Sequelize('truescore', 'root', 'test', {
+   var db = new Sequelize('truescore', 'root', 'abc', {
       dialect: 'mysql',
       port: 3306,
       host: 'localhost'

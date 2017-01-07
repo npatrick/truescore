@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const ROOT_URL = 'http://localhost:8080/';
+const ROOT_URL = process.env.PORT ? 'https://true-score.herokuapp.com/' : 'http://localhost:8080/';
 
 
 var results = [

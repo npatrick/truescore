@@ -10,9 +10,8 @@ import ChoiceReducer from './choices_reducer.js';
 const rootReducer = combineReducers({
   comparison: ComparisonReducer,
   users: UsersReducer,
-  prompt: PromptReducer,
-  prompts: PromptsReducer
-  // statsByPrompt: StatsReducer
+  prompt: PromptReducer, // obj containing prompt data
+  prompts: PromptsReducer //array of prompt objects
 });
 
 export default rootReducer;

@@ -11,9 +11,7 @@ class PromptContainer extends  Component {
   }
 
 	renderPrompts () {
-    console.log('PROMPT CONTAINER OUTSIDE: ', this.props);
 		return this.props.prompts.map((prompt) => {
-      console.log('MAPPING PROMPT: ', prompt);
 			return(
 				<PromptTile
 				prompt={prompt}

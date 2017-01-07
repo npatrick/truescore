@@ -12,11 +12,20 @@ module.exports = {
       db.database.dropAllSchemas()
       .then(result => {
         db.User.sync();
+
         db.Choice.sync();
-        db.Prompt.sync();
-        db.Comparison.sync();
-        seedDatabase();
-        res.send("All evidence has been destroyed, you have a fresh start.");
+
+        db.Prompt.sync()
+
+        .then(() => 
+          db.Comparison.sync()
+          .then(() => {
+            seedDatabase();
+            res.send("Done");
+
+          })
+        );
+
       });
     }
   },

@@ -1,19 +1,21 @@
 const Sequelize = require('sequelize');
 
+
+// const db = process.env.CLEARDB_DATABASE_URL ? 
+//   new Sequelize(process.env.CLEARDB_DATABASE_URL) : 
+//   new Sequelize('truescore', 'root', 'test', {
+//     dialect: 'mysql',
+//     port: 3306,
+//     host: 'localhost'
+//   }) // DB, user, password
+
+
 const db = new Sequelize('truescore', 'root', 'test', {
-  dialect: 'mysql',
-  port: 3306,
-  host: 'localhost'
-}) // DB, user, password
+    dialect: 'mysql',
+    port: 3306,
+    host: 'localhost'
+  }) // DB, user, password
 
-
-// db
-//   .authenticate()
-//   .then(function(err) {
-//     console.log('Connection has been established successfully.');
-//   }, function (err) {
-//     console.log('Unable to connect to the database:', err);
-//   });
 
 
 /////////////////
@@ -21,11 +23,11 @@ const db = new Sequelize('truescore', 'root', 'test', {
 /////////////////
 
 const User = db.define('user', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
+  // id: {
+  //   type: Sequelize.INTEGER,
+  //   primaryKey: true,
+  //   autoIncrement: true
+  // },
   fbId: {
     type: Sequelize.STRING,
     unique: true

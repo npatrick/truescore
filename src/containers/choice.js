@@ -8,9 +8,9 @@ class Choice extends Component {
     super(props);
     this.state = {showResults: false}
   }
-  submit(winner){
+  submit(winnerId){
     console.log('PROPS??: ', this.props);
-    this.props.submitDecision(winner);
+    this.props.submitDecision(winnerId);
     setTimeout(this.props.fetchComparison, 1000);
   }
 
@@ -38,7 +38,7 @@ class Choice extends Component {
         <h3>{this.props.name}</h3>
         <img
         onClick={() => {
-          this.submit.bind(this)(this.props.name);
+          this.submit.bind(this)(this.props.id);
           this.onDecided();
         }}
         src={this.props.imageUrl} />

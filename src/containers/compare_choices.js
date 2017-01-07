@@ -17,6 +17,7 @@ class CompareChoices extends Component {
       return (
         <Choice 
           name={choice.name}
+          id={choice.id}
           imageUrl={choice.imageUrl}
           average={userWL}
           key={choice.id} />
@@ -28,7 +29,7 @@ class CompareChoices extends Component {
 
     return (
       <div id="gamecontainer"className="game-container">
-        <h3 id= "prompt"className="game-info">{this.props.comparison ? this.props.comparison.prompt : 'Loading...'}</h3>
+        <h3 id= "prompt"className="game-info">{this.props.prompt.text ? this.props.prompt.text : 'Loading...'}</h3>
         <div id="choices"className="game-comparison">
           {this.renderChoices.bind(this)()}
         </div>
@@ -39,7 +40,7 @@ class CompareChoices extends Component {
 }
 
 function mapStateToProps (state) {
-  return {comparison: state.comparison};
+  return {comparison: state.comparison, prompt: state.prompt};
 }
 
 export default connect(mapStateToProps, { fetchComparison })(CompareChoices);

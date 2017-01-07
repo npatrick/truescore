@@ -9,10 +9,10 @@ export const SUBMIT_DECISION = 'SUBMIT_DECISION';
 export const FETCH_PROMPT = 'FETCH_PROMPT';
 export const FETCH_PROMPTS = 'FETCH_PROMPTS';
 export const UPDATE_PROMPT = 'UPDATE_PROMPT';
-export const FETCH_STATSBYPROMPT = 'FETCH_STATSBYPROMPT';
+export const FETCH_STATS_BY_PROMPT = 'FETCH_STATS_BY_PROMPT';
 
 export function fetchComparison () {
-  const request = axios.get(`${ROOT_URL}nextBattlePairs`);
+  const request = axios.get(`${ROOT_URL}comparison`);
 
   return {
     type: FETCH_COMPARISON,
@@ -23,7 +23,7 @@ export function fetchComparison () {
 export function fetchUsers () {
 
   /// WARNING CHECK ROUTE WITH BARTEK!!
-  const request = axios.get(`${ROOT_URL}getAllObjectsOfComparison`);
+  const request = axios.get(`${ROOT_URL}allChoices`);
 
   return {
     type: FETCH_USERS,
@@ -33,17 +33,17 @@ export function fetchUsers () {
 
 
 
-export function submitDecision(winner) {
+export function submitDecision(winnerId) {
 
   const currentComparison = store.getState().comparison;
  
   const [left, right] = currentComparison.choices;
-  const loser = left.name === winner ? right.name  : left.name;
-  const prompt = currentComparison.prompt;
+  const loserId = left.id === winnerId ? right.id  : left.id;
+  const promptId = store.getState().prompt.id;
 
-  const result = {winner, loser, prompt};
+  const result = {winnerId, loserId, promptId};
 
-  const request = axios.post(`${ROOT_URL}updateDBwithResultOfBattle`, result);
+  const request = axios.post(`${ROOT_URL}comparison`, result);
   return {
     type: SUBMIT_DECISION,
     payload: request
@@ -79,10 +79,13 @@ export function updatePrompt(prompt) {
 }
 
 export function fetchStatsByPrompt() {
-  const request = axios.get(`${ROOT_URL}api/stats/prompt/1`);
+
+  const promptId = store.getState().prompt.id
+
+  const request = axios.get(`${ROOT_URL}stats/prompt/${promptId}`);
 
   return{
-    type: FETCH_STATSBYPROMPT,
+    type: FETCH_STATS_BY_PROMPT,
     payload: request
   }
 }

@@ -1,19 +1,26 @@
 import axios from 'axios';
 import { store } from '../index';
 
+<<<<<<< HEAD
 export const ROOT_URL = 'http://localhost:8080/api/';
+=======
+export const ROOT_URL = 'http://localhost:8080/';
+>>>>>>> change comparison view to take data with a MySql setup
 
 export const FETCH_COMPARISON = 'FETCH_COMPARISON';
 export const FETCH_USERS = 'FETCH_USERS';
 export const SUBMIT_DECISION = 'SUBMIT_DECISION';
 export const FETCH_PROMPT = 'FETCH_PROMPT';
 export const FETCH_PROMPTS = 'FETCH_PROMPTS';
+<<<<<<< HEAD
 export const UPDATE_PROMPT = 'UPDATE_PROMPT';
 
 
+=======
+>>>>>>> change comparison view to take data with a MySql setup
 
 export function fetchComparison () {
-  const request = axios.get(`${ROOT_URL}nextBattlePairs`);
+  const request = axios.get(`${ROOT_URL}api/comparison`);
 
   return {
     type: FETCH_COMPARISON,

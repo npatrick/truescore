@@ -12,13 +12,24 @@ const Sequelize = require('sequelize');
 //   }) // DB, user, password
 
 
-const db = new Sequelize('truescore', 'root', 'test', {
-    dialect: 'mysql',
-    port: 3306,
-    host: 'localhost'
+
+if(process.env.CLEARDB_DATABASE_URL){
+
+  var db = new Sequelize(process.env.CLEARDB_DATABASE_URL, {
+    dialect: 'mysql'
   }) // DB, user, password
 
+} else {
 
+   var db = new Sequelize('truescore', 'root', 'test', {
+      dialect: 'mysql',
+      port: 3306,
+      host: 'localhost'
+    }) // DB, user, password
+
+}
+
+  console.log("PROCESS.ENV", process.env.CLEARDB_DATABASE_URL);
 
 /////////////////
 //   Tables    //

@@ -15,15 +15,15 @@ const Sequelize = require('sequelize');
 
 if(process.env.CLEARDB_DATABASE_URL){
 
+  var db = new Sequelize(process.env.CLEARDB_DATABASE_URL) // DB, user, password
+
+} else {
+
    var db = new Sequelize('truescore', 'root', 'test', {
       dialect: 'mysql',
       port: 3306,
       host: 'localhost'
     }) // DB, user, password
-
-} else {
-
-  var db = new Sequelize(process.env.CLEARDB_DATABASE_URL) // DB, user, password
 
 }
 

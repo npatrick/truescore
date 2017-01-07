@@ -6,10 +6,10 @@ const parser = require('body-parser');
 
 const router = require('./routes');
 
+const PORT = process.env.PORT || 8080;
+
 const app = express();
 
-// set port to listen on
-app.set('port', 8080);
 
 //log and parse
 app.use(morgan('dev'));
@@ -22,6 +22,6 @@ app.use('/api', router);
 
 app.use(express.static(__dirname+'/../../client'));
 
-app.listen(app.get('port'), function(){
-  console.log('Listening on', app.get('port'));
+app.listen(PORT, function(){
+  console.log('Listening on', PORT);
 });

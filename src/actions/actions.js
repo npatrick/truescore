@@ -1,7 +1,11 @@
 import axios from 'axios';
 import { store } from '../index';
 
-export const ROOT_URL = 'http://localhost:8080/api/';
+const protocol = window.location.protocol;
+const host = window.location.host;
+const pathname = window.location.pathname;
+export const ROOT_URL = `${protocol}//${host}/api/`;
+
 
 export const FETCH_COMPARISON = 'FETCH_COMPARISON';
 export const FETCH_USERS = 'FETCH_USERS';

@@ -2,6 +2,7 @@ const db = require('../db/db_index');
 const animals = require('../../../docs/db_stubs/animals');
 const seedDatabase = require('./seedDatabase');
 const stats = require('./stats');
+const seedWinLoss = require('../../../docs/tests/winloss');
 
 
 module.exports = {
@@ -11,27 +12,36 @@ module.exports = {
       db.database.dropAllSchemas()
       .then(result => {
         db.User.sync();
+
         db.Choice.sync();
-        db.Prompt.sync();
-        db.Comparison.sync();
-        seedDatabase();
-        res.send("All evidence has been destroyed, you have a fresh start.");
+
+        db.Prompt.sync()
+
+        .then(() => 
+          db.Comparison.sync()
+          .then(() => {
+            seedDatabase();
+            res.send("Done");
+
+          })
+        );
+
       });
+    }
+  },
+
+  seedwinloss: {
+
+    get: function(req, res){
+      seedWinLoss();
+      res.send('comparisons seeded');
     }
   },
 
   testroute: {
     get: function(req, res){
-
-
-      // db.Comparison.count({where:{ winnerId: 1}})
-      // .then(wins => {
-      //   db.Comparison.count({where:{ loserId: 1}})
-      //   .then(losses => res.send({wins, losses}));
-      // });
-      res.send(stats.winsAndLosses());
-
-
+      
+      res.send('testing route!');
 
     }
   

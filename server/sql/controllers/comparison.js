@@ -63,14 +63,15 @@ module.exports = {
     .then(comparisons => res.send(comparisons));
   },
   post: function(req, res){
-    const {userid, promptid, winner, loser} = req.body;
+    console.log("____req.body: ", req.body);
+    const {userId, promptId, winnerId, loserId} = req.body;
     db.Comparison.create({
-      userId: userid,
-      promptId: promptid,
-      winnerId: winner,
-      loserId: loser
+      userId: userId,
+      promptId: promptId,
+      winnerId: winnerId,
+      loserId: loserId
     })
-    .then((thing) => res.send(thing))
+    .then((thing) => res.sendStatus(201))
   }
 }
 

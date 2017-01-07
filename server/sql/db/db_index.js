@@ -9,7 +9,7 @@ if(process.env.CLEARDB_DATABASE_URL){
 
 } else {
 
-   var db = new Sequelize('truescore', 'root', 'abc', {
+   var db = new Sequelize('truescore', 'root', 'test', {
       dialect: 'mysql',
       port: 3306,
       host: 'localhost'
@@ -62,6 +62,7 @@ const Choice = db.define('choice', {
 
 const Prompt = db.define('prompt', {
   text: Sequelize.STRING,
+  tileImage: Sequelize.STRING,
   sensitive: {
     type: Sequelize.BOOLEAN,
     defaultValue: false

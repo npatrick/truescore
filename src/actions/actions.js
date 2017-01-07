@@ -1,13 +1,17 @@
 import axios from 'axios';
 import { store } from '../index';
 
-export const ROOT_URL = 'http://localhost:3000/';
+export const ROOT_URL = 'http://localhost:8080/api/';
 
 export const FETCH_COMPARISON = 'FETCH_COMPARISON';
 export const FETCH_USERS = 'FETCH_USERS';
 export const SUBMIT_DECISION = 'SUBMIT_DECISION';
 export const FETCH_PROMPT = 'FETCH_PROMPT';
 export const FETCH_PROMPTS = 'FETCH_PROMPTS';
+export const UPDATE_PROMPT = 'UPDATE_PROMPT';
+
+
+
 export function fetchComparison () {
   const request = axios.get(`${ROOT_URL}nextBattlePairs`);
 
@@ -58,11 +62,18 @@ export function fetchPrompt () {
 }
 
 export function fetchPrompts() {
-  const request = axios.get(`${ROOT_URL}getAllPrompts`);
+  const request = axios.get(`${ROOT_URL}prompts`);
 
   return{
-    type:FETCH_PROMPTS,
+    type: FETCH_PROMPTS,
     payload: request
   }
 }
 
+export function updatePrompt(prompt) {
+
+  return{
+    type: UPDATE_PROMPT,
+    payload: prompt
+  }
+}

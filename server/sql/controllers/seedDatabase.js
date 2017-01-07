@@ -24,8 +24,8 @@ const seedAnimals = function(){
 };
 
 const seedPrompts = function(){
-  prompts.forEach( ({text, sensitive}) =>
-    db.Prompt.create({text, sensitive})
+  prompts.forEach( ({text, sensitive, tileImage}) =>
+    db.Prompt.create({text, sensitive, tileImage})
   );
 };
 

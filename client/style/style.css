@@ -585,6 +585,7 @@ img {
 .prompt-container{
   border:1px solid lightgrey;
   margin:30px;
+  overflow:hidden;
 }
 
 .prompt-tile
@@ -606,10 +607,10 @@ img {
 .prompt-tile:hover img {
   display:none;
 }
-.prompt-tile div{
+.prompt-tile h3{
   display:none;
 }
-.prompt-tile:hover div{
+.prompt-tile:hover h3{
   display:block;
   width:inherit;
   height:inherit;

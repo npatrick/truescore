@@ -8,7 +8,7 @@ import CompareChoices from './containers/compare_choices';
 import StatsListItem from './components/stats_list_item.js';
 import PromptList from './containers/prompt_list';
 import LoginView from './components/login.js';
-import PromptContainer from './containers/prompt_container';
+import PromptsContainer from './containers/prompts_container';
 
 
 export default (
@@ -17,7 +17,7 @@ export default (
     <Route path="stats" component={PromptList} />
     <Route path="game" component={CompareChoices} />
     <Route path= "login"component={LoginView} />
-    <Route path= "home"component={PromptContainer} />
+    <Route path= "home"component={PromptsContainer} />
 
   </Route>
 );

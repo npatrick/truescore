@@ -2,13 +2,15 @@ import { combineReducers } from 'redux';
 import ComparisonReducer from './comparison_reducer';
 import UsersReducer from './users_reducer';
 import PromptReducer from './prompt_reducer.js';
+import PromptsReducer from './prompts_reducer.js';
 import ChoiceReducer from './choices_reducer.js';
 
 
 const rootReducer = combineReducers({
   comparison: ComparisonReducer,
   users: UsersReducer,
-  prompt: PromptReducer
+  prompt: PromptReducer,
+  prompts: PromptsReducer
 });
 
 export default rootReducer;

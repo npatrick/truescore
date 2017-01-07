@@ -15,7 +15,7 @@ class UsersList extends Component {
         width: '60px'
       };
       return (
-          <img key={user.name} style={picSize} src={user.imageUrl} />
+          <img className="network-images" key={user.name} style={picSize} src={user.imageUrl} />
         )
     });
   }

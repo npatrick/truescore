@@ -11,6 +11,7 @@ class StatsByPrompt extends Component {
   }
 
   renderStatsListItem () {
+    console.log('STATS BY PROMPT PROPS HEAH: ', this.props);
     return this.props.statsByPrompt.map(user => {
       const wins = user.wins;
       const losses = user.losses;
@@ -33,14 +34,14 @@ class StatsByPrompt extends Component {
 
   render () {
     const textPos = {
-      'color': 'white'
+      'color': 'black'
     };
     return (
       <div>
         <br />
         <h2>Cohort Stats</h2>
         <br />
-        <h4 style={textPos}>Who has a shorter hair?</h4>
+        <h4 style={textPos}>{}</h4>
         <br />
         <div className="network-list">
           <h5>Your Network (players)</h5>

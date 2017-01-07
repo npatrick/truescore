@@ -9,8 +9,7 @@ export const SUBMIT_DECISION = 'SUBMIT_DECISION';
 export const FETCH_PROMPT = 'FETCH_PROMPT';
 export const FETCH_PROMPTS = 'FETCH_PROMPTS';
 export const UPDATE_PROMPT = 'UPDATE_PROMPT';
-
-
+export const FETCH_STATSBYPROMPT = 'FETCH_STATSBYPROMPT';
 
 export function fetchComparison () {
   const request = axios.get(`${ROOT_URL}nextBattlePairs`);
@@ -62,6 +61,7 @@ export function fetchPrompt () {
 }
 
 export function fetchPrompts() {
+
   const request = axios.get(`${ROOT_URL}prompts`);
 
   return{
@@ -75,5 +75,14 @@ export function updatePrompt(prompt) {
   return{
     type: UPDATE_PROMPT,
     payload: prompt
+  }
+}
+
+export function fetchStatsByPrompt() {
+  const request = axios.get(`${ROOT_URL}api/stats/prompt/1`);
+
+  return{
+    type: FETCH_STATSBYPROMPT,
+    payload: request
   }
 }

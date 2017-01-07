@@ -24,7 +24,7 @@ class StatsByPrompt extends Component {
             <StatsListItem
               name={user.name}
               average={average}
-              key={user.name} />
+              key={user.id} />
           </div>
         </div> 
       );
@@ -33,14 +33,14 @@ class StatsByPrompt extends Component {
 
   render () {
     const textPos = {
-      'color': 'white'
+      'color': 'black'
     };
     return (
       <div>
         <br />
         <h2>Cohort Stats</h2>
         <br />
-        <h4 style={textPos}>Who has a shorter hair?</h4>
+        <h4 style={textPos}>{this.props.prompt.text}</h4>
         <br />
         <div className="network-list">
           <h5>Your Network (players)</h5>
@@ -57,7 +57,7 @@ class StatsByPrompt extends Component {
 }
 
 function mapStateToProps (state) {
-  return {statsByPrompt: state.statsByPrompt};
+  return {statsByPrompt: state.statsByPrompt, prompt: state.prompt};
 }
 
 export default connect(mapStateToProps, { fetchStatsByPrompt })(StatsByPrompt);

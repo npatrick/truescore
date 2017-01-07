@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize');
 
+// mysql://b06fed5159e473:287381f7@us-cdbr-iron-east-04.cleardb.net/heroku_c10fc179039d016?reconnect=true
+
 
 // const db = process.env.CLEARDB_DATABASE_URL ? 
 //   new Sequelize(process.env.CLEARDB_DATABASE_URL) : 

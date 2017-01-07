@@ -27,7 +27,6 @@ app.use(passport.initialize()); // ??
 app.use(passport.session()); // persistent session login
 
 require('./routes.js')(app, passport); // what does this do?
-require('./config/passport')(passport); // what does this do?
 require('./config/passport')(passport);
 
 

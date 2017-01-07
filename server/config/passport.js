@@ -1,6 +1,6 @@
 
 var FacebookStrategy = require('passport-facebook').Strategy;
-var Model = require ('../model.js');
+var db = require ('../sql/db/db_index.js');
 
 // load auth variablers for facebook
 var configAuth = require ('./keys');
@@ -13,9 +13,14 @@ module.exports = function (passport){
   });
 
 //deserialize User
-  passport.deserializeUser(function(id, done){
-    Model.findById(id, function(err, user){
-      done(err, user);
+  passport.deserializeUser(function(id, done) {
+    db.User.find({
+      where: {
+        id: id
+      }
+    }).then(function(user) {
+      if (!user) return done(new Error('Invalid user'));
+      return done(null, user);
     });
   });
 
@@ -25,44 +30,19 @@ module.exports = function (passport){
     callbackURL: configAuth.facebookAuth.callbackURL,
     profileFields: ['id', 'displayName', 'photos', 'email']
   },
-
-  function(token, refreshToken, profile, done){
-    // console.log("token", token);
-    // console.log("refreshToken", refreshToken);
-    // console.log("profile", profile);
-
-
-    process.nextTick(function(){
-      Model.findOne({'user_id' : profile.id}, function (err, user){
-        if (err){
-          return done(err);
+  function(token, tokenSecret, profile, done) {
+      db.User.findOrCreate({
+        where: {
+          fbId: profile.id, // sets user facebook id
+          token: token, // save token that facebooks sends us
+          name: profile.displayName, // name of user set to facbook name
+          minifbPhoto: profile.photos[0].value,// sets user facebook id
+          bigfbPhoto: `http://graph.facebook.com/${profile.id}/picture?type:large`,
+          email: profile.emails[0].value// sets user facebook id
         }
-
-        if (user){
-          return done(null, user); // returns that user if foune
-        } else {
-          var newUser = new Model();
-
-          //add attributes to model
-
-          newUser.fbId = profile.id; // sets user facebook id
-          newUser.token = token; // save token that facebooks sends us
-          newUser.name = profile.displayName; // name of user set to facbook name
-          newUser.minifbPhoto = profile.photos[0].value;// sets user facebook id
-          newUser.bigfbPhoto = `http://graph.facebook.com/${profile.id}/picture?type=large`;
-          newUser.email = profile.emails[0].value;// sets user facebook id
-
-          console.log("new user", newUser);
-
-          newUser.save (function(err){
-            if(err){
-              throw err;
-            }
-            return done (null, newUser);
-            });
-          }
-        });
+      }).spread(function(user) {
+        return done(null, user);
       });
-    }
-  ));
+    }));
+
 };

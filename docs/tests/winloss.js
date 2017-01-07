@@ -2974,291 +2974,283 @@ var results = [
     "winnerId": 2,
     "loserId": 3
   },
-  // {
-  //   "id": 331,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 2
-  // },
-  // {
-  //   "id": 332,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 333,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 334,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 2,
-  //   "loserId": 1
-  // },
-  // {
-  //   "id": 335,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 2,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 336,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 3,
-  //   "loserId": 2
-  // },
-  // {
-  //   "id": 337,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 338,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 339,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 2,
-  //   "loserId": 1
-  // },
-  // {
-  //   "id": 340,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 2
-  // },
-  // {
-  //   "id": 341,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 2,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 342,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 3,
-  //   "loserId": 2
-  // },
-  // {
-  //   "id": 343,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 2
-  // },
-  // {
-  //   "id": 344,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 345,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 346,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 2,
-  //   "loserId": 1
-  // },
-  // {
-  //   "id": 347,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 2,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 348,
-  //   "createdAt": "2017-01-06T20:40:51.000Z",
-  //   "updatedAt": "2017-01-06T20:40:51.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 3,
-  //   "loserId": 2
-  // },
-  // {
-  //   "id": 349,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 350,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 351,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 2,
-  //   "loserId": 1
-  // },
-  // {
-  //   "id": 352,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 2
-  // },
-  // {
-  //   "id": 353,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 2,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 354,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 3,
-  //   "loserId": 2
-  // },
-  // {
-  //   "id": 355,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 2
-  // },
-  // {
-  //   "id": 356,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 357,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 1,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 358,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 2,
-  //   "loserId": 1
-  // },
-  // {
-  //   "id": 359,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 2,
-  //   "loserId": 3
-  // },
-  // {
-  //   "id": 360,
-  //   "createdAt": "2017-01-06T20:40:52.000Z",
-  //   "updatedAt": "2017-01-06T20:40:52.000Z",
-  //   "userId": null,
-  //   "promptId": 1,
-  //   "winnerId": 3,
-  //   "loserId": 2
-  // }
+  {
+    "id": 331,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 2
+  },
+  {
+    "id": 332,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 3
+  },
+  {
+    "id": 333,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 3
+  },
+  {
+    "id": 334,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 2,
+    "loserId": 1
+  },
+  {
+    "id": 335,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 2,
+    "loserId": 3
+  },
+  {
+    "id": 336,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 3,
+    "loserId": 2
+  },
+  {
+    "id": 337,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 3
+  },
+  {
+    "id": 338,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 3
+  },
+  {
+    "id": 339,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 2,
+    "loserId": 1
+  },
+  {
+    "id": 340,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 2
+  },
+  {
+    "id": 341,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 2,
+    "loserId": 3
+  },
+  {
+    "id": 342,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 3,
+    "loserId": 2
+  },
+  {
+    "id": 343,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 2
+  },
+  {
+    "id": 344,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 3
+  },
+  {
+    "id": 345,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 3
+  },
+  {
+    "id": 346,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 2,
+    "loserId": 1
+  },
+  {
+    "id": 347,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 2,
+    "loserId": 3
+  },
+  {
+    "id": 348,
+    "createdAt": "2017-01-06T20:40:51.000Z",
+    "updatedAt": "2017-01-06T20:40:51.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 3,
+    "loserId": 2
+  },
+  {
+    "id": 349,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 3
+  },
+  {
+    "id": 350,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 3
+  },
+  {
+    "id": 351,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 2,
+    "loserId": 1
+  },
+  {
+    "id": 352,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 2
+  },
+  {
+    "id": 353,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 2,
+    "loserId": 3
+  },
+  {
+    "id": 354,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 3,
+    "loserId": 2
+  },
+  {
+    "id": 355,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 2
+  },
+  {
+    "id": 356,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 3
+  },
+  {
+    "id": 357,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 1,
+    "loserId": 3
+  },
+  {
+    "id": 358,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 2,
+    "loserId": 1
+  },
+  {
+    "id": 359,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 2,
+    "loserId": 3
+  },
+  {
+    "id": 360,
+    "createdAt": "2017-01-06T20:40:52.000Z",
+    "updatedAt": "2017-01-06T20:40:52.000Z",
+    "userId": null,
+    "promptId": 1,
+    "winnerId": 3,
+    "loserId": 2
+  }
 ];
 
 function test (){
 
-  for(var i = 0; i < results.length; i++){
-    let result = results[i];
-    setTimeout(() => axios.post(`${ROOT_URL}api/comparison`, result), 100);
-
-  }
-
-
-
-  // results.forEach(result=>{
-  //   axios.post(`${ROOT_URL}api/comparison`, result)
-  // });
+  results.forEach(result=>{
+    axios.post(`${ROOT_URL}api/comparison`, result)
+  });
 
 }
 

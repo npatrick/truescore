@@ -23,6 +23,7 @@ class PromptContainer extends  Component {
 
 
 	render () {
+
     return (
       	<div className="prompt-container">
         	{this.renderPrompts.bind(this)()}

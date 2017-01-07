@@ -6,7 +6,7 @@ const people = require('../../../docs/db_stubs/people');
 
 //One function to call them all
 const seedDB = function(){
-  seedAnimals();
+  //seedAnimals();
   seedPeople();
   seedPrompts();
 

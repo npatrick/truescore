@@ -35,7 +35,7 @@ module.exports = [
 
   },
   {
-   "name": "Elliot",
-   "imageUrl": "/assets/classPhotos/Elliot.jpg",
+   "name": "Elliott",
+   "imageUrl": "/assets/classPhotos/Elliott.jpg",
   }
 ];

@@ -1,26 +1,30 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { fetchPrompt } from '../actions/actions';
-import StatsListItem from '../components/stats_list_item';
+import { fetchStatsByPrompt } from '../actions/actions';
+import StatsListItem from '../components/stats_list_item.js';
 import UsersList from './users_list';
 
-class PromptList extends Component {
+class StatsByPrompt extends Component {
 
   componentWillMount() {
-    this.props.fetchPrompt();
+    this.props.fetchStatsByPrompt();
   }
 
   renderStatsListItem () {
-    console.log('WHAT I DONT KNOW on PromptList: ', this.props);
-    return this.props.prompt.map(data => {
+    return this.props.statsByPrompt.map(user => {
+      const wins = user.wins;
+      const losses = user.losses;
+      const total = wins + losses;
+
+      const average = total ? Math.floor(wins/total * 100) : 0;
+
       return (
         <div>
           <div>
             <StatsListItem
-              prompt="Shortest Hair"
-              name={data[0]}
-              average={Math.floor(data[1]*100)}
-              key={data[0]} />
+              name={user.name}
+              average={average}
+              key={user.name} />
           </div>
         </div> 
       );
@@ -53,8 +57,8 @@ class PromptList extends Component {
 }
 
 function mapStateToProps (state) {
-  return {prompt: state.prompt};
+  return {statsByPrompt: state.statsByPrompt};
 }
 
-export default connect(mapStateToProps, { fetchPrompt })(PromptList);
+export default connect(mapStateToProps, { fetchStatsByPrompt })(StatsByPrompt);
 

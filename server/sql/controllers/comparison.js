@@ -18,8 +18,6 @@ module.exports = {
     // get choices data from db
     db.Choice.findAll( {where: {id: [choice1Id, choice2Id] } } )
     .then(([choiceA, choiceB]) => {
-    
-      console.log("ChoiceA is ", choiceA);
 
       db.Comparison.count({where: {
         winnerId: choiceA.id,

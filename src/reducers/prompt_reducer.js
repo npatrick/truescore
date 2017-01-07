@@ -1,14 +1,13 @@
-import { FETCH_PROMPT, FETCH_PROMPTS } from '../actions/actions.js';
+import { UPDATE_PROMPT } from '../actions/actions.js';
 
-const INITIAL_STATE = [];
+const INITIAL_STATE = {};
 
 export default function(state = INITIAL_STATE, action) {
   switch( action.type ) {
 
-    case FETCH_PROMPT:
-      return action.payload.data
-    case FETCH_PROMPTS:
-      return action.payload.data
+    case UPDATE_PROMPT:
+      console.log("updating current prompt: ", action.payload);
+      return action.payload
 
     default:
       return state;

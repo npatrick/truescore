@@ -1,26 +1,18 @@
 import axios from 'axios';
 import { store } from '../index';
 
-<<<<<<< HEAD
 export const ROOT_URL = 'http://localhost:8080/api/';
-=======
-export const ROOT_URL = 'http://localhost:8080/';
->>>>>>> change comparison view to take data with a MySql setup
 
 export const FETCH_COMPARISON = 'FETCH_COMPARISON';
 export const FETCH_USERS = 'FETCH_USERS';
 export const SUBMIT_DECISION = 'SUBMIT_DECISION';
 export const FETCH_PROMPT = 'FETCH_PROMPT';
 export const FETCH_PROMPTS = 'FETCH_PROMPTS';
-<<<<<<< HEAD
 export const UPDATE_PROMPT = 'UPDATE_PROMPT';
-
-
-=======
->>>>>>> change comparison view to take data with a MySql setup
+export const FETCH_STATSBYPROMPT = 'FETCH_STATSBYPROMPT';
 
 export function fetchComparison () {
-  const request = axios.get(`${ROOT_URL}api/comparison`);
+  const request = axios.get(`${ROOT_URL}nextBattlePairs`);
 
   return {
     type: FETCH_COMPARISON,
@@ -69,6 +61,7 @@ export function fetchPrompt () {
 }
 
 export function fetchPrompts() {
+
   const request = axios.get(`${ROOT_URL}prompts`);
 
   return{
@@ -82,5 +75,14 @@ export function updatePrompt(prompt) {
   return{
     type: UPDATE_PROMPT,
     payload: prompt
+  }
+}
+
+export function fetchStatsByPrompt() {
+  const request = axios.get(`${ROOT_URL}api/stats/prompt/1`);
+
+  return{
+    type: FETCH_STATSBYPROMPT,
+    payload: request
   }
 }

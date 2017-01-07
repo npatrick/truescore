@@ -4,6 +4,7 @@ import UsersReducer from './users_reducer';
 import PromptReducer from './prompt_reducer.js';
 import PromptsReducer from './prompts_reducer.js';
 import ChoiceReducer from './choices_reducer.js';
+// import StatsReducer from './stats_reducer.js';
 
 
 const rootReducer = combineReducers({
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   users: UsersReducer,
   prompt: PromptReducer,
   prompts: PromptsReducer
+  // statsByPrompt: StatsReducer
 });
 
 export default rootReducer;

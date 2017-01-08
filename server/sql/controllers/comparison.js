@@ -75,5 +75,6 @@ module.exports = {
 
 
 function randomId (itemsInSet){
-  return Math.ceil( Math.random() * itemsInSet );
+  const randId = Math.ceil( Math.random() * itemsInSet );
+  return process.env.PROD ? (randId - 1) * 10 + 2 : randId ;
 }

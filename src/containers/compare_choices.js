@@ -13,7 +13,7 @@ class CompareChoices extends Component {
   renderChoices(){
 
     return this.props.comparison.choices.map(choice => {
-      let userWL = choice.wins/(choice.wins + choice.losses);
+      let userWL = choice.wins/(choice.wins + choice.losses) || 0;
       return (
         <Choice 
           name={choice.name}

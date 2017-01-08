@@ -42,7 +42,7 @@ router.get('/stats/prompt/:promptId', stats.statsByPrompt);
 
 router.post('/comparison', comparison.post);
 
-router.get('/comparison', comparison.get);
+router.get('/comparison/:id', comparison.get);
 
 router.get('/comparison/all', comparison.getAll);
 

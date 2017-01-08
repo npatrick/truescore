@@ -16,7 +16,10 @@ export const UPDATE_PROMPT = 'UPDATE_PROMPT';
 export const FETCH_STATS_BY_PROMPT = 'FETCH_STATS_BY_PROMPT';
 
 export function fetchComparison () {
-  const request = axios.get(`${ROOT_URL}comparison`);
+
+  const promptId = store.getState().prompt.id;
+
+  const request = axios.get(`${ROOT_URL}comparison/${promptId}`);
 
   return {
     type: FETCH_COMPARISON,
@@ -84,7 +87,7 @@ export function updatePrompt(prompt) {
 
 export function fetchStatsByPrompt() {
 
-  const promptId = store.getState().prompt.id
+  const promptId = store.getState().prompt.id;
 
   const request = axios.get(`${ROOT_URL}stats/prompt/${promptId}`);
 

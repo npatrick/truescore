@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { fetchStatsByPrompt } from '../actions/actions';
+import { fetchStatsByPrompt, fetchPrompts } from '../actions/actions';
 import StatsListItem from '../components/stats_list_item.js';
 import UsersList from './users_list';
+import MiniPromptList from '../components/mini_prompt_list';
 
 class StatsByPrompt extends Component {
 
   componentWillMount() {
+    this.props.fetchPrompts();
     this.props.fetchStatsByPrompt();
   }
 
@@ -31,6 +33,18 @@ class StatsByPrompt extends Component {
     });
   }
 
+  renderPromptListItem () {
+    return this.props.prompts.map(prompts => {
+      return (
+        <div>
+          <MiniPromptList
+            text={prompts.text}
+            tileImage={prompts.tileImage} />
+        </div>
+        )
+    });
+  }
+
   render () {
     const textPos = {
       'color': 'black'
@@ -39,6 +53,10 @@ class StatsByPrompt extends Component {
       <div>
         <br />
         <h2>Cohort Stats</h2>
+        <br />
+          <div className="row">
+            {this.renderPromptListItem.bind(this)()}
+          </div>
         <br />
         <h4 style={textPos}>{this.props.prompt.text}</h4>
         <br />
@@ -57,8 +75,9 @@ class StatsByPrompt extends Component {
 }
 
 function mapStateToProps (state) {
-  return {statsByPrompt: state.statsByPrompt, prompt: state.prompt};
+  console.log('BEEEEE FOOOO STATE: ', state);
+  return {statsByPrompt: state.statsByPrompt, prompt: state.prompt, prompts: state.prompts};
 }
 
-export default connect(mapStateToProps, { fetchStatsByPrompt })(StatsByPrompt);
+export default connect(mapStateToProps, { fetchPrompts, fetchStatsByPrompt })(StatsByPrompt);
 

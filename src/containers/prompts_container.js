@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchPrompts } from '../actions/actions';
 
 import PromptTile from './prompt_tile';
+import StatsByPrompt from './stats_by_prompt';
 
 class PromptContainer extends  Component {
 

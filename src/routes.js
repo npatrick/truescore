@@ -15,8 +15,8 @@ export default (
     <IndexRoute component={LoginView} />
     <Route path="stats" component={StatsByPrompt} />
     <Route path="game" component={CompareChoices} />
-    <Route path= "login"component={LoginView} />
-    <Route path= "home"component={PromptsContainer} />
+    <Route path= "login" component={LoginView} />
+    <Route path= "home" component={PromptsContainer} />
 
   </Route>
 );

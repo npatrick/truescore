@@ -14,6 +14,8 @@ class CompareChoices extends Component {
 
     return this.props.comparison.choices.map(choice => {
       console.log("___Choice:", choice);
+      console.log("___Choice", choice);
+
       let userWL = choice.wins/(choice.wins + choice.losses) || 0;
       return (
         <Choice 

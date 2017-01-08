@@ -24,10 +24,12 @@ module.exports = {
         promptId
       }})
       .then((wins)=> {
+
         
         console.log("ChoiceA Name: ", choiceA.name);
         console.log("ChoiceA wins: ", wins);
         
+
         choiceA.dataValues.wins = wins; //set Choice A wins
       });
 

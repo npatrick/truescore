@@ -34,12 +34,13 @@ class StatsByPrompt extends Component {
   }
 
   renderPromptListItem () {
-    return this.props.prompts.map(prompts => {
+    return this.props.prompts.map(prompt => {
       return (
         <div>
           <MiniPromptList
-            text={prompts.text}
-            tileImage={prompts.tileImage} />
+            text={prompt.text}
+            tileImage={prompt.tileImage}
+            prompt={prompt} />
         </div>
         )
     });
@@ -49,6 +50,8 @@ class StatsByPrompt extends Component {
     const textPos = {
       'color': 'black'
     };
+
+    console.log('TEXT??? LOOK ', this.props.statsByPrompt);
     return (
       <div>
         <br />
@@ -75,7 +78,7 @@ class StatsByPrompt extends Component {
 }
 
 function mapStateToProps (state) {
-  console.log('BEEEEE FOOOO STATE: ', state);
+  console.log('Current STATE inside statsview: ', state);
   return {statsByPrompt: state.statsByPrompt, prompt: state.prompt, prompts: state.prompts};
 }
 

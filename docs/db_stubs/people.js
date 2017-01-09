@@ -5,7 +5,7 @@ module.exports = [
 
   },
   {
-   "name": "Nico",
+   "name": "Nicko",
    "imageUrl": "/assets/classPhotos/Neil.jpg",
 
   },

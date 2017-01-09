@@ -13,7 +13,7 @@ class StatsByPrompt extends Component {
   }
 
   renderStatsListItem () {
-    return this.props.statsByPrompt.map(user => {
+    return this.props.statsByPrompt.map((user, index) => {
       const wins = user.wins;
       const losses = user.losses;
       const total = wins + losses;
@@ -21,13 +21,10 @@ class StatsByPrompt extends Component {
       const average = total ? Math.floor(wins/total * 100) : 0;
 
       return (
-        <div>
-          <div>
-            <StatsListItem
+        <div key={user.id}>
+            <StatsListItem 
               name={user.name}
-              average={average}
-              key={user.id} />
-          </div>
+              average={average} />
         </div> 
       );
     });
@@ -36,7 +33,7 @@ class StatsByPrompt extends Component {
   renderPromptListItem () {
     return this.props.prompts.map(prompt => {
       return (
-        <div>
+        <div key={prompt.id}>
           <MiniPromptList
             text={prompt.text}
             tileImage={prompt.tileImage}
@@ -50,8 +47,6 @@ class StatsByPrompt extends Component {
     const textPos = {
       'color': 'black'
     };
-
-    console.log('TEXT??? LOOK ', this.props.statsByPrompt);
     return (
       <div>
         <br />

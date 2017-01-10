@@ -9,27 +9,26 @@ import StatsByPrompt from './containers/stats_by_prompt';
 import LoginView from './components/login.js';
 import PromptsContainer from './containers/prompts_container';
 import Privacy from './components/privacy_policy';
+import Navigation from './components/navigation';
+import TopFive from './components/topFive';
 
 import { store } from './index';
 
 function requireAuth(nextState, replace) {
   if (!store.getState().currentUser.id) { //if !user, then redirect to #/#/login
-    // console.log("state is", store.getState());
     replace({ nextPathname: nextState.location.pathname }, '/#/login')
   }
-
 }
-
-// onEnter={requireAuth}
 
 export default (
   <Route path="/" component={App} >
-    <IndexRoute component={LoginView} />
-    <Route path="stats" component={StatsByPrompt}  onEnter={requireAuth} />
-    <Route path="game" component={CompareChoices} onEnter={requireAuth} />
+    <IndexRoute components={ {main: LoginView } } />
+    <Route path="stats" components={ {main: StatsByPrompt, navigation: Navigation} } onEnter={requireAuth} />
+    <Route path="game" components={ {main: CompareChoices, navigation: Navigation} } onEnter={requireAuth} />
     <Route path= "login" component={LoginView} />
-    <Route path= "home" component={PromptsContainer} />
-    <Route path= "privacy" component={Privacy}  onEnter={requireAuth} />
+    <Route path= "home" components={ {main: PromptsContainer, navigation: Navigation} } />
+    <Route path= "privacy" components={ {main: Privacy, navigation: Navigation} }  onEnter={requireAuth} />
+    <Route path= "topFive" components={ {main: TopFive, navigation: Navigation} }  onEnter={requireAuth} />
 
   </Route>
 );

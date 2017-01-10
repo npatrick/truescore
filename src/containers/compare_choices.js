@@ -30,7 +30,6 @@ class CompareChoices extends Component {
   }
 
   render () {
-
     return (
       <div id="gamecontainer"className="game-container">
         <h3 id= "prompt"className="game-info">{this.props.prompt.text ? this.props.prompt.text : 'Loading...'}</h3>

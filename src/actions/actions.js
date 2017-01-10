@@ -14,6 +14,8 @@ export const FETCH_PROMPT = 'FETCH_PROMPT';
 export const FETCH_PROMPTS = 'FETCH_PROMPTS';
 export const UPDATE_PROMPT = 'UPDATE_PROMPT';
 export const FETCH_STATS_BY_PROMPT = 'FETCH_STATS_BY_PROMPT';
+export const FETCH_USER_DATA = 'FETCH_USER_DATA'; // unique id's for actions for reducers to listen to
+
 
 export function fetchComparison () {
 
@@ -98,3 +100,14 @@ export function fetchStatsByPrompt() {
 
 }
 
+
+export function fetchUserData() { // actions return objects
+  console.log("trying to fire get user data");
+  const request = axios.get(`${ROOT_URL}currentUserData`);
+
+  return{
+    type: FETCH_USER_DATA,
+    payload: request
+  }
+
+}

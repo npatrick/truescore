@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { fetchComparison } from '../actions/actions.js';
+import { fetchComparison, fetchUserData } from '../actions/actions.js';
+
 
 import Choice from './choice.js'
 
@@ -8,16 +9,17 @@ class CompareChoices extends Component {
 
   componentWillMount() {
     this.props.fetchComparison();
+    this.props.fetchUserData();
   }
 
   renderChoices(){
 
     return this.props.comparison.choices.map(choice => {
-      console.log("___Choice: ", choice);
 
+      console.log("user logged in:", this.props.fetchUserData());
       let userWL = choice.wins/(choice.wins + choice.losses) || 0;
       return (
-        <Choice 
+        <Choice
           name={choice.name}
           id={choice.id}
           imageUrl={choice.imageUrl}
@@ -45,4 +47,4 @@ function mapStateToProps (state) {
   return {comparison: state.comparison, prompt: state.prompt};
 }
 
-export default connect(mapStateToProps, { fetchComparison })(CompareChoices);
+export default connect(mapStateToProps, { fetchComparison, fetchUserData })(CompareChoices);

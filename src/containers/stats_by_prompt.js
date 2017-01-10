@@ -13,7 +13,7 @@ class StatsByPrompt extends Component {
   }
 
   renderStatsListItem () {
-    return this.props.statsByPrompt.map(user => {
+    return this.props.statsByPrompt.map((user, index) => {
       const wins = user.wins;
       const losses = user.losses;
       const total = wins + losses;
@@ -21,25 +21,23 @@ class StatsByPrompt extends Component {
       const average = total ? Math.floor(wins/total * 100) : 0;
 
       return (
-        <div>
-          <div>
-            <StatsListItem
+        <div key={user.id}>
+            <StatsListItem 
               name={user.name}
-              average={average}
-              key={user.id} />
-          </div>
+              average={average} />
         </div> 
       );
     });
   }
 
   renderPromptListItem () {
-    return this.props.prompts.map(prompts => {
+    return this.props.prompts.map(prompt => {
       return (
-        <div>
+        <div key={prompt.id}>
           <MiniPromptList
-            text={prompts.text}
-            tileImage={prompts.tileImage} />
+            text={prompt.text}
+            tileImage={prompt.tileImage}
+            prompt={prompt} />
         </div>
         )
     });
@@ -75,7 +73,7 @@ class StatsByPrompt extends Component {
 }
 
 function mapStateToProps (state) {
-  console.log('BEEEEE FOOOO STATE: ', state);
+  console.log('Current STATE inside statsview: ', state);
   return {statsByPrompt: state.statsByPrompt, prompt: state.prompt, prompts: state.prompts};
 }
 

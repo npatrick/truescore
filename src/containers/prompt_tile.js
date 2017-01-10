@@ -6,7 +6,6 @@ import { updatePrompt } from '../actions/actions';
 class PromptTile extends Component {
 
   render() {
-
     return (
         <div className ="prompt-tile"
         onClick={() => this.props.updatePrompt(this.props.prompt)}>

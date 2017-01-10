@@ -11,7 +11,7 @@ class Choice extends Component {
   submit(winnerId){
     console.log('PROPS??: ', this.props);
     this.props.submitDecision(winnerId);
-    setTimeout(this.props.fetchComparison, 1000);
+    setTimeout(this.props.fetchComparison, 700);
   }
 
   onDecided () {

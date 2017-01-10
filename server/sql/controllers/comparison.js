@@ -12,6 +12,7 @@ module.exports = {
       console.log("user is not logged in".underline.red);
     }
 
+
     const promptId = req.params.id || 1;
     //how many choices in db?
     db.Choice.count().

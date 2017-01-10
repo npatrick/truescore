@@ -20,7 +20,7 @@ module.exports = [
 
   },
   {
-   "name": "Wassif",
+   "name": "Wasiff",
    "imageUrl": "/assets/classPhotos/Wasiff.jpg",
 
   },

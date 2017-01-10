@@ -1,9 +1,17 @@
 var db = require('../db/db_index');
+var colors = require('colors');
 
 module.exports = {
   get: function(req, res){
 
-    console.log("request hopefully has user on it", req);
+    if(req.user) {
+
+      console.log()
+      console.log(`Logged in as FBID, ${req.user.dataValues.fbId}`.underline.green);
+    } else {
+      console.log("user is not logged in".underline.red);
+    }
+
     const promptId = req.params.id || 1;
     //how many choices in db?
     db.Choice.count().
@@ -27,7 +35,7 @@ module.exports = {
       }})
       .then((wins)=> {
 
-        
+
         console.log("ChoiceA Name: ", choiceA.name);
         console.log("ChoiceA wins: ", wins);
 

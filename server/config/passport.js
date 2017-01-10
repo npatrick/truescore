@@ -20,7 +20,7 @@ module.exports = function (passport){
       }
     }).then(function(user) {
       if (!user) return done(new Error('Invalid user'));
-      return done(null, user);
+      return done(null, user); 
     });
   });
 

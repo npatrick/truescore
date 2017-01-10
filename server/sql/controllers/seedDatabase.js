@@ -9,9 +9,7 @@ const seedDB = function(){
   //seedAnimals();
   seedPeople();
   seedPrompts();
-
 };
-
 
 //////////////////////////
 //   Individual seeds   //

@@ -5,14 +5,15 @@ import PromptReducer from './prompt_reducer.js';
 import PromptsReducer from './prompts_reducer.js';
 import ChoiceReducer from './choices_reducer.js';
 import StatsByPromptReducer from './stats_by_prompt_reducer.js';
-
+import CurrentUserReducer from './current_user_reducer.js';
 
 const rootReducer = combineReducers({
   comparison: ComparisonReducer,
   users: UsersReducer,
   prompt: PromptReducer, // obj containing prompt data
   prompts: PromptsReducer, //array of prompt objects
-  statsByPrompt: StatsByPromptReducer
+  statsByPrompt: StatsByPromptReducer,
+  currentUser: CurrentUserReducer
 });
 
 export default rootReducer;

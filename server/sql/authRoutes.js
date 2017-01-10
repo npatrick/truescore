@@ -15,7 +15,6 @@ module.exports = function (app, passport){
 
 // this is for setting state
   app.get('/api/currentUserData', function (req, res){
-    console.log('request user initaited from home', req.user);
     res.send(req.user);
   });
 

@@ -6,8 +6,8 @@ module.exports = {
 
     if(req.user) {
 
-      console.log()
       console.log(`Logged in as FBID, ${req.user.dataValues.fbId}`.underline.green);
+      console.log(`Logged in as FBID, ${req.user.dataValues.fbId}`.rainbow);
     } else {
       console.log("user is not logged in".underline.red);
     }

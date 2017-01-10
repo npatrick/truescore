@@ -11,12 +11,12 @@ class Choice extends Component {
   submit(winnerId){
     console.log('PROPS??: ', this.props);
     this.props.submitDecision(winnerId);
-    setTimeout(this.props.fetchComparison, 700);
-  }
-
-  onDecided () {
     this.setState({ showResults: true });
-  };
+    setTimeout(() => {
+      this.setState({showResults: false});
+      this.props.fetchComparison();
+    }, 700);
+  }
 
   renderUserStat () {
       if(this.props.name) {
@@ -39,7 +39,6 @@ class Choice extends Component {
         <img
         onClick={() => {
           this.submit.bind(this)(this.props.id);
-          this.onDecided();
         }}
         src={this.props.imageUrl} />
         {this.state.showResults ? this.renderUserStat.bind(this)() : null}

@@ -8,7 +8,9 @@ import MiniPromptList from '../components/mini_prompt_list';
 class StatsByPrompt extends Component {
 
   componentWillMount() {
-    this.props.fetchPrompts();
+    if(!this.props.prompts.length){
+      this.props.fetchPrompts();
+    }
     this.props.fetchStatsByPrompt();
   }
 

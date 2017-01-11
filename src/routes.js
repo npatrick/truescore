@@ -10,7 +10,7 @@ import LoginView from './components/login.js';
 import PromptsContainer from './containers/prompts_container';
 import Privacy from './components/privacy_policy';
 import Navigation from './components/navigation';
-import TopFive from './components/topFive';
+import TopFive from './containers/top_five_container';
 
 import { store } from './index';
 

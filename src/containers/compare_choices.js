@@ -9,14 +9,11 @@ class CompareChoices extends Component {
 
   componentWillMount() {
     this.props.fetchComparison();
-    //this.props.fetchUserData();
   }
 
   renderChoices(){
 
     return this.props.comparison.choices.map(choice => {
-
-      console.log("user logged in:", this.props.fetchUserData());
       let userWL = choice.wins/(choice.wins + choice.losses) || 0;
       return (
         <Choice

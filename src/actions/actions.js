@@ -102,7 +102,6 @@ export function fetchStatsByPrompt() {
 
 
 export function fetchUserData() { // actions return objects
-  console.log("trying to fire get user data");
   const request = axios.get(`${ROOT_URL}currentUserData`);
 
   return{

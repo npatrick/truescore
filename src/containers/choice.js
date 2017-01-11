@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { submitDecision, fetchComparison } from '../actions/actions';
+import { submitDecision, fetchComparison, throttledSubmitDecision, throttledFetchComparison} from '../actions/actions';
 import Results from '../components/results.js';
   
 class Choice extends Component {
@@ -9,8 +9,8 @@ class Choice extends Component {
     this.state = {showResults: false}
   }
   submit(winnerId){
-    this.props.submitDecision(winnerId);
-    this.props.fetchComparison();
+    this.props.throttledSubmitDecision(winnerId);
+    this.props.throttledFetchComparison();
   }
 
   // renderUserStat () {
@@ -44,5 +44,5 @@ class Choice extends Component {
 };
 
 
-export default connect(null, { submitDecision, fetchComparison })(Choice);
+export default connect(null, { submitDecision, fetchComparison, throttledSubmitDecision, throttledFetchComparison })(Choice);
 

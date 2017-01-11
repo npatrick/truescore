@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { store } from '../index';
+import _ from 'underscore';
 
 const protocol = window.location.protocol;
 const host = window.location.host;
@@ -29,6 +30,8 @@ export function fetchComparison () {
     payload: request
   }
 }
+
+export const throttledFetchComparison = _.throttle(fetchComparison, 1000);
 
 export function fetchUsers () {
 
@@ -60,6 +63,7 @@ export function submitDecision(winnerId) {
   }
 
 }
+export const throttledSubmitDecision = _.throttle(submitDecision, 1000);
 
 export function fetchPrompts() {
 

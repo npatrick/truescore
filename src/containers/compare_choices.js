@@ -14,13 +14,15 @@ class CompareChoices extends Component {
   renderChoices(){
 
     return this.props.comparison.choices.map(choice => {
-      let userWL = choice.wins/(choice.wins + choice.losses) || 0;
+      //let userWL = choice.wins/(choice.wins + choice.losses) || 0;
+
+      // average={userWL}   <-- Old prop to pass into Choice
+
       return (
         <Choice
           name={choice.name}
           id={choice.id}
           imageUrl={choice.imageUrl}
-          average={userWL}
           key={choice.id} />
       );
     });

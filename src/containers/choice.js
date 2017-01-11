@@ -10,21 +10,17 @@ class Choice extends Component {
   }
   submit(winnerId){
     this.props.submitDecision(winnerId);
-    this.setState({ showResults: true });
-    setTimeout(() => {
-      this.setState({showResults: false});
-      this.props.fetchComparison();
-    }, 400);
+    this.props.fetchComparison();
   }
 
-  renderUserStat () {
-      if(this.props.name) {
-        return (
-          <Results
-            average={Math.floor(this.props.average*100)} />
-        );
-      }
-  }
+  // renderUserStat () {
+  //     if(this.props.name) {
+  //       return (
+  //         <Results
+  //           average={Math.floor(this.props.average*100)} />
+  //       );
+  //     }
+  // }
 
 
   render() {
@@ -40,7 +36,7 @@ class Choice extends Component {
           this.submit.bind(this)(this.props.id);
         }}
         src={this.props.imageUrl} />
-        {this.state.showResults ? this.renderUserStat.bind(this)() : null}
+       
       </div>
     );
   }

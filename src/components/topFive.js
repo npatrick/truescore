@@ -1,37 +1,23 @@
 import React, { Component } from 'react';
+// let array = ["thing a", "thing b"]
 
-class TopFive extends Component {
-
+class TopFiveTile extends Component {
   render() {
+    console.log("this.props from topfive", this.props.arrayOfNames)
+
+
+
     return (
-      <div className="container">
-        <div className="first">
-          <div id="div1" onclick="">
-            <img src ={this.props.imgUrl}/>
-          </div>
-          <div id="div1">
-            <img src="http://simpleicon.com/wp-content/uploads/smile.png"/>
-          </div>
-          <div id="div1">
-            <img src="http://www.thebenjaminswedding.com/img/drinks.png"/>
-          </div>
-
-        </div>
-      <div className="second">
-          <div id="div1">
-            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQnEqDHtCpNwGBp3wDD9tkNdW3b8LjFFTDAQPpNWL2kWwxzlZLV"/>
-            </div>
-            <div id="div1">
-              <img src="http://simpleicon.com/wp-content/uploads/smile.png"/>
-            </div>
-            <div id="div1">
-              <img src="http://www.thebenjaminswedding.com/img/drinks.png"/>
-            </div>
-
-          </div>
+      <div className ="promptRankedList">
+        <h6>{this.props.prompt}</h6>
+          <ol>
+            {this.props.arrayOfNames.map( (name) => {
+            return(<li>{name.name}</li>) })
+            }
+          </ol>
       </div>
-    )
+    );
   }
 }
 
-export default TopFive;
+export default TopFiveTile;

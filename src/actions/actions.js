@@ -15,6 +15,7 @@ export const FETCH_PROMPTS = 'FETCH_PROMPTS';
 export const UPDATE_PROMPT = 'UPDATE_PROMPT';
 export const FETCH_STATS_BY_PROMPT = 'FETCH_STATS_BY_PROMPT';
 export const FETCH_USER_DATA = 'FETCH_USER_DATA'; // unique id's for actions for reducers to listen to
+export const FETCH_STATS_BY_PROMPT_ID = 'FETCH_STATS_BY_PROMPT_ID';
 
 
 export function fetchComparison () {
@@ -60,15 +61,6 @@ export function submitDecision(winnerId) {
 
 }
 
-export function fetchPrompt () {
-  const request = axios.get(`${ROOT_URL}getRankList`);
-
-  return {
-    type: FETCH_PROMPT,
-    payload: request
-  }
-}
-
 export function fetchPrompts() {
 
   const request = axios.get(`${ROOT_URL}prompts`);
@@ -97,7 +89,16 @@ export function fetchStatsByPrompt() {
     type: FETCH_STATS_BY_PROMPT,
     payload: request
   }
+}
 
+export function fetchStatsByPromptById(promptId) {
+
+  const request = axios.get(`${ROOT_URL}stats/prompt/${promptId}`);
+
+  return{
+    type: FETCH_STATS_BY_PROMPT_ID, //this requires specific id
+    payload: request
+  }
 }
 
 

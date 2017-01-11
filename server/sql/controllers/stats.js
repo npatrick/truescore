@@ -24,40 +24,14 @@ module.exports = {
   statsByPrompt: function(req, res){
     const { promptId } = req.params;
 
-    db.Choice.findAll()
-    .then(people => {
-
-      const numPeople = people.length;
-
-      people.forEach((person, idx) => {
-
-        db.Comparison.count({where: {
-          winnerId: person.id,
-          promptId
-        }})
-        .then((wins)=> {
-          person.dataValues.wins = wins;
-        });
-
-        db.Comparison.count({where: {
-          loserId: person.id,
-          promptId
-        }})
-        .then((losses)=> {
-          person.dataValues.losses = losses;
-
-          if(idx === numPeople - 1){
-
-            //Build Response Object
-            const responseObj = {promptId, stats: people}
-
-            res.send(responseObj);
-          }
-        });
-      
-      })
-
-    });
+    db.database.query(`select c.id, c.name, w.wins, l.losses from 
+      choices as c left join 
+      (select winnerId, count(*) as wins from comparisons where promptId = ${promptId} group by winnerId)
+      as w on c.id = w.winnerId
+      left join 
+      (select loserId, count(*) as losses from comparisons where promptId = ${promptId} group by loserId)
+      as l on c.id = l.loserId`)
+    .spread( (stats, metadata) => res.send( {promptId, stats} ) );
     
   }
 };

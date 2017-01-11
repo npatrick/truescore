@@ -11,7 +11,8 @@ class TopFiveTile extends Component {
 
     this.props.arrayOfUserObjects.forEach(function(userObject){
       var userName = userObject.name;
-      var battingAverage = (userObject.wins - userObject.losses) / (userObject.wins + userObject.losses)
+      // add a "+" in front of a variable to type convert a potential "null" to 0;
+      var battingAverage = +userObject.wins / (+userObject.wins + +userObject.losses);
 
       arrayOfResults.push([userName, battingAverage])
     });

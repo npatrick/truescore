@@ -45,15 +45,17 @@ module.exports = {
       // where promptId = 1 group by winnerId`)
       // .spread((results, metadata) => res.send(results))
 
+      const derp = 1;
+
 
       db.database.query(`select c.id, c.name, w.wins, l.losses from 
       choices as c left join 
-      (select winnerId, count(*) as wins from comparisons where promptId = 1 group by winnerId)
+      (select winnerId, count(*) as wins from comparisons where promptId = ${derp} group by winnerId)
       as w on c.id = w.winnerId
       left join 
-      (select loserId, count(*) as losses from comparisons where promptId = 1 group by loserId)
+      (select loserId, count(*) as losses from comparisons where promptId = ${derp} group by loserId)
       as l on c.id = l.loserId`)
-      .spread((results, metadata) => res.send(results))
+      .spread((results, metadata) => res.send(results));
 
   
 

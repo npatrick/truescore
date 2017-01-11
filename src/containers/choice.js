@@ -9,13 +9,12 @@ class Choice extends Component {
     this.state = {showResults: false}
   }
   submit(winnerId){
-    console.log('PROPS??: ', this.props);
     this.props.submitDecision(winnerId);
     this.setState({ showResults: true });
     setTimeout(() => {
       this.setState({showResults: false});
       this.props.fetchComparison();
-    }, 700);
+    }, 400);
   }
 
   renderUserStat () {

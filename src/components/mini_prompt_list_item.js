@@ -18,7 +18,7 @@ class MiniPromptList extends Component {
         <div className="mini-prompt-tile"
         	onClick={() => {
             this.props.updatePrompt(this.props.prompt);
-            this.props.fetchStatsByPrompt();
+            this.props.fetchStatsByPrompt(this.props.prompt.id);
           }}>
         	<img className="miniPrompt" style={miniPic} src={this.props.tileImage}/>
           <h6>{this.props.text}</h6>

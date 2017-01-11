@@ -8,7 +8,9 @@ import Choice from './choice.js'
 class CompareChoices extends Component {
 
   componentWillMount() {
-    this.props.fetchComparison();
+    if(!this.props.comparison.choices.length){
+      this.props.fetchComparison();
+    }
   }
 
   renderChoices(){

@@ -98,6 +98,7 @@ export function fetchStatsByPromptById(promptId) {
   return{
     type: FETCH_STATS_BY_PROMPT_ID, //this requires specific id
     payload: request
+    // promptId: 2
   }
 }
 

@@ -7,18 +7,25 @@ import TopFive from '../components/topFive'; //this is how we reference componen
 class TopFiveTilesContainer extends  Component {
 
   componentWillMount() {
-    this.props.fetchPrompts(); // once invoked, adds to state
-    this.props.fetchStatsByPromptById(1); // once invoked, adds to state
+    this.props.fetchStatsByPromptById(1);
+    this.props.fetchStatsByPromptById(2);
+    this.props.fetchStatsByPromptById(3);
   }
 
-
 	renderTopFiveTiles () {
-    console.log("this should have our topFives", this.props);
-			return(
-				<TopFive
-				prompt={this.props.prompts[0].text}
-				arrayOfNames={this.props.topFives} />
-			)
+
+    return this.props.prompts.map( (prompt) => {
+      console.log("this.props looks like", this.props);
+        if (!this.props.statsByPromptId[prompt.id]) {
+          return (<div>Loading...</div>)
+        } else {
+            return ( < TopFive prompt={prompt}
+                        arrayOfNames={this.props.statsByPromptId[prompt.id]}
+                      />
+                    )
+            }
+          }
+        );
 	}
 
 
@@ -36,7 +43,7 @@ class TopFiveTilesContainer extends  Component {
 function mapStateToProps (state) {
   return {
            prompts: state.prompts,
-           topFives: state.topFives
+           statsByPromptId: state.statsByPromptId
          };
 }
 

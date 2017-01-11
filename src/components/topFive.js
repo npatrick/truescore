@@ -12,13 +12,14 @@ class TopFiveTile extends Component {
     this.props.arrayOfUserObjects.forEach(function(userObject){
       var userName = userObject.name;
       // add a "+" in front of a variable to type convert a potential "null" to 0;
-      var battingAverage = +userObject.wins / (+userObject.wins + +userObject.losses);
+      var battingAverage = +userObject.wins / (+userObject.wins + +userObject.losses) || 0;
 
       arrayOfResults.push([userName, battingAverage])
     });
 
-    var sortedArray = arrayOfResults.sort(function(a,b){
-      return [a[1]-b[1]]})
+    console.log("____arrayOfResults", arrayOfResults);
+
+    var sortedArray = arrayOfResults.sort(function(a,b){ return b[1] - a[1] })
         .slice(0,5);
 
       return sortedArray;

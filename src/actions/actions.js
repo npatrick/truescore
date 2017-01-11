@@ -81,7 +81,7 @@ export function updatePrompt(prompt) {
 
 export function fetchStatsByPrompt(promptId) {
 
-  //const promptId = store.getState().prompt.id;
+  promptId = promptId || store.getState().prompt.id;
 
   const request = axios.get(`${ROOT_URL}stats/prompt/${promptId}`);
 

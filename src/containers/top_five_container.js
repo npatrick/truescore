@@ -19,13 +19,13 @@ class TopFiveTilesContainer extends  Component {
           return (<div>Loading...</div>)
         } else {
             return (
-                < TopFive prompt={prompt}
-                        arrayOfUserObjects={this.props.allStats[prompt.id]}
-                      />
-                    )
-            }
-          }
-        );
+              < TopFive 
+                prompt={prompt}
+                arrayOfUserObjects={this.props.allStats[prompt.id]}
+              />
+            )
+        }
+    });
 	}
 
 

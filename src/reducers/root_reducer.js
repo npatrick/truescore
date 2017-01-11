@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
   prompts: PromptsReducer, //array of prompt objects
   statsByPrompt: StatsByPromptReducer,
   currentUser: CurrentUserReducer,
-  allStats: allStatsReducer
+  allStats: allStatsReducer,
   statsByPromptId: StatsByPromptIdReducer // many prompts
 });
 

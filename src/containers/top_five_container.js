@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPrompts, fetchStatsByPromptById } from '../actions/actions'; //gets us promptsId, and stats by prompt
+import { fetchPrompts, fetchStatsByPrompt } from '../actions/actions'; //gets us promptsId, and stats by prompt
 
 import TopFive from '../components/topFive'; //this is how we reference components from external
 
 class TopFiveTilesContainer extends  Component {
 
   componentWillMount() {
-    this.props.fetchStatsByPromptById(1);
-    this.props.fetchStatsByPromptById(2);
-    this.props.fetchStatsByPromptById(3);
+    this.props.fetchStatsByPrompt(1);
+    this.props.fetchStatsByPrompt(2);
+    this.props.fetchStatsByPrompt(3);
   }
 
 	renderTopFiveTiles () {
-
+    console.log("this.props looks like", this.props);
     return this.props.prompts.map( (prompt) => {
-      console.log("this.props looks like", this.props);
-        if (!this.props.statsByPromptId[prompt.id]) {
+        if (!this.props.allStats[prompt.id]) {
           return (<div>Loading...</div>)
         } else {
-            return ( < TopFive prompt={prompt}
-                        arrayOfNames={this.props.statsByPromptId[prompt.id]}
+            return (
+                < TopFive prompt={prompt}
+                        arrayOfUserObjects={this.props.allStats[prompt.id]}
                       />
                     )
             }
@@ -43,8 +43,9 @@ class TopFiveTilesContainer extends  Component {
 function mapStateToProps (state) {
   return {
            prompts: state.prompts,
-           statsByPromptId: state.statsByPromptId
+           statsByPromptId: state.statsByPromptId,
+           allStats: state.allStats
          };
 }
 
-export default connect(mapStateToProps, { fetchPrompts, fetchStatsByPromptById })(TopFiveTilesContainer); // this makes actions available as props of the component
+export default connect(mapStateToProps, { fetchPrompts, fetchStatsByPrompt })(TopFiveTilesContainer); // this makes actions available as props of the component

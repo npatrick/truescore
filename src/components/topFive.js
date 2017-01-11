@@ -1,18 +1,38 @@
 import React, { Component } from 'react';
-// let array = ["thing a", "thing b"]
+
 
 class TopFiveTile extends Component {
+
+  rankList(){
+    // create a blank array arrayOfResults
+    var arrayOfResults = [];
+
+    // loop over array located at this.props.arrayOfUserObjects
+
+    this.props.arrayOfUserObjects.forEach(function(userObject){
+      var userName = userObject.name;
+      var battingAverage = (userObject.wins - userObject.losses) / (userObject.wins + userObject.losses)
+
+      arrayOfResults.push([userName, battingAverage])
+    });
+
+    var sortedArray = arrayOfResults.sort(function(a,b){
+      return [a[1]-b[1]]})
+        .slice(0,5);
+
+      return sortedArray;
+  }
+
+
+
   render() {
-    console.log("this.props from topfive", this.props.arrayOfNames)
-
-
 
     return (
       <div className ="promptRankedList">
-        <h6>{this.props.prompt}</h6>
+        <h4>{this.props.prompt.text}</h4>
           <ol>
-            {this.props.arrayOfNames.map( (name) => {
-            return(<li>{name.name}</li>) })
+            {this.rankList().map( (user) => {
+            return(<li>{user[0]}</li>) })
             }
           </ol>
       </div>

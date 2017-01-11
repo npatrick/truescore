@@ -4,15 +4,6 @@ var colors = require('colors');
 module.exports = {
   get: function(req, res){
 
-    if(req.user) {
-
-      console.log(`Logged in as FBID, ${req.user.dataValues.fbId}`.underline.green);
-      console.log(`Logged in as FBID, ${req.user.dataValues.fbId}`.rainbow);
-    } else {
-      console.log("user is not logged in".underline.red);
-    }
-
-
     const promptId = req.params.id || 1;
     //how many choices in db?
     db.Choice.count().
@@ -74,10 +65,14 @@ module.exports = {
 
     });
   },
+
   getAll: function(req, res){
+
     db.Comparison.findAll()
     .then(comparisons => res.send(comparisons));
+    
   },
+
   post: function(req, res){
     console.log("____req.body: ", req.body);
     const {userId, promptId, winnerId, loserId} = req.body;

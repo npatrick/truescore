@@ -6,7 +6,7 @@ export default function(state = INITIAL_STATE, action) {
   switch( action.type ) {
 
     case FETCH_STATS_BY_PROMPT:
-      return action.payload.data;
+      return action.payload.data.stats;
 
     default:
       return state;

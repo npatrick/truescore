@@ -9,7 +9,7 @@ class CompareChoices extends Component {
 
   componentWillMount() {
     this.props.fetchComparison();
-    this.props.fetchUserData();
+    //this.props.fetchUserData();
   }
 
   renderChoices(){

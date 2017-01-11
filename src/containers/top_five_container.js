@@ -12,29 +12,29 @@ class TopFiveTilesContainer extends  Component {
     this.props.fetchStatsByPrompt(3);
   }
 
-	renderTopFiveTiles () {
-    console.log("this.props looks like", this.props);
+  renderTopFiveTiles () {
+    console.log("top5 tiles PROMPTS: ", this.props.prompts);
     return this.props.prompts.map( (prompt) => {
-        if (!this.props.allStats[prompt.id]) {
-          return (<div>Loading...</div>)
+        if(!this.props.allStats[prompt.id]) {
+          return (<div key={prompt.id}>Loading...</div>)
         } else {
-            return (
-              < TopFive 
-                prompt={prompt}
-                arrayOfUserObjects={this.props.allStats[prompt.id]}
-              />
-            )
+          return (
+            <TopFive 
+              key={prompt.id}
+              prompt={prompt}
+              arrayOfUserObjects={this.props.allStats[prompt.id]}
+            />
+          )
         }
     });
-	}
+  }
 
-
-	render () {
+  render () {
 
     return (
-      	<div className="prompt-container">
-        	{this.renderTopFiveTiles.bind(this)()}
-      	</div>
+        <div className="prompt-container">
+          {this.renderTopFiveTiles.bind(this)()}
+        </div>
 
     );
   }
@@ -42,10 +42,10 @@ class TopFiveTilesContainer extends  Component {
 
 function mapStateToProps (state) {
   return {
-           prompts: state.prompts,
-           statsByPromptId: state.statsByPromptId,
-           allStats: state.allStats
-         };
+    prompts: state.prompts,
+    statsByPromptId: state.statsByPromptId,
+    allStats: state.allStats
+  };
 }
 
 export default connect(mapStateToProps, { fetchPrompts, fetchStatsByPrompt })(TopFiveTilesContainer); // this makes actions available as props of the component

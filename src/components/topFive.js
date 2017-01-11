@@ -33,8 +33,8 @@ class TopFiveTile extends Component {
       <div className ="promptRankedList">
         <h4>{this.props.prompt.text}</h4>
           <ol>
-            {this.rankList().map( (user) => {
-            return(<li>{user[0]}</li>) })
+            {this.rankList().map( (user, index) => {
+            return(<li key={index}>{user[0]}</li>) })
             }
           </ol>
       </div>

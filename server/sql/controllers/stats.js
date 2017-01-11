@@ -47,7 +47,11 @@ module.exports = {
           person.dataValues.losses = losses;
 
           if(idx === numPeople - 1){
-            res.send(people);
+
+            //Build Response Object
+            const responseObj = {promptId, stats: people}
+
+            res.send(responseObj);
           }
         });
       

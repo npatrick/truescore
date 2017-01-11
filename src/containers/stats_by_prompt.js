@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import { fetchStatsByPrompt, fetchPrompts } from '../actions/actions';
 import StatsListItem from '../components/stats_list_item.js';
 import UsersList from './users_list';
-import MiniPromptList from '../components/mini_prompt_list';
+import MiniPromptListItem from '../components/mini_prompt_list_item';
 
 class StatsByPrompt extends Component {
 
   componentWillMount() {
-    this.props.fetchPrompts();
+    if(!this.props.prompts.length){
+      this.props.fetchPrompts();
+    }
     this.props.fetchStatsByPrompt();
   }
 
@@ -34,7 +36,7 @@ class StatsByPrompt extends Component {
     return this.props.prompts.map(prompt => {
       return (
         <div key={prompt.id}>
-          <MiniPromptList
+          <MiniPromptListItem
             text={prompt.text}
             tileImage={prompt.tileImage}
             prompt={prompt} />

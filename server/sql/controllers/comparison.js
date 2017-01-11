@@ -19,48 +19,51 @@ module.exports = {
 
     // get choices data from db
     db.Choice.findAll( {where: {id: [choice1Id, choice2Id] } } )
-    .then(([choiceA, choiceB]) => {
-
-      db.Comparison.count({where: {
-        winnerId: choiceA.id,
-        promptId
-      }})
-      .then((wins)=> {
-
-
-        console.log("ChoiceA Name: ", choiceA.name);
-        console.log("ChoiceA wins: ", wins);
+    .then(([choiceA, choiceB]) => res.send([choiceA, choiceB])
+    
+    // {
+    //   db.Comparison.count({where: {
+    //     winnerId: choiceA.id,
+    //     promptId
+    //   }})
+    //   .then((wins)=> {
 
 
+    //     console.log("ChoiceA Name: ", choiceA.name);
+    //     console.log("ChoiceA wins: ", wins);
 
-        choiceA.dataValues.wins = wins; //set Choice A wins
-      });
 
-      db.Comparison.count({where: {
-        loserId: choiceA.id,
-        promptId
-      }})
-      .then((losses)=> {
-        choiceA.dataValues.losses = losses; //set Choice A losses
-      });
 
-      db.Comparison.count({where: {
-        winnerId: choiceB.id,
-        promptId
-      }})
-      .then((wins)=> {
-        choiceB.dataValues.wins = wins; //set Choice B wins
-      });
+    //     choiceA.dataValues.wins = wins; //set Choice A wins
+    //   });
 
-      db.Comparison.count({where: {
-        loserId: choiceB.id,
-        promptId
-      }})
-      .then((losses)=> {
-        choiceB.dataValues.losses = losses; //set Choice B losses
-        res.send([choiceA, choiceB]);
-      });
-    });
+    //   db.Comparison.count({where: {
+    //     loserId: choiceA.id,
+    //     promptId
+    //   }})
+    //   .then((losses)=> {
+    //     choiceA.dataValues.losses = losses; //set Choice A losses
+    //   });
+
+    //   db.Comparison.count({where: {
+    //     winnerId: choiceB.id,
+    //     promptId
+    //   }})
+    //   .then((wins)=> {
+    //     choiceB.dataValues.wins = wins; //set Choice B wins
+    //   });
+
+    //   db.Comparison.count({where: {
+    //     loserId: choiceB.id,
+    //     promptId
+    //   }})
+    //   .then((losses)=> {
+    //     choiceB.dataValues.losses = losses; //set Choice B losses
+    //     res.send([choiceA, choiceB]);
+    //   });
+    // }
+    
+    );
 
 
     });

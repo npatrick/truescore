@@ -13,7 +13,6 @@ class TopFiveTilesContainer extends  Component {
   }
 
   renderTopFiveTiles () {
-    console.log("top5 tiles PROMPTS: ", this.props.prompts);
     return this.props.prompts.map( (prompt) => {
         if(!this.props.allStats[prompt.id]) {
           return (<div key={prompt.id}>Loading...</div>)

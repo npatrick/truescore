@@ -80,4 +80,3 @@ function mapStateToProps (state) {
 }
 
 export default connect(mapStateToProps, { fetchPrompts, fetchStatsByPrompt })(StatsByPrompt);
-

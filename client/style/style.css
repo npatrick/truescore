@@ -10,12 +10,14 @@ dl {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  max-width: 1000px;
+  max-width: 650px;
   position: relative;
   padding: 20px;
-  padding-right: 250px;
 }
 
+div {
+  border: 1px solid red;
+}
 dt {
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -127,9 +129,120 @@ dt {
   background-color: #aaa;
 }
 
+<<<<<<< HEAD
 .percentage-0:after {
   width: 0%;
 }
+=======
+
+
+#choices{
+  border:1px solid lightgrey;
+  margin:40px;
+}
+
+#prompt{
+  margin:20px;
+}
+#App{
+  margin:20px;
+}
+#nav{
+  border: 1px solid lightgrey;
+  background-color: inherit;
+  color: Yellow;
+}
+#gamecontainer{
+  border: 1px solid lightgrey;
+  text-align: center;
+  font-style: italic;
+  margin:20px;
+}
+
+#loginform {
+  border: 1px solid lightgrey;
+  align-self:center;
+  margin:45px
+
+}
+#lform{
+  margin: 20px;
+  align: center;
+  align-self:center;
+
+}
+
+h2 {
+  margin-left:10px;
+}
+
+#username{
+  width:200px;
+}
+#password{
+  width:200px;
+}
+#confirmpassword{
+  width:200px;
+}
+#signupform{
+  border: 1px solid lightgrey;
+  margin: 15px;
+}
+#sform{
+  margin: 20px;
+}
+img {
+  width:230px;
+  border: 1px solid lightgrey;
+}
+
+.prompt-container{
+  border:1px solid lightgrey;
+  margin:30px;
+  overflow:hidden;
+}
+
+.prompt-tile
+{
+  display: inline-block;
+  float: left;
+  text-align: center;
+  margin:30px;
+  border: 1px solid lightgrey;
+  height:240px;
+  width:240px;
+  cursor: pointer;
+}
+/*.second div {
+  display: inline-block;
+  float: left;
+  margin:25px;
+  border: 1px solid lightgrey;
+}*/
+.prompt-tile:hover img {
+  display:none,
+}
+
+
+.prompt-tile h3{
+  display:none;
+}
+.prompt-tile:hover h3{
+  display:block;
+  width:inherit;
+  height:inherit;
+}
+
+.btn-fb {
+  border-radius: 5px;
+  width: 200px;
+  margin-left: 20px;
+}
+
+
+
+>>>>>>> small changes
 
 .percentage-1:after {
   width: 1%;
@@ -531,6 +644,7 @@ dt {
   width: 100%;
 }
 
+<<<<<<< HEAD
 #choices{
   border:1px solid lightgrey;
   margin:40px;
@@ -633,4 +747,8 @@ img {
   border-radius: 5px;
   width: 200px;
   margin-left: 20px;
+}
+
+.percentage-100:after {
+  width: 100%;
 }

@@ -53,6 +53,8 @@ dt {
   border: 1px solid lightgrey;
   padding: 20px;
   margin: 20px;
+  cursor: pointer;
+
 }
 
 .choice-container img {
@@ -73,6 +75,7 @@ dt {
 .mini-prompt-tile {
   margin-right: 80px;
   margin-left: 30px;
+  cursor: pointer;
 }
 
 
@@ -602,6 +605,7 @@ img {
   border: 1px solid lightgrey;
   height:240px;
   width:240px;
+  cursor: pointer;
 }
 /*.second div {
   display: inline-block;
@@ -610,8 +614,10 @@ img {
   border: 1px solid lightgrey;
 }*/
 .prompt-tile:hover img {
-  display:none;
+  display:none,
 }
+
+
 .prompt-tile h3{
   display:none;
 }

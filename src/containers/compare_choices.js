@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { fetchComparison, fetchUserData } from '../actions/actions.js';
+import { fetchComparison } from '../actions/actions.js';
 
 
 import Choice from './choice.js'
@@ -16,9 +16,6 @@ class CompareChoices extends Component {
   renderChoices(){
 
     return this.props.comparison.choices.map(choice => {
-      //let userWL = choice.wins/(choice.wins + choice.losses) || 0;
-
-      // average={userWL}   <-- Old prop to pass into Choice
 
       return (
         <Choice
@@ -38,7 +35,6 @@ class CompareChoices extends Component {
           {this.renderChoices.bind(this)()}
         </div>
       </div>
-
     );
   }
 }
@@ -47,4 +43,4 @@ function mapStateToProps (state) {
   return {comparison: state.comparison, prompt: state.prompt};
 }
 
-export default connect(mapStateToProps, { fetchComparison, fetchUserData })(CompareChoices);
+export default connect(mapStateToProps, { fetchComparison })(CompareChoices);

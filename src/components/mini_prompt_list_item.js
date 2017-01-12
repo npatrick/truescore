@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updatePrompt, fetchStatsByPrompt } from '../actions/actions';
+import { updatePrompt, throttledFetchStatsByPrompt } from '../actions/actions';
 
 class MiniPromptList extends Component {
 
@@ -18,7 +18,7 @@ class MiniPromptList extends Component {
         <div className="mini-prompt-tile"
         	onClick={() => {
             this.props.updatePrompt(this.props.prompt);
-            this.props.fetchStatsByPrompt(this.props.prompt.id);
+            this.props.throttledFetchStatsByPrompt(this.props.prompt.id);
           }}>
         	<img className="miniPrompt" style={miniPic} src={this.props.tileImage}/>
           <h6>{this.props.text}</h6>
@@ -29,6 +29,6 @@ class MiniPromptList extends Component {
 
 
 
-export default connect(null, { updatePrompt, fetchStatsByPrompt })(MiniPromptList);
+export default connect(null, { updatePrompt, throttledFetchStatsByPrompt })(MiniPromptList);
 
 //connection(state, action)(component)

@@ -4,7 +4,12 @@ const Sequelize = require('sequelize');
 if(process.env.CLEARDB_DATABASE_URL){
 
   var db = new Sequelize(process.env.CLEARDB_DATABASE_URL, {
-    dialect: 'mysql'
+    dialect: 'mysql',
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    }
   })
 
 } else {

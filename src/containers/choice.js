@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { submitDecision, fetchComparison, throttledSubmitDecision, throttledFetchComparison} from '../actions/actions';
+import { throttledSubmitDecision, throttledFetchComparison} from '../actions/actions';
 import Results from '../components/results.js';
   
 class Choice extends Component {
@@ -13,16 +13,6 @@ class Choice extends Component {
     this.props.throttledFetchComparison();
   }
 
-  // renderUserStat () {
-  //     if(this.props.name) {
-  //       return (
-  //         <Results
-  //           average={Math.floor(this.props.average*100)} />
-  //       );
-  //     }
-  // }
-
-
   render() {
     let overlay = {
       zIndex: 1,
@@ -32,11 +22,9 @@ class Choice extends Component {
       <div className="choice-container">
         <h3>{this.props.name}</h3>
         <img
-        onClick={() => {
-          this.submit.bind(this)(this.props.id);
-        }}
-        src={this.props.imageUrl} />
-       
+          onClick={() => this.submit.bind(this)(this.props.id) }
+          src={this.props.imageUrl}
+        />
       </div>
     );
   }
@@ -44,5 +32,5 @@ class Choice extends Component {
 };
 
 
-export default connect(null, { submitDecision, fetchComparison, throttledSubmitDecision, throttledFetchComparison })(Choice);
+export default connect(null, { throttledSubmitDecision, throttledFetchComparison })(Choice);
 

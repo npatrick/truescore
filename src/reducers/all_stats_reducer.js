@@ -13,7 +13,6 @@ export default function(state = INITIAL_STATE, action) {
       // const stats = action.payload.data.stats
 
       newState[promptId] = stats;
-      console.log("NEW allStats STATE: ", newState);
       return newState;
 
     default:

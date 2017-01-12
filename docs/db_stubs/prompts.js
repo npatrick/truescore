@@ -1,18 +1,51 @@
 module.exports = [
-  {
-    "tileImage":"https://static1.squarespace.com/static/5233f116e4b0b842898f25d7/t/56d37da3c2ea51b152124420/1456700853032/",
-    "text": "Invent the next snapchat",
-    "sensitive": false,
 
-  },
   {
-    "tileImage":"http://davidpapp.com/wp-content/uploads/2014/07/spy.png",
-    "text": "Get arrested by the NSA",
+    "tileImage":"https://s-media-cache-ak0.pinimg.com/originals/e2/04/23/e2042311f00b753704995768c863efc4.jpg",
+    "text": "Who works harder?",
+    "title": "Workhorse",
     "sensitive": false
   },
   {
     "tileImage":"https://s-media-cache-ak0.pinimg.com/originals/e2/04/23/e2042311f00b753704995768c863efc4.jpg",
-    "text": "Code remotely from the beach",
+    "text": "Who gives better advice?",
+    "title": "Life Advice",
+    "sensitive": false
+  },
+  {
+    "tileImage":"https://s-media-cache-ak0.pinimg.com/originals/e2/04/23/e2042311f00b753704995768c863efc4.jpg",
+    "text": "Who is more social?",
+    "title": "Social Butterfly",
+    "sensitive": false
+  },
+  {
+    "tileImage":"https://s-media-cache-ak0.pinimg.com/originals/e2/04/23/e2042311f00b753704995768c863efc4.jpg",
+    "text": "Who's more optomistic?",
+    "title": "Always Smiling",
+    "sensitive": false
+  },
+  {
+    "tileImage":"https://s-media-cache-ak0.pinimg.com/originals/e2/04/23/e2042311f00b753704995768c863efc4.jpg",
+    "text": "Who's a better listener?",
+    "title": "Lend an Ear",
+    "sensitive": false
+  },
+  {
+    "tileImage":"https://s-media-cache-ak0.pinimg.com/originals/e2/04/23/e2042311f00b753704995768c863efc4.jpg",
+    "text": "Who's a better coder?",
+    "title": "Coding Expert",
+    "sensitive": true
+  },
+  {
+    "tileImage":"https://s-media-cache-ak0.pinimg.com/originals/e2/04/23/e2042311f00b753704995768c863efc4.jpg",
+    "text": "Who is funnier?",
+    "title": "Class Clown",
+    "sensitive": false
+  },
+  {
+    "tileImage":"https://s-media-cache-ak0.pinimg.com/originals/e2/04/23/e2042311f00b753704995768c863efc4.jpg",
+    "text": "Who's more often late?",
+    "title": "Always Late",
     "sensitive": false
   }
 ];

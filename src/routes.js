@@ -6,7 +6,6 @@ import CompareChoices from './containers/compare_choices';
 import StatsByPrompt from './containers/stats_by_prompt';
 import LoginView from './components/login.js';
 import PromptsContainer from './containers/prompts_container';
-import Privacy from './components/privacy_policy';
 import Navigation from './components/navigation';
 import TopFive from './containers/top_five_container';
 
@@ -25,7 +24,6 @@ export default (
     <Route path="game" components={ {main: CompareChoices, navigation: Navigation} } onEnter={requireAuth} />
     <Route path= "login" component={LoginView} />
     <Route path= "home" components={ {main: PromptsContainer, navigation: Navigation} } />
-    <Route path= "privacy" components={ {main: Privacy, navigation: Navigation} }  onEnter={requireAuth} />
     <Route path= "topFive" components={ {main: TopFive, navigation: Navigation} }  onEnter={requireAuth} />
 
   </Route>

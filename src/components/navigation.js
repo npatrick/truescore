@@ -6,16 +6,15 @@ export default class Navigation extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar id="nav" color="faded" light >
+
+      
+      <div className="navigation">
+        <Navbar id="nav"color="faded" light >
           <Nav className="float-right">
             <NavbarBrand href="/">Truescore</NavbarBrand>
             <NavItem>
-            </NavItem>
               <NavLink href="#/home">Home</NavLink>
-            <NavItem>
-              <NavLink href="#/game">Play</NavLink>
-            </NavItem>
+            </NavItem> 
             <NavItem>
               <NavLink href="#/stats">Stats</NavLink>
             </NavItem>

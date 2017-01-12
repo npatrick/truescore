@@ -95,6 +95,8 @@ export function fetchStatsByPrompt(promptId) {
   }
 }
 
+export const throttledFetchStatsByPrompt = _.throttle(fetchStatsByPrompt, 1000);
+
 export function fetchStatsByPromptById(promptId) {
 
   const request = axios.get(`${ROOT_URL}stats/prompt/${promptId}`);

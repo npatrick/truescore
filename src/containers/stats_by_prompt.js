@@ -23,11 +23,11 @@ class StatsByPrompt extends Component {
       const average = total ? Math.floor(wins/total * 100) : 0;
 
       return (
-        <div key={user.id}>
-            <StatsListItem 
-              name={user.name}
-              average={average} />
-        </div> 
+        <StatsListItem 
+          key={user.id}
+          name={user.name}
+          average={average}
+        />
       );
     });
   }
@@ -39,9 +39,10 @@ class StatsByPrompt extends Component {
           <MiniPromptListItem
             text={prompt.text}
             tileImage={prompt.tileImage}
-            prompt={prompt} />
+            prompt={prompt}
+          />
         </div>
-        )
+      )
     });
   }
 
@@ -75,7 +76,6 @@ class StatsByPrompt extends Component {
 }
 
 function mapStateToProps (state) {
-  console.log('Current STATE inside statsview: ', state);
   return {statsByPrompt: state.statsByPrompt, prompt: state.prompt, prompts: state.prompts};
 }
 

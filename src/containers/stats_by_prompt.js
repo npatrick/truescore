@@ -23,7 +23,7 @@ class StatsByPrompt extends Component {
       const average = total ? Math.floor(wins/total * 100) : 0;
 
       return (
-        <StatsListItem 
+        <StatsListItem
           key={user.id}
           name={user.name}
           average={average}
@@ -37,7 +37,7 @@ class StatsByPrompt extends Component {
       return (
         <div key={prompt.id}>
           <MiniPromptListItem
-            text={prompt.text}
+            text={prompt.title}
             tileImage={prompt.tileImage}
             prompt={prompt}
           />

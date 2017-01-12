@@ -17,11 +17,13 @@ class PromptTile extends Component {
 
 
   render() {
+
+    console.log("from inside this.props", this.props);
     return (
         <div className ="prompt-tile"
         onClick={ () => this.tileClick()}>
         	<img src={this.props.tileImage}/>
-          <h3>{this.props.text}</h3>
+          <h3>{this.props.title}</h3>
         </div>
     );
   }

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-var url = require("../../client/assets/logo.png");
-
 
 export default class Navigation extends React.Component {
 
@@ -20,9 +18,6 @@ export default class Navigation extends React.Component {
             </NavItem>
             <NavItem>
               <NavLink href="#/stats">Stats</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#/topFive">Leaders</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/logout">Logout</NavLink>

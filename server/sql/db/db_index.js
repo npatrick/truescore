@@ -62,6 +62,7 @@ const Choice = db.define('choice', {
 
 const Prompt = db.define('prompt', {
   text: Sequelize.STRING,
+  title: Sequelize.STRING,
   tileImage: Sequelize.STRING,
   sensitive: {
     type: Sequelize.BOOLEAN,

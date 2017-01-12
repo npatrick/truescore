@@ -16,12 +16,8 @@ function isLoggedIn(req, res, next) {
 
     // if user is authenticated in the session, carry on
     if (req.user) {
-      console.log("User exists which is pretty sweet".rainbow);
         return next();
       }
-
-    console.log("User shoudl be getting kicked out!!!!!".rainbow);
-    // if they aren't redirect them to the home page
     // res.sendfile('./dist/index.html');
     res.redirect('/#/login');
 }

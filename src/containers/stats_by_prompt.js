@@ -33,16 +33,26 @@ class StatsByPrompt extends Component {
   }
 
   renderPromptListItem () {
-    return this.props.prompts.map(prompt => {
-      return (
-        <div key={prompt.id}>
-          <MiniPromptListItem
-            text={prompt.title}
-            tileImage={prompt.tileImage}
-            prompt={prompt}
-          />
-        </div>
-      )
+    let buttonActive = "btn btn-info active";
+    return this.props.prompts.map(promptLoop => {
+      if(promptLoop.id === this.props.prompt.id) {
+        return (
+            <MiniPromptListItem
+              text={promptLoop.text}
+              tileImage={promptLoop.tileImage}
+              prompt={promptLoop} 
+              onActive={buttonActive} />
+        )
+      } else {
+        buttonActive = "btn btn-info";
+        return (
+            <MiniPromptListItem
+              text={promptLoop.text}
+              tileImage={promptLoop.tileImage}
+              prompt={promptLoop}
+              onActive={buttonActive} />
+        )
+      }
     });
   }
 
@@ -53,10 +63,14 @@ class StatsByPrompt extends Component {
     return (
       <div>
         <br />
-        <h2>Cohort Stats</h2>
+        <h2 style={{textAlign: 'center'}}>Cohort Stats</h2>
+        <br />
+        <h6>Select a prompt:</h6>
         <br />
           <div className="row">
-            {this.renderPromptListItem.bind(this)()}
+            <div className="btn-group" data-toggle="buttons">
+              {this.renderPromptListItem.bind(this)()}
+            </div>
           </div>
         <br />
         <h4 style={textPos}>{this.props.prompt.text}</h4>
@@ -76,6 +90,10 @@ class StatsByPrompt extends Component {
 }
 
 function mapStateToProps (state) {
+<<<<<<< HEAD
+=======
+  console.log('Current STATE inside statsview: ', state.prompt);
+>>>>>>> change prompt tile to button tiles with highlight
   return {statsByPrompt: state.statsByPrompt, prompt: state.prompt, prompts: state.prompts};
 }
 

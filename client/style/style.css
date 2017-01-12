@@ -79,7 +79,8 @@ dt {
   margin-right: 80px;
   margin-left: 30px;
   cursor: pointer;
-+ cursor: hand;
+  cursor: hand;
+  border-radius: 12px;
 }
 
 

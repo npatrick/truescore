@@ -6,23 +6,24 @@ class MiniPromptList extends Component {
 
   render() {
   	const miniPic = {
-  		height: '80px',
-  		width: '80px',
+  		height: '50px',
+  		width: '50px',
   		display: 'block',
   		'marginLeft': 'auto',
   		'marginRight': 'auto'
 
   	}
+    console.log('IS THERE ANYONE HERE??', this.props);
 
     return (
-        <div className="mini-prompt-tile"
+        <label className={this.props.onActive}
         	onClick={() => {
             this.props.updatePrompt(this.props.prompt);
             this.props.throttledFetchStatsByPrompt(this.props.prompt.id);
           }}>
         	<img className="miniPrompt" style={miniPic} src={this.props.tileImage}/>
-          <h6>{this.props.text}</h6>
-        </div>
+          <input type="radio" name="options" autoComplete="off" />
+        </label>
     );
   }
 }

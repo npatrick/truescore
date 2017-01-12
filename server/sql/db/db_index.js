@@ -9,6 +9,7 @@ if(process.env.CLEARDB_DATABASE_URL){
 
 } else {
 
+
    var db = new Sequelize('truescore', 'root', 'test', {
       dialect: 'mysql',
       port: 3306,

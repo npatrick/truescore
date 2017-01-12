@@ -10,6 +10,12 @@ class TopFiveTilesContainer extends  Component {
     this.props.fetchStatsByPrompt(1);
     this.props.fetchStatsByPrompt(2);
     this.props.fetchStatsByPrompt(3);
+
+    setInterval(() => {
+      this.props.fetchStatsByPrompt(1);
+      this.props.fetchStatsByPrompt(2);
+      this.props.fetchStatsByPrompt(3);
+    }, 3000)
   }
 
   renderTopFiveTiles () {

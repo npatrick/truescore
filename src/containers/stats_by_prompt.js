@@ -90,10 +90,6 @@ class StatsByPrompt extends Component {
 }
 
 function mapStateToProps (state) {
-<<<<<<< HEAD
-=======
-  console.log('Current STATE inside statsview: ', state.prompt);
->>>>>>> change prompt tile to button tiles with highlight
   return {statsByPrompt: state.statsByPrompt, prompt: state.prompt, prompts: state.prompts};
 }
 

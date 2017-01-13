@@ -38,6 +38,7 @@ class StatsByPrompt extends Component {
       if(promptLoop.id === this.props.prompt.id) {
         return (
             <MiniPromptListItem
+              key={promptLoop.id}
               text={promptLoop.text}
               tileImage={promptLoop.tileImage}
               prompt={promptLoop} 
@@ -47,6 +48,7 @@ class StatsByPrompt extends Component {
         buttonActive = "btn btn-info";
         return (
             <MiniPromptListItem
+              key={promptLoop.id}
               text={promptLoop.text}
               tileImage={promptLoop.tileImage}
               prompt={promptLoop}

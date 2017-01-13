@@ -62,17 +62,17 @@ dt {
   width: 200px;
 }
 
-.statList-container {
+/*.statList-container {
   width: 70%
 
-}
+}*/
 
-.network-list {
+/*.network-list {
   position: relative;
   float: right;
   width: 300px;
   height: 500px;
-}
+}*/
 
 .mini-prompt-tile {
   margin-right: 80px;
@@ -791,3 +791,6 @@ body{
   width: 50px;
 }
 
+.prompt-buttons {
+  margin-bottom: 30px;
+}

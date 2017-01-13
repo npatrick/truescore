@@ -64,27 +64,37 @@ class StatsByPrompt extends Component {
     };
     return (
       <div>
-        <br />
-        <h2 style={{textAlign: 'center'}}>Cohort Stats</h2>
-        <br />
+
         <h6>Select a prompt:</h6>
-        <br />
-          <div className="row">
-            <div className="btn-group" data-toggle="buttons">
-              {this.renderPromptListItem.bind(this)()}
+        <div className="row prompt-buttons">
+          <div className="btn-group" data-toggle="buttons">
+            {this.renderPromptListItem.bind(this)()}
+          </div>
+        </div>
+
+
+
+
+        <div className="row">
+
+          <div className ="col-md-8">
+            <h4 style={textPos}>{this.props.prompt.text}</h4>
+            <div className="statList-container">
+              <dl>
+                {this.renderStatsListItem.bind(this)()}
+              </dl>
             </div>
           </div>
-        <br />
-        <h4 style={textPos}>{this.props.prompt.text}</h4>
-        <br />
-        <div className="network-list">
-          <h5>Your Network (players)</h5>
-          <UsersList />
-        </div>
-        <div className="statList-container">
-          <dl>
-            {this.renderStatsListItem.bind(this)()}
-          </dl>
+
+          <div className ="col-md-4">
+
+            <div className="network-list">
+              <h5>Your Network (players)</h5>
+              <UsersList />
+            </div>
+
+          </div>
+
         </div>
       </div>
     );

@@ -14,4 +14,4 @@ export const store = createStoreWithMiddleware(reducers);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory} routes={routes}/>
-  </Provider>, document.querySelector('.container'));
+  </Provider>, document.querySelector('#App'));

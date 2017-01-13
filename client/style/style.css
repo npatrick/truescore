@@ -18,10 +18,13 @@ dl {
   padding: 20px;
 }
 
+<<<<<<< HEAD
 /*div {
   border: 1px solid red;
 }*/
 
+=======
+>>>>>>> front page
 dt {
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -92,8 +95,192 @@ dt {
 
 
 
+#choices{
+  border:1px solid lightgrey;
+  margin:40px;
+}
+
+#prompt{
+  margin:20px;
+}
+#App{
+  margin:20px;
+}
+#nav{
+  border: 1px solid lightgrey;
+  background-color: inherit;
+  color: Yellow;
+}
+#gamecontainer{
+  border: 1px solid lightgrey;
+  text-align: center;
+  font-style: italic;
+  margin:20px;
+}
+
+#loginform {
+  border: 1px solid lightgrey;
+  align-self:center;
+  margin:45px
+
+}
+#lform{
+  margin: 20px;
+  align: center;
+  align-self:center;
+
+}
+
+h2 {
+  margin-left:10px;
+}
+
+#username{
+  width:200px;
+}
+#password{
+  width:200px;
+}
+#confirmpassword{
+  width:200px;
+}
+#signupform{
+  border: 1px solid lightgrey;
+  margin: 15px;
+}
+#sform{
+  margin: 20px;
+}
+img {
+  width:230px;
+  border: 1px solid lightgrey;
+}
+
+.prompt-container{
+  border:1px solid lightgrey;
+  margin:30px;
+  overflow:hidden;
+}
+
+.prompt-tile
+{
+  display: inline-block;
+  float: left;
+  text-align: center;
+  margin:30px;
+  border: 1px solid lightgrey;
+  height:240px;
+  width:240px;
+  cursor: pointer;
+}
+/*.second div {
+  display: inline-block;
+  float: left;
+  margin:25px;
+  border: 1px solid lightgrey;
+}*/
+.prompt-tile:hover img {
+  display:none;
+}
 
 
+.prompt-tile h3{
+  display:none;
+}
+.prompt-tile:hover h3{
+  display:block;
+  width:inherit;
+  height:inherit;
+}
+
+.btn-group {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list-group-item:hover {
+  background-color: #eee;
+}
+
+.list-group-item img {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+/*.light-background {
+  background-color: rgb(247, 245, 245);
+}*/
+
+/*div {
+  border: 1px solid green;
+}*/
+
+.left-column-login {
+  content: '';
+  height: 100 % ;
+  display: inline-block;
+}
+
+
+.login-title {
+  text-align: center;
+}
+.right-column-login {
+  text-align: center;
+  content: '';
+  height: 100 % ;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#fb-button {
+ margin: 0 auto;
+ display: inline-block;
+ vertical-align: middle;
+ padding: 10px;
+}
+
+
+.login-container {
+  height: 500px;
+  background-color: rgb(249, 249, 252);
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+/*background container*/
+.container {
+  background-color: rgb(234, 235, 246)
+}
+
+/*background container*/
+.screenShot {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+#App {
+  border-radius: 5px;
+}
+
+
+.dark-primary-color    { background: #0097A7; }
+.default-primary-color { background: #00BCD4; }
+.light-primary-color   { background: #B2EBF2; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FFC107; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }
+
+
+.btn-fb {
+  margin: 0 auto;
+  align-items: center;
+  border-radius: 5px;
+}
 
 
 
@@ -134,6 +321,8 @@ dt {
   transition: background-color .3s ease;
   cursor: pointer;
 }
+
+
 .percentage:hover:after, .percentage:focus:after {
   background-color: #aaa;
 }

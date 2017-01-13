@@ -14,7 +14,7 @@ export default class App extends Component {
     return (
       <div id="app">
         <div>{this.props.navigation}</div>
-        <div>{this.props.main}</div>
+        <div className="main">{this.props.main}</div>
       </div>
     );
   }

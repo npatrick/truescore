@@ -6,14 +6,14 @@ class MiniPromptList extends Component {
 
   render() {
   	const miniPic = {
-  		height: '50px',
-  		width: '50px',
-  		display: 'block',
+  		maxWidth: '100%',
+  		height: 'auto',
+  		display: 'inline',
   		'marginLeft': 'auto',
-  		'marginRight': 'auto'
+  		'marginRight': 'auto',
+      borderRadius: '12px'
 
   	}
-    console.log('IS THERE ANYONE HERE??', this.props);
 
     return (
         <label className={this.props.onActive}

@@ -25,7 +25,7 @@ module.exports = [
     "sensitive": false
   },
   {
-    "tileImage":"http://image.flaticon.com/icons/svg/30/30411.svg",
+    "tileImage":"http://image.flaticon.com/icons/svg/77/77031.svg",
     "text": "Who's a better listener?",
     "title": "Lend an Ear",
     "sensitive": false

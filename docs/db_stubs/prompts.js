@@ -43,14 +43,8 @@ module.exports = [
     "sensitive": false
   },
   {
-<<<<<<< HEAD
     "tileImage":"https://s-media-cache-ak0.pinimg.com/originals/e2/04/23/e2042311f00b753704995768c863efc4.jpg",
     "text": "Who's more often late?",
     "title": "Always Late",
-=======
-    "tileImage":"http://image.flaticon.com/icons/png/128/157/157830.png",
-    "text": "Code remotely from the beach",
->>>>>>> Changed prompt icon size and removed hover
-    "sensitive": false
   }
 ];

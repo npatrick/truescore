@@ -752,3 +752,17 @@ img {
 .percentage-100:after {
   width: 100%;
 }
+
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #eee;
+}
+
+.list-group-item img {
+  height: 50px;
+  width: 50px;
+}

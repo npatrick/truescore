@@ -20,11 +20,15 @@ class PromptTile extends Component {
 
     console.log("from inside this.props", this.props);
     return (
-        <div className ="prompt-tile"
+        <li className ="list-group-item"
         onClick={ () => this.tileClick()}>
-        	<img src={this.props.tileImage}/>
-          <h3>{this.props.title}</h3>
-        </div>
+          <div className="media-left">
+            <img className="media-left" src={this.props.tileImage}/>
+          </div>
+            <div className="media-body">
+              <div className="media-heading">{this.props.title}</div>
+            </div>
+        </li>
     );
   }
 }

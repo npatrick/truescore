@@ -4,6 +4,7 @@ import { fetchPrompts, fetchUserData } from '../actions/actions';
 
 import PromptTile from './prompt_tile';
 import StatsByPrompt from './stats_by_prompt';
+import UsersList from './users_list';
 
 class PromptContainer extends  Component {
 
@@ -27,9 +28,15 @@ class PromptContainer extends  Component {
 	render () {
 
     return (
-      	<div className="prompt-container">
+			<div className="row">
+      	<ul className="col-md-6 list-group">
         	{this.renderPrompts.bind(this)()}
-      	</div>
+      	</ul>
+				<div className="network-list col-md-4">
+          <h5>Your Network (players)</h5>
+          <UsersList />
+        </div>
+			</div>
 
     );
   }

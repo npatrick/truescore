@@ -1,3 +1,7 @@
+ body{
+  background-color: #fcfcfc;
+}
+ 
  /*This block is used on the User_Stats component
     which styles a graph based on percentage*/
 dl {
@@ -17,6 +21,7 @@ dl {
 /*div {
   border: 1px solid red;
 }*/
+
 dt {
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -54,10 +59,12 @@ dt {
   border: 1px solid lightgrey;
   padding: 20px;
   margin: 20px;
-  cursor: hand;
-  background-color: #2a4771;
+  cursor: pointer;
 }
 
+.choice-container:hover {
+  background-color: #eee;
+}
 .choice-container img {
   width: 200px;
 }
@@ -150,9 +157,11 @@ dt {
 #prompt{
   margin:20px;
 }
-#App{
+
+/*#App{
   margin:20px;
-}
+}*/
+
 #nav{
   border: 1px solid lightgrey;
   background-color: inherit;
@@ -712,58 +721,6 @@ img {
   border: 1px solid lightgrey;
 }
 
-.prompt-container{
-  border:none;
-  border-radius: 15px;
-  margin:30px;
-  /*background-color:rgba(221, 221, 221, 0.43);*/
-  display: inline-flex;
-}
-
-.prompt-tile
-{
-  text-align: center;
-  float: left;
-  margin:30px;
-  border: none;
-  border-radius: 10px;
-  /*background-color: rgba(170, 170, 170, 0.42);*/
-  cursor: pointer;
-}
-
-/*.second div {
-  display: inline-block;
-  float: left;
-  margin:25px;
-  border: 1px solid lightgrey;
-}*/
-
-.prompt-tile:hover img {
-  display:none;
-}
-
-
-
-body{
-  background-color: #fcfcfc;
-}
-.container{
-  /*background-color: rgba(204, 204, 204, 0.62);*/
-  display: flex;
-}
-/*.prompt-tile: img {
-  display:none;
-}
-.prompt-tile h3{
-  display:none;
-}
-.prompt-tile:hover h3{
-  display:block;
-  width:inherit;
-  height:inherit;
-}*/
-
-
 
 .btn-fb {
   border-radius: 5px;
@@ -795,4 +752,13 @@ body{
 
 .prompt-buttons {
   margin-bottom: 30px;
+}
+
+.media-heading {
+  margin-left: 20px;
+}
+
+.list-group h3 {
+  margin-left: 9%;
+  margin-bottom: 20px;
 }

@@ -19,12 +19,10 @@ class Choice extends Component {
       opacity: 0.4
     }
     return (
-      <div className="choice-container">
+      <div className="choice-container"
+        onClick={() => this.submit.bind(this)(this.props.id) } >
         <h3>{this.props.name}</h3>
-        <img
-          onClick={() => this.submit.bind(this)(this.props.id) }
-          src={this.props.imageUrl}
-        />
+        <img src={this.props.imageUrl} />
       </div>
     );
   }

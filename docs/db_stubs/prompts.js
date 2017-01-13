@@ -31,12 +31,6 @@ module.exports = [
     "sensitive": false
   },
   {
-    "tileImage":"http://image.flaticon.com/icons/svg/74/74873.svg",
-    "text": "Who's a better coder?",
-    "title": "Coding Expert",
-    "sensitive": true
-  },
-  {
     "tileImage":"http://image.flaticon.com/icons/svg/68/68313.svg",
     "text": "Who is funnier?",
     "title": "Class Clown",

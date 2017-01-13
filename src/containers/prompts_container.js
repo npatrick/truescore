@@ -29,9 +29,12 @@ class PromptContainer extends  Component {
 
     return (
 			<div className="row">
-      	<ul className="col-md-6 list-group">
-        	{this.renderPrompts.bind(this)()}
-      	</ul>
+				<div className="col-md-6 col-s-12 list-group">
+					<h3>Choose a category to vote!</h3>
+					<ul>
+						{this.renderPrompts.bind(this)()}
+					</ul>
+				</div>
 				<div className="network-list col-md-4">
           <h5>Your Network (players)</h5>
           <UsersList />

@@ -39,7 +39,7 @@ dt {
       -ms-flex-align: center;
           align-items: center;
   height: 40px;
-  width: 130px;
+  width: 22%;
   background-color: white;
   position: absolute;
   left: 0;
@@ -69,9 +69,10 @@ dt {
 
 /*.network-list {
   position: relative;
-  float: right;
-  width: 300px;
-  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 45%;
+  height: auto;
 }*/
 
 .mini-prompt-tile {
@@ -104,9 +105,9 @@ dt {
 .percentage {
   line-height: 1;
   text-transform: uppercase;
-  width: 78%;
+  max-width: 75%;
   height: 40px;
-  margin-left: 130px;
+  margin-left: 45px;
   background: -webkit-repeating-linear-gradient(left, #ddd, #ddd 1px, #fff 1px, #fff 5%);
   background: repeating-linear-gradient(to right, #ddd, #ddd 1px, #fff 1px, #fff 5%);
 }
@@ -116,6 +117,7 @@ dt {
   background-color: #3d9970;
   width: 50px;
   margin-bottom: 10px;
+  margin-left: 20%;
   height: 90%;
   position: relative;
   top: 50%;

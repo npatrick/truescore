@@ -31,7 +31,7 @@ class PromptTile extends Component {
             </div>
         </li>
 
-      
+
     );
   }
 }

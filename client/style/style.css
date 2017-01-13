@@ -79,7 +79,8 @@ dt {
   margin-right: 80px;
   margin-left: 30px;
   cursor: pointer;
-+ cursor: hand;
+  cursor: hand;
+  border-radius: 12px;
 }
 
 
@@ -104,7 +105,7 @@ dt {
 .percentage {
   line-height: 1;
   text-transform: uppercase;
-  width: 100%;
+  width: 78%;
   height: 40px;
   margin-left: 130px;
   background: -webkit-repeating-linear-gradient(left, #ddd, #ddd 1px, #fff 1px, #fff 5%);
@@ -129,120 +130,9 @@ dt {
   background-color: #aaa;
 }
 
-<<<<<<< HEAD
 .percentage-0:after {
   width: 0%;
 }
-=======
-
-
-#choices{
-  border:1px solid lightgrey;
-  margin:40px;
-}
-
-#prompt{
-  margin:20px;
-}
-#App{
-  margin:20px;
-}
-#nav{
-  border: 1px solid lightgrey;
-  background-color: inherit;
-  color: Yellow;
-}
-#gamecontainer{
-  border: 1px solid lightgrey;
-  text-align: center;
-  font-style: italic;
-  margin:20px;
-}
-
-#loginform {
-  border: 1px solid lightgrey;
-  align-self:center;
-  margin:45px
-
-}
-#lform{
-  margin: 20px;
-  align: center;
-  align-self:center;
-
-}
-
-h2 {
-  margin-left:10px;
-}
-
-#username{
-  width:200px;
-}
-#password{
-  width:200px;
-}
-#confirmpassword{
-  width:200px;
-}
-#signupform{
-  border: 1px solid lightgrey;
-  margin: 15px;
-}
-#sform{
-  margin: 20px;
-}
-img {
-  width:230px;
-  border: 1px solid lightgrey;
-}
-
-.prompt-container{
-  border:1px solid lightgrey;
-  margin:30px;
-  overflow:hidden;
-}
-
-.prompt-tile
-{
-  display: inline-block;
-  float: left;
-  text-align: center;
-  margin:30px;
-  border: 1px solid lightgrey;
-  height:240px;
-  width:240px;
-  cursor: pointer;
-}
-/*.second div {
-  display: inline-block;
-  float: left;
-  margin:25px;
-  border: 1px solid lightgrey;
-}*/
-.prompt-tile:hover img {
-  display:none,
-}
-
-
-.prompt-tile h3{
-  display:none;
-}
-.prompt-tile:hover h3{
-  display:block;
-  width:inherit;
-  height:inherit;
-}
-
-.btn-fb {
-  border-radius: 5px;
-  width: 200px;
-  margin-left: 20px;
-}
-
-
-
->>>>>>> small changes
 
 .percentage-1:after {
   width: 1%;
@@ -644,7 +534,6 @@ img {
   width: 100%;
 }
 
-<<<<<<< HEAD
 #choices{
   border:1px solid lightgrey;
   margin:40px;
@@ -749,8 +638,9 @@ img {
   margin-left: 20px;
 }
 
-.percentage-100:after {
-  width: 100%;
+.btn-group {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -766,3 +656,4 @@ img {
   height: 50px;
   width: 50px;
 }
+

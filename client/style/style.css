@@ -662,7 +662,7 @@ img {
   border: none;
   border-radius:10px;
   width:100%;
-  background-color: rgba(76, 69, 69, 0.28);
+  /*background-color: rgba(76, 69, 69, 0.28);*/
 
 }
 #gamecontainer{
@@ -714,7 +714,7 @@ img {
   border:none;
   border-radius: 15px;
   margin:30px;
-  background-color:rgba(221, 221, 221, 0.43);
+  /*background-color:rgba(221, 221, 221, 0.43);*/
   display: inline-flex;
 }
 
@@ -725,7 +725,7 @@ img {
   margin:30px;
   border: none;
   border-radius: 10px;
-  background-color: rgba(170, 170, 170, 0.42);
+  /*background-color: rgba(170, 170, 170, 0.42);*/
   cursor: pointer;
 }
 
@@ -746,7 +746,7 @@ body{
   background-image: url("http://www.talonx.com/file/2013/09/polyagonal-web-design.jpg")
 }
 .container{
-  background-color: rgba(204, 204, 204, 0.62);
+  /*background-color: rgba(204, 204, 204, 0.62);*/
   display: flex;
 }
 /*.prompt-tile: img {

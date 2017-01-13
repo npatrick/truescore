@@ -7,14 +7,11 @@ import TopFive from '../components/topFive'; //this is how we reference componen
 class TopFiveTilesContainer extends  Component {
 
   componentWillMount() {
-    this.props.fetchStatsByPrompt(1);
-    this.props.fetchStatsByPrompt(2);
-    this.props.fetchStatsByPrompt(3);
+
+    this.props.prompts.forEach(prompt => this.props.fetchStatsByPrompt(prompt.id));
 
     setInterval(() => {
-      this.props.fetchStatsByPrompt(1);
-      this.props.fetchStatsByPrompt(2);
-      this.props.fetchStatsByPrompt(3);
+      this.props.prompts.forEach(prompt => this.props.fetchStatsByPrompt(prompt.id));
     }, 3000)
   }
 

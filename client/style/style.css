@@ -105,7 +105,7 @@ dt {
 .percentage {
   line-height: 1;
   text-transform: uppercase;
-  width: 100%;
+  width: 78%;
   height: 40px;
   margin-left: 130px;
   background: -webkit-repeating-linear-gradient(left, #ddd, #ddd 1px, #fff 1px, #fff 5%);

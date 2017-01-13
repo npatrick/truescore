@@ -3,7 +3,6 @@
 dl {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
   background-color: white;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -55,9 +54,8 @@ dt {
   border: 1px solid lightgrey;
   padding: 20px;
   margin: 20px;
-  cursor: pointer;
 + cursor: hand;
-
+  background-color: #2a4771;
 }
 
 .choice-container img {
@@ -66,6 +64,7 @@ dt {
 
 .statList-container {
   width: 70%
+
 }
 
 .network-list {
@@ -133,6 +132,120 @@ dt {
 .percentage-0:after {
   width: 0%;
 }
+
+
+.percentage-0:after {
+  width: 0%;
+}
+
+
+
+#choices{
+  border:1px solid lightgrey;
+  margin:40px;
+}
+
+#prompt{
+  margin:20px;
+}
+#App{
+  margin:20px;
+}
+#nav{
+  border: 1px solid lightgrey;
+  background-color: inherit;
+  color: Yellow;
+}
+#gamecontainer{
+  border: 1px solid lightgrey;
+  text-align: center;
+  font-style: italic;
+  margin:20px;
+}
+
+#loginform {
+  border: 1px solid lightgrey;
+  align-self:center;
+  margin:45px
+
+}
+#lform{
+  margin: 20px;
+  align: center;
+  align-self:center;
+
+}
+
+h2 {
+  margin-left:10px;
+}
+
+#username{
+  width:200px;
+}
+#password{
+  width:200px;
+}
+#confirmpassword{
+  width:200px;
+}
+#signupform{
+  border: 1px solid lightgrey;
+  margin: 15px;
+}
+#sform{
+  margin: 20px;
+}
+img {
+  width:230px;
+  border: 1px solid lightgrey;
+}
+
+.prompt-container{
+  border:1px solid lightgrey;
+  margin:30px;
+  overflow:hidden;
+}
+
+.prompt-tile
+{
+  display: inline-block;
+  float: left;
+  text-align: center;
+  margin:30px;
+  border: 1px solid lightgrey;
+  height:240px;
+  width:240px;
+  cursor: pointer;
+}
+/*.second div {
+  display: inline-block;
+  float: left;
+  margin:25px;
+  border: 1px solid lightgrey;
+}*/
+.prompt-tile:hover img {
+  display:none,
+}
+
+
+.prompt-tile h3{
+  display:none;
+}
+.prompt-tile:hover h3{
+  display:block;
+  width:inherit;
+  height:inherit;
+}
+
+.btn-fb {
+  border-radius: 5px;
+  width: 200px;
+  margin-left: 20px;
+}
+
+
+
 
 .percentage-1:after {
   width: 1%;
@@ -543,12 +656,14 @@ dt {
   margin:20px;
 }
 #App{
-  margin:20px;
+  margin: 25px;
 }
 #nav{
-  border: 1px solid lightgrey;
-  background-color: inherit;
-  color: Yellow;
+  border: none;
+  border-radius:10px;
+  width:100%;
+  /*background-color: rgba(76, 69, 69, 0.28);*/
+
 }
 #gamecontainer{
   border: 1px solid lightgrey;
@@ -591,38 +706,52 @@ h2 {
   margin: 20px;
 }
 img {
-  width:230px;
+  width:80px;
   border: 1px solid lightgrey;
 }
 
 .prompt-container{
-  border:1px solid lightgrey;
+  border:none;
+  border-radius: 15px;
   margin:30px;
-  overflow:hidden;
+  /*background-color:rgba(221, 221, 221, 0.43);*/
+  display: inline-flex;
 }
 
 .prompt-tile
 {
-  display: inline-block;
-  float: left;
   text-align: center;
+  float: left;
   margin:30px;
-  border: 1px solid lightgrey;
-  height:240px;
-  width:240px;
+  border: none;
+  border-radius: 10px;
+  /*background-color: rgba(170, 170, 170, 0.42);*/
   cursor: pointer;
 }
+
 /*.second div {
   display: inline-block;
   float: left;
   margin:25px;
   border: 1px solid lightgrey;
 }*/
+
 .prompt-tile:hover img {
   display:none;
 }
 
 
+
+body{
+  background-image: url("http://www.talonx.com/file/2013/09/polyagonal-web-design.jpg")
+}
+.container{
+  /*background-color: rgba(204, 204, 204, 0.62);*/
+  display: flex;
+}
+/*.prompt-tile: img {
+  display:none;
+}
 .prompt-tile h3{
   display:none;
 }
@@ -630,7 +759,9 @@ img {
   display:block;
   width:inherit;
   height:inherit;
-}
+}*/
+
+
 
 .btn-fb {
   border-radius: 5px;

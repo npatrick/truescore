@@ -14,14 +14,12 @@ class TopFiveTilesContainer extends  Component {
 
   componentWillMount() {
 
+    this.getAllData();
+
+  }
+
+  getAllData() {
     this.props.prompts.forEach(prompt => this.props.fetchStatsByPrompt(prompt.id));
-    
-    const killSwitchId = setInterval(() => {
-      this.props.prompts.forEach(prompt => this.props.fetchStatsByPrompt(prompt.id));
-    }, 3000);
-
-    this.props.updateKillSwitch(killSwitchId);
-
   }
 
   renderTopFiveTiles () {
@@ -44,7 +42,19 @@ class TopFiveTilesContainer extends  Component {
 
     return (
         <div className="top5-container row">
-          {this.renderTopFiveTiles.bind(this)()}
+          <div className="col-md-10">
+            <div className ="row">
+              {this.renderTopFiveTiles.bind(this)()}
+            </div>
+          </div>
+
+          <div className="col-md-2">
+            <button
+              onClick={() => this.getAllData()}
+              type="button"
+              className="btn btn-primary">Update
+            </button>
+          </div>
         </div>
 
     );

@@ -1,6 +1,6 @@
-var db = require('../db/db_index');
+const db = require('../db/db_index');
 
-var numberOfChoices;
+let numberOfChoices;
 
 const getChoiceCount = function(){
 

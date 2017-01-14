@@ -8,7 +8,7 @@
 
 var db = require('../db/db_index');
 var colors = require('colors');
-const getChoiceCount = require('./choice_count_cache');
+const getChoiceCount = require('../cache/choice_count');
 
 
 module.exports = {
@@ -45,8 +45,9 @@ module.exports = {
   },
   //post the win and loss to the db based on promptId
   post: function(req, res){
-    console.log("____req.body: ", req.body);
+
     const {userId, promptId, winnerId, loserId} = req.body;
+    
     db.Comparison.create({
       userId: userId,
       promptId: promptId,

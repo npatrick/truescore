@@ -16,6 +16,7 @@ export const UPDATE_PROMPT = 'UPDATE_PROMPT';
 export const FETCH_STATS_BY_PROMPT = 'FETCH_STATS_BY_PROMPT';
 export const FETCH_USER_DATA = 'FETCH_USER_DATA'; // unique id's for actions for reducers to listen to
 export const FETCH_STATS_BY_PROMPT_ID = 'FETCH_STATS_BY_PROMPT_ID';
+export const UPDATE_KILL_SWITCH = 'UPDATE_KILL_SWITCH';
 
 export function fetchComparison () {
 
@@ -112,5 +113,13 @@ export function fetchUserData() { // actions return objects
   return{
     type: FETCH_USER_DATA,
     payload: request
+  }
+}
+
+
+export function updateKillSwitch(id){
+  return {
+    type: UPDATE_KILL_SWITCH,
+    payload: id
   }
 }

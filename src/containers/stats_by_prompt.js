@@ -8,9 +8,16 @@ import MiniPromptListItem from '../components/mini_prompt_list_item';
 class StatsByPrompt extends Component {
 
   componentWillMount() {
+
+    //stop topfive's setInterval from over-writing stats you're viewing
+    clearInterval(this.props.killSwitch.id);
+
+    //in case you skipped the homepage, get prompts
     if(!this.props.prompts.length){
       this.props.fetchPrompts();
     }
+
+    //get FRESH stats
     this.props.fetchStatsByPrompt();
   }
 
@@ -102,7 +109,12 @@ class StatsByPrompt extends Component {
 }
 
 function mapStateToProps (state) {
-  return {statsByPrompt: state.statsByPrompt, prompt: state.prompt, prompts: state.prompts};
+  return {
+    statsByPrompt: state.statsByPrompt.stats,
+    prompt: state.prompt,
+    prompts: state.prompts,
+    killSwitch: state.killSwitch
+  };
 }
 
 export default connect(mapStateToProps, { fetchPrompts, fetchStatsByPrompt })(StatsByPrompt);

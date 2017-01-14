@@ -7,6 +7,9 @@ import Choice from './choice.js'
 class CompareChoices extends Component {
 
   componentWillMount() {
+
+    clearInterval(this.props.killSwitch.id);
+
     if(!this.props.comparison.choices.length){
       this.props.fetchComparison();
     }
@@ -39,7 +42,11 @@ class CompareChoices extends Component {
 }
 
 function mapStateToProps (state) {
-  return {comparison: state.comparison, prompt: state.prompt};
+  return {
+    comparison: state.comparison,
+    prompt: state.prompt,
+    killSwitch: state.killSwitch
+  };
 }
 
 export default connect(mapStateToProps, { fetchComparison })(CompareChoices);

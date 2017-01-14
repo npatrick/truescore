@@ -7,6 +7,7 @@ import ChoiceReducer from './choices_reducer.js';
 import StatsByPromptReducer from './stats_by_prompt_reducer.js';
 import CurrentUserReducer from './current_user_reducer.js';
 import allStatsReducer from './all_stats_reducer';
+import killSwitchReducer from './kill_switch_reducer';
 
 
 const rootReducer = combineReducers({
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   prompts: PromptsReducer, //array of prompt objects
   statsByPrompt: StatsByPromptReducer,
   currentUser: CurrentUserReducer,
-  allStats: allStatsReducer
+  allStats: allStatsReducer,
+  killSwitch: killSwitchReducer
 });
 
 export default rootReducer;

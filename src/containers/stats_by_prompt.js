@@ -41,6 +41,7 @@ class StatsByPrompt extends Component {
           key={user.id}
           name={user.name}
           average={average}
+          total={total}
         />
       );
     });

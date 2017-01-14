@@ -9,6 +9,10 @@ import UsersList from './users_list';
 class PromptContainer extends  Component {
 
   componentWillMount() {
+
+		//stop topfive's setInterval from over-writing stats you're viewing
+    clearInterval(this.props.killSwitch.id);
+
     this.props.fetchPrompts();
     this.props.fetchUserData();
   }
@@ -46,7 +50,10 @@ class PromptContainer extends  Component {
 }
 
 function mapStateToProps (state) {
-  return {prompts: state.prompts};
+  return {
+		prompts: state.prompts,
+		killSwitch: state.killSwitch
+	};
 }
 
 

@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPrompts, fetchStatsByPrompt } from '../actions/actions'; //gets us promptsId, and stats by prompt
+import { fetchPrompts, fetchStatsByPrompt, updateKillSwitch } from '../actions/actions'; //gets us promptsId, and stats by prompt
 
-import TopFive from '../components/topFive'; //this is how we reference components from external
+import TopFive from '../containers/topFive'; //this is how we reference components from external
 
 class TopFiveTilesContainer extends  Component {
 
   componentWillMount() {
 
     this.props.prompts.forEach(prompt => this.props.fetchStatsByPrompt(prompt.id));
-
-    setInterval(() => {
+    
+    const killSwitchId = setInterval(() => {
       this.props.prompts.forEach(prompt => this.props.fetchStatsByPrompt(prompt.id));
-    }, 3000)
+    }, 3000);
+
+    this.props.updateKillSwitch(killSwitchId);
+
   }
 
   renderTopFiveTiles () {
@@ -24,7 +27,7 @@ class TopFiveTilesContainer extends  Component {
             <TopFive
               key={prompt.id}
               prompt={prompt}
-              arrayOfUserObjects={this.props.allStats[prompt.id]}
+              people={this.props.allStats[prompt.id]}
             />
           )
         }
@@ -34,7 +37,7 @@ class TopFiveTilesContainer extends  Component {
   render () {
 
     return (
-        <div className="prompt-container">
+        <div className="top5-container row">
           {this.renderTopFiveTiles.bind(this)()}
         </div>
 
@@ -50,4 +53,4 @@ function mapStateToProps (state) {
   };
 }
 
-export default connect(mapStateToProps, { fetchPrompts, fetchStatsByPrompt })(TopFiveTilesContainer); // this makes actions available as props of the component
+export default connect(mapStateToProps, { fetchPrompts, fetchStatsByPrompt, updateKillSwitch })(TopFiveTilesContainer); // this makes actions available as props of the component

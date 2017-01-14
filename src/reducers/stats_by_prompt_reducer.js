@@ -1,12 +1,14 @@
 import { FETCH_STATS_BY_PROMPT } from '../actions/actions';
+import { store } from '../index';
 
-const INITIAL_STATE = [];
+const INITIAL_STATE = {stats:[]};
 
 export default function(state = INITIAL_STATE, action) {
+
   switch( action.type ) {
 
     case FETCH_STATS_BY_PROMPT:
-      return action.payload.data.stats;
+        return action.payload.data;
 
     default:
       return state;

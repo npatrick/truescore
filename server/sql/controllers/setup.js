@@ -8,7 +8,7 @@ const db = require('../db/db_index');
 const seedDatabase = require('./seedDatabase');
 const stats = require('./stats');
 const seedWinLoss = require('../../../docs/tests/winloss');
-const getChoiceCount = require('./choice_count_cache');
+const getChoiceCount = require('../cache/choice_count');
 
 //wipes the databases and uses the new datas
 module.exports = {

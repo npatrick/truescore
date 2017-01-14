@@ -6,6 +6,8 @@
 
 
 var db = require('../db/db_index');
+var getChoices = require('../cache/choices');
+var getPrompts = require('../cache/prompts');
 
 module.exports = {
 
@@ -26,10 +28,8 @@ module.exports = {
 
       } else { // if no prompt id
 
-        db.Prompt.findAll()
-        .then(function(prompts) {
-          res.send(prompts);
-        });
+        getPrompts()
+        .then(prompts => res.send(prompts));
 
       }
     },
@@ -47,8 +47,10 @@ module.exports = {
   //Get All choices from the db
   allChoices: {
     get: function(req, res){
-      db.Choice.findAll()
-      .then(choices => res.send(choices));
+      
+      getChoices()
+      .then(choices => res.send(choices))
+     
     }
   }
 };

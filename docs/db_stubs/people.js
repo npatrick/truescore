@@ -38,38 +38,6 @@ module.exports = [
    "name": "Elliott",
    "imageUrl": "/assets/classPhotos/Elliott.jpg",
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
   {
     "name": "Nim",
     "imageUrl": "/assets/classPhotos/Nim.jpg",
@@ -85,5 +53,37 @@ module.exports = [
   {
     "name": "Ryan",
     "imageUrl": "/assets/classPhotos/Ryan.jpg",
+  },
+  {
+   "name": "Bei",
+   "imageUrl": "/assets/classPhotos/Bei.jpg",
+  },
+  {
+   "name": "Dan",
+   "imageUrl": "/assets/classPhotos/Dan.jpg",
+  },
+  {
+   "name": "Eric",
+   "imageUrl": "/assets/classPhotos/Eric.jpg",
+  },
+  {
+   "name": "Iana",
+   "imageUrl": "/assets/classPhotos/Iana.jpg",
+  },
+  {
+   "name": "Nate",
+   "imageUrl": "/assets/classPhotos/Nate.jpg",
+  },
+  {
+   "name": "Alissa",
+   "imageUrl": "/assets/classPhotos/Alissa.jpg",
+  },
+  {
+   "name": "Valerie",
+   "imageUrl": "/assets/classPhotos/Valerie.jpg",
+  },
+  {
+   "name": "Sevda",
+   "imageUrl": "/assets/classPhotos/Sevda.jpg",
   }
 ];

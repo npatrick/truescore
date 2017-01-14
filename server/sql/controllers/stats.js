@@ -6,7 +6,7 @@
 
 
 var db = require('../db/db_index');
-
+//returns the win and loss percentage counts
 module.exports = {
   winsAndLosses: function(choiceId, promptId){
 
@@ -28,6 +28,7 @@ module.exports = {
       });
 
   },
+  //Returns win and loss count based on each prompt
   statsByPrompt: function(req, res){
     const { promptId } = req.params;
 

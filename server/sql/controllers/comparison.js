@@ -76,14 +76,14 @@ module.exports = {
 
     });
   },
-
+  //gets All the comparisons from db
   getAll: function(req, res){
 
     db.Comparison.findAll()
     .then(comparisons => res.send(comparisons));
 
   },
-
+  //post the win and loss to the db based on promptId
   post: function(req, res){
     console.log("____req.body: ", req.body);
     const {userId, promptId, winnerId, loserId} = req.body;

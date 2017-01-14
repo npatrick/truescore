@@ -13,7 +13,7 @@ module.exports = {
   //     Work Here     //
   ////////////////////////
 
-
+  //Gets the Prompts from the db 
   prompts: {
     get: function (req, res) {
       //if there's a promptid
@@ -44,6 +44,7 @@ module.exports = {
     }
   },
 
+  //Get All choices from the db
   allChoices: {
     get: function(req, res){
       db.Choice.findAll()

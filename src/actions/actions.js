@@ -17,13 +17,19 @@ export const FETCH_STATS_BY_PROMPT = 'FETCH_STATS_BY_PROMPT';
 export const FETCH_USER_DATA = 'FETCH_USER_DATA'; // unique id's for actions for reducers to listen to
 export const FETCH_STATS_BY_PROMPT_ID = 'FETCH_STATS_BY_PROMPT_ID';
 export const UPDATE_KILL_SWITCH = 'UPDATE_KILL_SWITCH';
+export const CHANGE_STATE = 'CHANGE_STATE';
+
+
+
 
 //Fetches the random comparison to vote 
 export function fetchComparison () {
 
+  // store.dispatch(changeState());
+
   const promptId = store.getState().prompt.id;
 
-  const request = axios.get(`${ROOT_URL}comparison/${promptId}`);
+  const request = axios.get(`${ROOT_URL}comparison/${promptId}`)
 
   return {
     type: FETCH_COMPARISON,

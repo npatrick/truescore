@@ -8,52 +8,71 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { fetchComparison } from '../actions/actions.js';
-
 import Choice from './choice.js'
+
 
 class CompareChoices extends Component {
 
-  componentWillMount() {
-
-    clearInterval(this.props.killSwitch.id);
-
-    if(!this.props.comparison.choices.length){
-      this.props.fetchComparison();
-    }
+  constructor(props) {
+    super(props);
+    this.state = {isFetching: false};
   }
 
-  renderChoices(){
+ componentWillMount() {
+   clearInterval(this.props.killSwitch.id);
 
-    return this.props.comparison.choices.map(choice => {
+   if(!this.props.comparison.choices.length){
+     this.props.fetchComparison();
+   }
 
-      return (
-        <Choice
-          name={choice.name}
-          id={choice.id}
-          imageUrl={choice.imageUrl}
-          key={choice.id} />
-      );
-    });
+ };
+
+
+  setIsFetchingToTrue () {
+    this.setState({isFetching: true});
   }
 
-  render () {
-    return (
-      <div className="game-container">
-        <h3 className="game-info">{this.props.prompt.text ? this.props.prompt.text : 'Loading...'}</h3>
-        <div className="game-comparison">
-          {this.renderChoices.bind(this)()}
-        </div>
-      </div>
-    );
+  setIsFetchingToFalse() {
+    this.setState({isFetching: false});
   }
+
+ renderChoices(){
+
+   return this.props.comparison.choices.map(choice => {
+
+     return (
+       <Choice
+         name={choice.name}
+         id={choice.id}
+         imageUrl={choice.imageUrl}
+         key={choice.id}
+         isFetching={this.state.isFetching}
+         setIsFetchingToFalse={this.setIsFetchingToFalse.bind(this)}
+         setIsFetchingToTrue={this.setIsFetchingToTrue.bind(this)} />
+     );
+   });
+ }
+
+ render () {
+
+   return (
+     <div className="game-container">
+       <h3 className="game-info">{this.props.prompt.text ? this.props.prompt.text : 'Loading...'}</h3>
+       <div>{this.state.isFetching ? <img className="spinner" src="/assets/spinner.gif" /> : "" }</div>
+       <div className="game-comparison">
+         {this.renderChoices.bind(this)()}
+       </div>
+     </div>
+   );
+ }
 }
 
 function mapStateToProps (state) {
-  return {
-    comparison: state.comparison,
-    prompt: state.prompt,
-    killSwitch: state.killSwitch
-  };
+ return {
+   comparison: state.comparison,
+   prompt: state.prompt,
+   killSwitch: state.killSwitch
+ };
 }
 
 export default connect(mapStateToProps, { fetchComparison })(CompareChoices);

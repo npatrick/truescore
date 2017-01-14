@@ -37,5 +37,53 @@ module.exports = [
   {
    "name": "Elliott",
    "imageUrl": "/assets/classPhotos/Elliott.jpg",
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  {
+    "name": "Nim",
+    "imageUrl": "/assets/classPhotos/Nim.jpg",
+  },
+  {
+    "name": "Paul",
+    "imageUrl": "/assets/classPhotos/Paul.jpg",
+  },
+  {
+    "name": "Romain",
+    "imageUrl": "/assets/classPhotos/Romain.jpg",
+  },
+  {
+    "name": "Ryan",
+    "imageUrl": "/assets/classPhotos/Ryan.jpg",
   }
 ];

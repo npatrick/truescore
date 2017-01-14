@@ -64,7 +64,12 @@ dl {
   padding: 20px;
   margin: 20px;
   cursor: hand;
+  cursor: pointer;
   border-radius: 5px;
+}
+
+.choice-container:hover {
+  background-color: #eee;
 }
 
 .choice-container img {

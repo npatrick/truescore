@@ -6,8 +6,7 @@ module.exports = {
   //     Work Here     //
   ////////////////////////
 
-
-  prompts: {
+  //Gets the Prompts from the db 
     get: function (req, res) {
       //if there's a promptid
       if(req.params.id){
@@ -26,7 +25,6 @@ module.exports = {
 
       }
     },
-
     post: function (req, res) {
       const {text, sensitive } = req.body;
       db.Prompt.findOrCreate({where: {text: text}})
@@ -37,6 +35,7 @@ module.exports = {
     }
   },
 
+  //Get All choices from the db
   allChoices: {
     get: function(req, res){
       db.Choice.findAll()

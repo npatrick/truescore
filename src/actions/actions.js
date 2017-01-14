@@ -18,6 +18,7 @@ export const FETCH_USER_DATA = 'FETCH_USER_DATA'; // unique id's for actions for
 export const FETCH_STATS_BY_PROMPT_ID = 'FETCH_STATS_BY_PROMPT_ID';
 export const UPDATE_KILL_SWITCH = 'UPDATE_KILL_SWITCH';
 
+//Fetches the random comparison to vote 
 export function fetchComparison () {
 
   const promptId = store.getState().prompt.id;
@@ -32,6 +33,7 @@ export function fetchComparison () {
 
 export const throttledFetchComparison = _.throttle(fetchComparison, 1000);
 
+//Fetches allchoices required for comparison 
 export function fetchUsers () {
 
   const request = axios.get(`${ROOT_URL}allChoices`);
@@ -43,6 +45,7 @@ export function fetchUsers () {
 }
 
 
+//On submitting or voting send the  (win/loss) results to db 
 
 export function submitDecision(winnerId) {
 
@@ -63,6 +66,8 @@ export function submitDecision(winnerId) {
 }
 export const throttledSubmitDecision = _.throttle(submitDecision, 1000);
 
+
+//Fetches All prompts required to choose for voting
 export function fetchPrompts() {
 
   const request = axios.get(`${ROOT_URL}prompts`);
@@ -73,6 +78,7 @@ export function fetchPrompts() {
   }
 }
 
+//This returns the prompt to the comparison state
 export function updatePrompt(prompt) {
 
   return{
@@ -81,6 +87,7 @@ export function updatePrompt(prompt) {
   }
 }
 
+//On submitting the vote calculates the stats 
 export function fetchStatsByPrompt(promptId) {
 
   promptId = promptId || store.getState().prompt.id;

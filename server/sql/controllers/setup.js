@@ -3,7 +3,7 @@ const seedDatabase = require('./seedDatabase');
 const stats = require('./stats');
 const seedWinLoss = require('../../../docs/tests/winloss');
 
-
+//wipes the databases and uses the new datas
 module.exports = {
   dangerwipedatabase: {
 

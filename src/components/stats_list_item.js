@@ -32,6 +32,7 @@ class StatsListItem extends Component {
           <span className="text">
             {(this.props.average + "%")}
           </span>
+            <sup>{this.props.total + " Vote(s)"}</sup>
         </dd>
       </div>
     );

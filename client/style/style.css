@@ -29,11 +29,22 @@ dl {
 /*-----General ----- */
 .navigation-style{
   border: 1px solid lightgrey;
-  background-color: inherit;
   border-radius: 5px;
+}
+
+nav.navigation-style.navbar.navbar-light.bg-faded {
+  background-color: #FFC107;
+}
+
+li.list-group-item {
+  background-color: #FFECB3;
 }
 /*div {
   border: 1px green solid;
+}*/
+
+/*.main {
+  background-color: #FFC107;
 }*/
 
 
@@ -148,7 +159,7 @@ dl {
 }
 
 .list-group-item:hover {
-  background-color: #eee;
+  background-color: #00BCD4;
 }
 
 .list-group-item img {
@@ -255,6 +266,10 @@ dt {
 
 .container.jumbotron {
   border-radius: 5px;
+}
+.jumbotron.jumbotron-fluid {
+  background-color: #FFC107;
+  border-radius: 8px;
 }
 
 .login-container {

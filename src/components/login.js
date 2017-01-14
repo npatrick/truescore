@@ -27,7 +27,7 @@ class LoginView extends Component {
           <h5>How it works</h5>
           <ol>
             <li className="selling-points">Choose between two people on various attributes</li>
-            <li className="selling-points">Our advanced algorithm analyze your choices</li>
+            <li className="selling-points">Our advanced algorithm analyzes your choices</li>
             <li className="selling-points">You see a list of your preferences</li>
           </ol>
           <div>

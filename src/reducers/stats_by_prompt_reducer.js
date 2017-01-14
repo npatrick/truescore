@@ -1,5 +1,4 @@
 import { FETCH_STATS_BY_PROMPT } from '../actions/actions';
-import { store } from '../index';
 
 const INITIAL_STATE = {stats:[]};
 

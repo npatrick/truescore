@@ -8,7 +8,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 body {
   background-color: black;
 }
- 
+
  /*This block is used on the User_Stats component
     which styles a graph based on percentage*/
 dl {
@@ -37,8 +37,15 @@ dl {
 }*/
 
 
-/*-----Play ----- */
+.footer {
+  background-color: rgb(205, 202, 196);
+  text-align: center;
+  border-radius: 5px;
+}
 
+
+
+/*-----Play ----- */
 
 
 

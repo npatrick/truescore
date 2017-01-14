@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 
 import CompareChoices from '../containers/compare_choices';
 import Navigation from './navigation.js';
+import Footer from './footer.js';
 
 export default class App extends Component {
   constructor (props){
@@ -20,6 +21,7 @@ export default class App extends Component {
       <div id="app">
         <div>{this.props.navigation}</div>
         <div className="main">{this.props.main}</div>
+        <div>{this.props.footer}</div>
       </div>
     );
   }

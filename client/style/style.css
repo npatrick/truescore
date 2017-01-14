@@ -1,7 +1,7 @@
-@import 'percentStyle.css';
+
 
 /*-----General ----- */
-#nav{
+.navigation-style{
   border: 1px solid lightgrey;
   background-color: inherit;
   border-radius: 5px;
@@ -10,9 +10,21 @@
 
 /*-----Play ----- */
 
+.game-info{
+  margin:20px;
+}
 
-#choices{
+
+.game-comparison{
   margin:40px;
+}
+
+.game-container{
+  border: 1px solid lightgrey;
+  text-align: center;
+  font-style: italic;
+  margin:20px;
+  border-radius: 5px;
 }
 
 .choice-container{
@@ -28,19 +40,6 @@
   width: 200px;
 }
 
-
-#prompt{
-  margin:20px;
-}
-
-#gamecontainer{
-  border: 1px solid lightgrey;
-  text-align: center;
-  font-style: italic;
-  margin:20px;
-  border-radius: 5px;
-
-}
 
 .prompt-container{
   border:1px solid lightgrey;
@@ -214,11 +213,4 @@ dt {
   height: 100 % ;
   display: inline-block;
   vertical-align: middle;
-}
-
-#fb-button {
- margin: 0 auto;
- display: inline-block;
- vertical-align: middle;
- padding: 10px;
 }

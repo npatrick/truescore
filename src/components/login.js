@@ -22,7 +22,7 @@ class LoginView extends Component {
             <li className="selling-points">Our advanced algorithm analyze your choices</li>
             <li className="selling-points">You see a list of your preferences</li>
           </ol>
-          <div className="fb-div">
+          <div>
             <span>
               <a href="auth/facebook"><img className="btn-fb" src="/assets/fbButton.png" width="224" /></a>
             </span>

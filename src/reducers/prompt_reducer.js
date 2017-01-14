@@ -1,6 +1,6 @@
 import { UPDATE_PROMPT } from '../actions/actions.js';
 
-const INITIAL_STATE = {id: 1, text: "Invent the next snapchat"};
+const INITIAL_STATE = {id: 1, text: "Who works harder?"};
 
 export default function(state = INITIAL_STATE, action) {
   switch( action.type ) {

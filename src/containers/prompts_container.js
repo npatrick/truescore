@@ -28,7 +28,7 @@ class PromptContainer extends  Component {
 	render () {
 
     return (
-			<div className="row">
+			<div className="row container">
 				<div className="col-md-6 col-s-12 list-group">
 					<h3>Choose a category to vote!</h3>
 					<ul>

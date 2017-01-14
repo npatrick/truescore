@@ -15,8 +15,6 @@ class PromptTile extends Component {
 
 
   render() {
-
-    console.log("from inside this.props", this.props);
     return (
 
         <li className ="list-group-item"
@@ -28,12 +26,8 @@ class PromptTile extends Component {
               <div className="media-heading">{this.props.title}</div>
             </div>
         </li>
-
-
     );
   }
 }
 
 export default connect(null, { updatePrompt })(PromptTile);
-
-//connection(state, action)(component)

@@ -31,5 +31,3 @@ class MiniPromptList extends Component {
 
 
 export default connect(null, { updatePrompt, throttledFetchStatsByPrompt })(MiniPromptList);
-
-//connection(state, action)(component)

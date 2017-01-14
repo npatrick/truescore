@@ -21,7 +21,7 @@ class MiniPromptList extends Component {
             this.props.updatePrompt(this.props.prompt);
             this.props.throttledFetchStatsByPrompt(this.props.prompt.id);
           }}>
-        	<img className="miniPrompt" style={miniPic} src={this.props.tileImage}/>
+        	<img className="mini-prompt-tile" style={miniPic} src={this.props.tileImage}/>
           <input type="radio" name="options" autoComplete="off" />
         </label>
     );

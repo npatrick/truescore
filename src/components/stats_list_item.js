@@ -5,11 +5,26 @@ import { fetchStatsByPrompt } from '../actions/actions';
 class StatsListItem extends Component {
 
   render() {
+    let numberAsPercent = this.props.average.toString() + "%";
     let actualPercentage = "percentage percentage-" + (this.props.average).toString();
+
+    let barMaker = (function(style){
+      console.log('THIS IS STYLE: ',style);
+      let sheet = document.head.appendChild(style).sheet;
+      return function(selector, css){
+        let propText = Object.keys(css).map(function(p){
+            return p+":"+css[p]
+        }).join(";");
+
+        console.log('THIS IS SELECTOR: ', selector);
+        sheet.insertRule(selector + "{" + propText + "}", sheet.cssRules.length);
+      }
+    })(document.createElement("style"));
+
     return (
       <div>
         {this.props.name}
-        <dd className={actualPercentage}>
+        <dd className={actualPercentage} style={barMaker(`.percentage-${this.props.average}:after`, {width: numberAsPercent})}>
           <span className="text">
             {(this.props.average + "%")}
           </span>

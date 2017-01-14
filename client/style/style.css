@@ -89,6 +89,15 @@
   display:none;
 }
 
+.mini-prompt-tile {
+  margin-right: 80px;
+  margin-left: 30px;
+  cursor: pointer;
+  cursor: hand;
+  border-radius: 12px;
+  width: 130px;  
+}
+
 .list-group-item {
   cursor: pointer;
 }
@@ -136,16 +145,6 @@ dt {
   margin-left: 130px;
 }
 
-
-.mini-prompt-tile {
-  margin-right: 80px;
-  margin-left: 30px;
-  cursor: pointer;
-  cursor: hand;
-  border-radius: 12px;
-}
-
-
 .text {
   font-weight: 600;
   display: -webkit-box;
@@ -165,13 +164,43 @@ dt {
 }
 
 
+/*//////////////////////////*/
+/*/                        /*/
+/*/     Percentage         /*/
+/*/     Formatting         /*/
+/*/                        /*/
+/*//////////////////////////*/
 
 
+
+.percentage {
+  line-height: 1;
+  text-transform: uppercase;
+  max-width: 75%;
+  height: 40px;
+  margin-left: 45px;
+  background: -webkit-repeating-linear-gradient(left, #ddd, #ddd 1px, #fff 1px, #fff 5%);
+  background: repeating-linear-gradient(to right, #ddd, #ddd 1px, #fff 1px, #fff 5%);
+}
+.percentage:after {
+  content: "";
+  display: block;
+  background-color: #3d9970;
+  width: 50px;
+  margin-bottom: 10px;
+  margin-left: 20%;
+  height: 90%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: background-color .3s ease;
+}
 
 /*-----Login----- */
 
 
-.container .jumbotron {
+.container.jumbotron {
   border-radius: 5px;
 }
 

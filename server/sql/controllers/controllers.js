@@ -8,7 +8,7 @@ module.exports = {
 
   //Gets the Prompts from the db 
   prompts: {
-      get: function (req, res) {
+    get: function (req, res) {
       //if there's a promptid
       if(req.params.id){
 

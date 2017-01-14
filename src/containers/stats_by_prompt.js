@@ -79,7 +79,7 @@ class StatsByPrompt extends Component {
     };
     return (
       <div>
-
+        <br />
         <h6>Select a prompt:</h6>
         <div className="row prompt-buttons">
           <div className="btn-group" data-toggle="buttons">

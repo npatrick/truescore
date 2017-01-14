@@ -18,7 +18,7 @@ export default class Navigation extends React.Component {
       <div className="navigation">
         <Navbar className="navigation-style" color="faded" light >
           <Nav className="float-right">
-            <NavbarBrand href="/">Truescore</NavbarBrand>
+            <NavbarBrand href="/">TrueScore</NavbarBrand>
             <NavItem>
               <NavLink href="#/home">Home</NavLink>
             </NavItem>

@@ -136,16 +136,6 @@ dt {
   margin-left: 130px;
 }
 
-
-.mini-prompt-tile {
-  margin-right: 80px;
-  margin-left: 30px;
-  cursor: pointer;
-  cursor: hand;
-  border-radius: 12px;
-}
-
-
 .text {
   font-weight: 600;
   display: -webkit-box;
@@ -198,36 +188,20 @@ dt {
   -webkit-transition: background-color .3s ease;
 }
 
-#choices{
-  border:1px solid lightgrey;
-  margin:40px;
-}
-
-#prompt{
-  margin:20px;
-}
-#App{
-  margin: 25px;
-}
-#nav{
-  border: none;
-  border-radius:10px;
-  width:100%;
-  /*background-color: rgba(76, 69, 69, 0.28);*/
-
-}
-#gamecontainer{
-  border: 1px solid lightgrey;
-  text-align: center;
-  font-style: italic;
-  margin:20px;
-}
-
 /*-----Login----- */
 
 
-.container .jumbotron {
+.container.jumbotron {
   border-radius: 5px;
+}
+
+.mini-prompt-tile {
+  margin-right: 80px;
+  margin-left: 30px;
+  cursor: pointer;
+  cursor: hand;
+  border-radius: 12px;
+  width: 130px;  
 }
 
 .login-container {

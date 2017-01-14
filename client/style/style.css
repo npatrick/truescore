@@ -164,6 +164,10 @@ dl {
   margin-bottom: 30px;
 }
 
+sup {
+  right: 10%;
+}
+
 
 /*-----Stats page----- */
 
@@ -240,7 +244,7 @@ dt {
   margin-left: 20%;
   height: 90%;
   position: relative;
-  top: 50%;
+  top: 10%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   -webkit-transition: background-color .3s ease;

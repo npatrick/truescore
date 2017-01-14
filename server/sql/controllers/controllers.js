@@ -7,7 +7,8 @@ module.exports = {
   ////////////////////////
 
   //Gets the Prompts from the db 
-    get: function (req, res) {
+  prompts: {
+      get: function (req, res) {
       //if there's a promptid
       if(req.params.id){
 
@@ -25,6 +26,7 @@ module.exports = {
 
       }
     },
+
     post: function (req, res) {
       const {text, sensitive } = req.body;
       db.Prompt.findOrCreate({where: {text: text}})

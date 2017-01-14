@@ -165,8 +165,63 @@ dt {
 }
 
 
+/*//////////////////////////*/
+/*/                        /*/
+/*/     Percentage         /*/
+/*/     Formatting         /*/
+/*/                        /*/
+/*//////////////////////////*/
 
 
+
+.percentage {
+  line-height: 1;
+  text-transform: uppercase;
+  max-width: 75%;
+  height: 40px;
+  margin-left: 45px;
+  background: -webkit-repeating-linear-gradient(left, #ddd, #ddd 1px, #fff 1px, #fff 5%);
+  background: repeating-linear-gradient(to right, #ddd, #ddd 1px, #fff 1px, #fff 5%);
+}
+.percentage:after {
+  content: "";
+  display: block;
+  background-color: #3d9970;
+  width: 50px;
+  margin-bottom: 10px;
+  margin-left: 20%;
+  height: 90%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: background-color .3s ease;
+}
+
+#choices{
+  border:1px solid lightgrey;
+  margin:40px;
+}
+
+#prompt{
+  margin:20px;
+}
+#App{
+  margin: 25px;
+}
+#nav{
+  border: none;
+  border-radius:10px;
+  width:100%;
+  /*background-color: rgba(76, 69, 69, 0.28);*/
+
+}
+#gamecontainer{
+  border: 1px solid lightgrey;
+  text-align: center;
+  font-style: italic;
+  margin:20px;
+}
 
 /*-----Login----- */
 

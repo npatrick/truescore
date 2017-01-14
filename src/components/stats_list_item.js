@@ -9,14 +9,11 @@ class StatsListItem extends Component {
     let actualPercentage = "percentage percentage-" + (this.props.average).toString();
 
     let barMaker = (function(style){
-      console.log('THIS IS STYLE: ',style);
-      let sheet = document.head.appendChild(style).sheet;
+    let sheet = document.head.appendChild(style).sheet;
       return function(selector, css){
         let propText = Object.keys(css).map(function(p){
             return p+":"+css[p]
         }).join(";");
-
-        console.log('THIS IS SELECTOR: ', selector);
         sheet.insertRule(selector + "{" + propText + "}", sheet.cssRules.length);
       }
     })(document.createElement("style"));

@@ -8,19 +8,17 @@ class Choice extends Component {
     super(props);
     this.state = {showResults: false}
   }
-  
+
   submit(winnerId){
     this.props.throttledSubmitDecision(winnerId);
     this.props.throttledFetchComparison();
   }
-
 
   render() {
     let overlay = {
       zIndex: 1,
       opacity: 0.4
     }
-
 
     return (
       <div className="choice-container"
@@ -32,6 +30,5 @@ class Choice extends Component {
   }
 
 };
-
 
 export default connect(null, { throttledSubmitDecision, throttledFetchComparison })(Choice);

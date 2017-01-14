@@ -6,9 +6,20 @@
   background-color: inherit;
   border-radius: 5px;
 }
+div {
+  border: 1px green solid;
+}
 
 
 /*-----Play ----- */
+
+
+
+
+.media-heading{
+  margin-left: 20px;
+  font-size: 1.25em;
+}
 
 .game-info{
   margin:20px;
@@ -95,7 +106,7 @@
   cursor: pointer;
   cursor: hand;
   border-radius: 12px;
-  width: 130px;  
+  width: 130px;
 }
 
 .list-group-item {
@@ -109,6 +120,10 @@
 .list-group-item img {
   height: 50px;
   width: 50px;
+}
+
+.list-group {
+  margin-left: 10px;
 }
 
 .prompt-buttons {

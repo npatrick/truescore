@@ -327,8 +327,12 @@ ol li img {
   border-radius: 50%;
   max-width: 30%;
   margin-right: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
 }
+
+
 
 .top5-container {
   margin-top: 20px;

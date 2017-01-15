@@ -33,7 +33,7 @@ class TopFiveTile extends Component {
         <div>
           <ol>
             {this.rankList().map( (person, index) => 
-              <li key={index}><img className ="pull-right" src={person.imageUrl} alt=""/>{person.name}</li> ) }
+              <li key={index}><img src={person.imageUrl} alt=""/>{person.name}</li> ) }
           </ol>
         </div>
           

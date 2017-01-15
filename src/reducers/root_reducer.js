@@ -15,7 +15,6 @@ import CurrentUserReducer from './current_user_reducer.js';
 import allStatsReducer from './all_stats_reducer';
 import killSwitchReducer from './kill_switch_reducer';
 
-
 const rootReducer = combineReducers({
   comparison: ComparisonReducer,
   users: UsersReducer,
@@ -24,7 +23,6 @@ const rootReducer = combineReducers({
   statsByPrompt: StatsByPromptReducer,
   currentUser: CurrentUserReducer,
   allStats: allStatsReducer,
-  killSwitch: killSwitchReducer
-});
+  killSwitch: killSwitchReducer});
 
 export default rootReducer;

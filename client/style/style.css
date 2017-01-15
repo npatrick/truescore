@@ -165,6 +165,10 @@ img.mini-prompt-tile {
   width: 50px;
 }
 
+.btn-group, .btn-group-vertical {
+  left: 2%;
+}
+
 .list-group-item {
   cursor: pointer;
 }

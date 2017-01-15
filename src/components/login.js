@@ -17,7 +17,8 @@ class LoginView extends Component {
 
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
-            <h1 className="display-3">TrueScore</h1>
+            <h1 className="display-3"><img className='logo' src="/assets/logo.png"/></h1>
+
             <p className="lead">Crowd sourced sentiment</p>
           </div>
         </div>

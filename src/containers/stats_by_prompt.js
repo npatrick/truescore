@@ -48,7 +48,7 @@ class StatsByPrompt extends Component {
   }
 
   renderPromptListItem () {
-    let buttonActive = "btn btn-info active";
+    let buttonActive = "btn active";
     return this.props.prompts.map(promptLoop => {
       if(promptLoop.id === this.props.prompt.id) {
         return (
@@ -60,7 +60,7 @@ class StatsByPrompt extends Component {
               onActive={buttonActive} />
         )
       } else {
-        buttonActive = "btn btn-info";
+        buttonActive = "btn";
         return (
             <MiniPromptListItem
               key={promptLoop.id}

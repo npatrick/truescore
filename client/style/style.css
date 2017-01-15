@@ -13,24 +13,6 @@ body {
   /*color: rgb(255, 255, 250);*/
 }
 
-
- /*This block is used on the User_Stats component
-    which styles a graph based on percentage*/
-dl {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  background-color: inherit;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  max-width: 650px;
-  position: relative;
-  padding: 20px;
-}
-
-
 /*-----General ----- */
 .navigation-style{
   border: 1px solid lightgrey;
@@ -44,7 +26,9 @@ h3 h5 {
   margin-bottom:50px:
 }
 
-
+nav.navigation-style.navbar.navbar-light.bg-faded {
+  background-color: #fac960;
+}
 
 li.list-group-item {
   background-color: rgb(249, 249, 252);
@@ -186,7 +170,9 @@ img.mini-prompt-tile {
 }
 
 .list-group-item:hover {
-  background-color: rgb(230, 237, 250);
+
+/*  background-color: rgb(230, 237, 250);*/
+  background-color: #B3E5FC;
 }
 
 .list-group-item img {
@@ -208,6 +194,9 @@ sup {
 
 
 /*-----Stats page----- */
+
+ /*This block is used on the User_Stats component
+    which styles a graph based on percentage*/
 
 dl {
   display: -webkit-box;
@@ -318,6 +307,7 @@ dt {
   padding: 20px;
 }
 
+
 .selling-points {
   font-size: 1.5em;
   margin-top: 30px;
@@ -359,12 +349,32 @@ ol li img {
 
 }
 
-
-
 .top5-container {
   margin-top: 20px;
 }
 
 .prompts-button {
  margin-left: 20px;
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+  .network-list {text-align: center;}
+}
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+  .network-list {text-align: center;}
 }

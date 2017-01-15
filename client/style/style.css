@@ -165,6 +165,11 @@ li.list-group-item {
   width: 130px;
 }
 
+img.mini-prompt-tile {
+  height: 50px;
+  width: 50px;
+}
+
 .list-group-item {
   cursor: pointer;
 }
@@ -336,4 +341,8 @@ ol li img {
 
 .top5-container {
   margin-top: 20px;
+}
+
+.prompts-button {
+ margin-left: 20px;
 }

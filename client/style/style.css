@@ -174,9 +174,7 @@ img.mini-prompt-tile {
 }
 
 .list-group-item:hover {
-
-/*  background-color: rgb(230, 237, 250);*/
-  background-color: #B3E5FC;
+  background-color: rgb(230, 237, 250);
 }
 
 .list-group-item img {

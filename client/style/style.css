@@ -60,6 +60,7 @@ li.list-group-item {
 .spinner {
   position: absolute;
   margin-left: -56px;
+  z-index: 6;
 
 }
 
@@ -77,6 +78,19 @@ li.list-group-item {
   margin:40px;
 }
 
+.game-comparison div:nth-child(even) {
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+}
+
+.game-comparison div:hover {
+  -webkit-transition: -webkit-transform .15s linear;
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  position: relative;
+  z-index: 5;
+}
+
 .game-container{
   border: 1px solid lightgrey;
   text-align: center;
@@ -86,23 +100,28 @@ li.list-group-item {
 }
 
 .choice-container{
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
   display: inline-block;
   border: 1px solid lightgrey;
-  padding: 20px;
+  background-color: #fff;
+  padding: 10px 10px 15px;
   margin: 20px;
   cursor: hand;
   cursor: pointer;
   border-radius: 5px;
-}
-
-.choice-container:hover {
-  background-color: #eee;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .choice-container img {
+  margin-bottom: 6%;
   width: 200px;
 }
 
+.choice-container div:after {
+  content: attr(title);
+}
 
 .prompt-container{
   border:1px solid lightgrey;

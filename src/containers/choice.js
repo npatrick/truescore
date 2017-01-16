@@ -37,8 +37,8 @@ class Choice extends Component {
     return (
       <div className="choice-container"
         onClick={() => this.throttledSubmit(this.props.id)} >
-        <h3>{this.props.name}</h3>
         <img src={this.props.imageUrl} />
+        <h3>{this.props.name}</h3>
       </div>
     );
   }

@@ -11,7 +11,7 @@ export default class Footer extends Component {
 
   render() {
     return (
-      <div className="footer"><p>Built with ❤️️  in react, redux, magic, angel feathers, moose larva, and sweat at HackReactor</p></div>
+      <div className="footer"><p>Built with ❤️ ️ and <img className="footer-logos-react" src="/assets/react-logo.png"/> + <img className="footer-logos-redux" src="/assets/redux.png"/> + <img className="footer-logos-node" src="/assets/node-logo.png"/> + <img className="footer-logos-express" src="/assets/express-logo.png"/> + <img className="footer-logos-mysql" src="/assets/mysql-logo.png"/> and sweat at HackReactor</p></div>
     )
   }
 }

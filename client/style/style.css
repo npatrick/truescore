@@ -339,7 +339,7 @@ dt {
 .jumbotron.jumbotron-fluid {
   /*background-color: #fac960;*/
 
-  background-color: rgba(205, 193, 24, 0.08);
+  background-color: #fac960;
   /*background-color: #E0DDD7;*/
   /*background-color: rgba(72, 95, 251, 0.07);*/
   border-radius: 8px;
@@ -406,7 +406,7 @@ ol li img {
 
 /* Portrait and Landscape */
 @media only screen
-  and (min-device-width: 375px) 
+  and (min-device-width: 375px)
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2) {
 

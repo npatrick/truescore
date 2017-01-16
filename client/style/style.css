@@ -23,6 +23,27 @@ body {
 }
 
 
+.logo-nav {
+  width:120px;
+}
+
+
+.footer-logos-express{
+  width: 55px;
+}
+.footer-logos-node{
+  width: 55px;
+}
+.footer-logos-mysql{
+  width: 50px;
+}
+.footer-logos-react{
+  width: 60px;
+}
+.footer-logos-redux{
+  width: 70px;
+}
+
 .list-group h3 {
   margin-bottom: 20px;
 }
@@ -31,8 +52,9 @@ nav.navigation-style.navbar.navbar-light.bg-faded {
   background-color: #fac960;
 }
 
+
 li.list-group-item {
-  background-color: rgb(249, 249, 252);
+  background-color: rgb(235, 235, 241);
 }
 /*div {
   border: 1px green solid;
@@ -47,9 +69,10 @@ li.list-group-item {
 
 .footer {
   margin-top:20px;
-  background-color: rgb(205, 202, 196);
+  background-color: rgb(232, 233, 230);
   text-align: center;
   border-radius: 5px;
+  padding-top: 5px;
 }
 
 
@@ -382,10 +405,10 @@ ol li img {
 /* ----------- iPhone 6 ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
+@media only screen
   and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
 
   .network-list {text-align: center;}
 }
@@ -393,10 +416,10 @@ ol li img {
 /* ----------- iPhone 6+ ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
 
   .network-list {text-align: center;}
 }

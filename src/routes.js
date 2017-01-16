@@ -27,7 +27,7 @@ function requireAuth(nextState, replace) {
 
 export default (
   <Route path="/" component={App} >
-    <IndexRoute components={ {main: LoginView } } />
+    <IndexRoute components={ {main: LoginView, footer: Footer } } />
     <Route path="stats" components={ {main: StatsByPrompt, navigation: Navigation, footer: Footer} } onEnter={requireAuth} />
     <Route path="game" components={ {main: CompareChoices, navigation: Navigation, footer: Footer} } onEnter={requireAuth} />
     <Route path= "login" component={LoginView} />

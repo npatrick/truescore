@@ -13,6 +13,7 @@ class StatsByPrompt extends Component {
   }
 
   renderStatsListItem () {
+    console.log('STATS BY PROMPT PROPS HEAH: ', this.props);
     return this.props.statsByPrompt.map(user => {
       const wins = user.wins;
       const losses = user.losses;

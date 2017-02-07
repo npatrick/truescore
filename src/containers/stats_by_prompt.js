@@ -86,12 +86,7 @@ class StatsByPrompt extends Component {
             {this.renderPromptListItem.bind(this)()}
           </div>
         </div>
-
-
-
-
         <div className="row">
-
           <div className ="col-md-8">
             <h4 style={textPos}>{this.props.prompt.text}</h4>
             <div className="statList-container">
@@ -100,16 +95,12 @@ class StatsByPrompt extends Component {
               </dl>
             </div>
           </div>
-
           <div className ="col-md-4">
-
             <div className="network-list">
               <h5>Your Network (players)</h5>
               <UsersList />
             </div>
-
           </div>
-
         </div>
       </div>
     );

@@ -8,13 +8,9 @@
 import React from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-
 export default class Navigation extends React.Component {
-
   render() {
     return (
-
-
       <div className="navigation">
         <Navbar className="navigation-style" color="faded" light >
           <Nav className="float-right">

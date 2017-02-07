@@ -7,7 +7,6 @@
 import React from 'react';
 
 const Results = (props) => {
-  console.log('RESULTS PROPS: ', props);
   const overlay = {
     color: 'black',
     zIndex: 2,
@@ -15,7 +14,7 @@ const Results = (props) => {
   }
   return (
     <h3 className="results" style={overlay}>
-        {Math.floor(props.average) + '% Win Rate'}
+      {Math.floor(props.average) + '% Win Rate'}
     </h3>
   );
 };

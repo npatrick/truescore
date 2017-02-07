@@ -13,16 +13,12 @@ class LoginView extends Component {
   render() {
     return (
       <div className=" login-container container">
-
-
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
             <h1 className="display-3"><img className='logo' src="/assets/logo-2.png"/></h1>
-
             <p className="lead">Crowd sourced sentiment</p>
           </div>
         </div>
-
       <div className="row">
         <div className="left-column-login col-xs-6 col-sm-6 col-lg-6">
           <h5>How it works</h5>
@@ -44,7 +40,6 @@ class LoginView extends Component {
           </div>
         </div>
       </div>
-
     </div>
     )
   }

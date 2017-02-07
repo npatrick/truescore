@@ -5,8 +5,8 @@ import _ from 'underscore';
 const protocol = window.location.protocol;
 const host = window.location.host;
 const pathname = window.location.pathname;
-export const ROOT_URL = `${protocol}//${host}/api/`; //http or https, host could be localhost or deployment
 
+export const ROOT_URL = `${protocol}//${host}/api/`; //http or https, host could be localhost or deployment
 export const FETCH_COMPARISON = 'FETCH_COMPARISON';
 export const FETCH_USERS = 'FETCH_USERS';
 export const SUBMIT_DECISION = 'SUBMIT_DECISION';
@@ -19,16 +19,12 @@ export const FETCH_STATS_BY_PROMPT_ID = 'FETCH_STATS_BY_PROMPT_ID';
 export const UPDATE_KILL_SWITCH = 'UPDATE_KILL_SWITCH';
 export const CHANGE_STATE = 'CHANGE_STATE';
 
-
-
-
 //Fetches the random comparison to vote 
 export function fetchComparison () {
 
   // store.dispatch(changeState());
 
   const promptId = store.getState().prompt.id;
-
   const request = axios.get(`${ROOT_URL}comparison/${promptId}`)
 
   return {
@@ -50,9 +46,7 @@ export function fetchUsers () {
   }
 }
 
-
-//On submitting or voting send the  (win/loss) results to db 
-
+//On submitting or voting send the (win/loss) results to db 
 export function submitDecision(winnerId) {
 
   const currentComparison = store.getState().comparison;
@@ -68,10 +62,9 @@ export function submitDecision(winnerId) {
     type: SUBMIT_DECISION,
     payload: request
   }
-
 }
-export const throttledSubmitDecision = _.throttle(submitDecision, 1000);
 
+export const throttledSubmitDecision = _.throttle(submitDecision, 1000);
 
 //Fetches All prompts required to choose for voting
 export function fetchPrompts() {
@@ -115,10 +108,8 @@ export function fetchStatsByPromptById(promptId) {
   return{
     type: FETCH_STATS_BY_PROMPT_ID, //this requires specific id
     payload: request
-    // promptId: 2
   }
 }
-
 
 export function fetchUserData() { // actions return objects
   const request = axios.get(`${ROOT_URL}currentUserData`);
@@ -128,7 +119,6 @@ export function fetchUserData() { // actions return objects
     payload: request
   }
 }
-
 
 export function updateKillSwitch(id){
   return {

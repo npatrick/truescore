@@ -19,22 +19,19 @@ class MiniPromptList extends Component {
   		'marginLeft': 'auto',
   		'marginRight': 'auto',
       borderRadius: '12px'
-
   	}
 
     return (
-        <label className={this.props.onActive}
-        	onClick={() => {
-            this.props.updatePrompt(this.props.prompt);
-            this.props.throttledFetchStatsByPrompt(this.props.prompt.id);
-          }}>
-        	<img className="mini-prompt-tile" style={miniPic} src={this.props.tileImage}/>
-          <input type="radio" name="options" autoComplete="off" />
-        </label>
+      <label className={this.props.onActive}
+      	onClick={() => {
+          this.props.updatePrompt(this.props.prompt);
+          this.props.throttledFetchStatsByPrompt(this.props.prompt.id);
+        }}>
+      	<img className="mini-prompt-tile" style={miniPic} src={this.props.tileImage}/>
+        <input type="radio" name="options" autoComplete="off" />
+      </label>
     );
   }
 }
-
-
 
 export default connect(null, { updatePrompt, throttledFetchStatsByPrompt })(MiniPromptList);

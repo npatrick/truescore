@@ -19,10 +19,8 @@ class PromptTile extends Component {
     this.context.router.push('/game')
   }
 
-
   render() {
     return (
-
         <li className ="list-group-item"
         onClick={ () => this.tileClick() }>
           <div className="media-left">

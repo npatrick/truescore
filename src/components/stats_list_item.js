@@ -15,11 +15,13 @@ class StatsListItem extends Component {
     let numberAsPercent = this.props.average.toString() + "%";
     let actualPercentage = "percentage percentage-" + (this.props.average).toString();
 
-    let barMaker = (function(style){
-    let sheet = document.head.appendChild(style).sheet;
-      return function(selector, css){
-        let propText = Object.keys(css).map(function(p){
-            return p+":"+css[p]
+    // creates bar graphs depending on the current percentage
+    // barMaker function is invoked as part of jsx on line 33
+    let barMaker = (function(style) {
+      let sheet = document.head.appendChild(style).sheet;
+      return function(selector, css) {
+        let propText = Object.keys(css).map(function(p) {
+          return p + ":" + css[p]
         }).join(";");
         sheet.insertRule(selector + "{" + propText + "}", sheet.cssRules.length);
       }
